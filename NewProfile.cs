@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectChocobo
 {
-    public partial class Home : Form
+    public partial class NewProfile : Form
     {
-        public Home()
+        public NewProfile()
         {
             InitializeComponent();
         }
