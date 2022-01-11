@@ -17,5 +17,17 @@ namespace ProjectChocobo
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            bool check = login("test","test");
+            if (check == true) {
+                MessageBox.Show("It worked :>");
+            }
+            else
+            {
+                MessageBox.Show("There was a problem with the login");
+            }
+        }
     }
 }

@@ -26,9 +26,9 @@ namespace ProjectChocobo
             try
             {
                 cnn.Open();
-                int loginCheck = comLogin.ExecuteNonQuery();
+                int loginCheck = Convert.ToInt32(comLogin.ExecuteScalar());
                 if (loginCheck == -1) { 
-                    int passCheck = comPass.ExecuteNonQuery();
+                    int passCheck = Convert.ToInt32(comPass.ExecuteScalar());
                     cnn.Close();
                     if (passCheck == -1) {
                         return true;
