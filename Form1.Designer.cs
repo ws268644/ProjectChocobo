@@ -55,6 +55,7 @@ namespace ProjectChocobo
             this.btn_profiles.TabIndex = 4;
             this.btn_profiles.Text = "Profiles";
             this.btn_profiles.UseVisualStyleBackColor = true;
+            this.btn_profiles.Click += new System.EventHandler(this.btn_profiles_Click);
             // 
             // btn_events
             // 
@@ -64,6 +65,7 @@ namespace ProjectChocobo
             this.btn_events.TabIndex = 5;
             this.btn_events.Text = "Events";
             this.btn_events.UseVisualStyleBackColor = true;
+            this.btn_events.Click += new System.EventHandler(this.btn_events_Click);
             // 
             // btn_tracks
             // 
@@ -73,6 +75,7 @@ namespace ProjectChocobo
             this.btn_tracks.TabIndex = 6;
             this.btn_tracks.Text = "Tracks";
             this.btn_tracks.UseVisualStyleBackColor = true;
+            this.btn_tracks.Click += new System.EventHandler(this.btn_tracks_Click);
             // 
             // btn_settings
             // 
@@ -82,6 +85,7 @@ namespace ProjectChocobo
             this.btn_settings.TabIndex = 7;
             this.btn_settings.Text = "Settings";
             this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // btn_quit
             // 
@@ -105,6 +109,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.lbl_title);
             this.Name = "Home";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjectChocobo
 {
-    public partial class profiles : Form
+    public partial class Tracks : Form
     {
-        public profiles()
+        public Tracks()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
