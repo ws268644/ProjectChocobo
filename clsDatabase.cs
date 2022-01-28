@@ -41,11 +41,18 @@ namespace ProjectChocobo
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
                 cnn.Close();
+                if (intSuccess == 0)
+                {
+                    return false; //If something went wrong and the user wasn't added it will return a false.
+                }
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                return false;
             }
         }
     }
