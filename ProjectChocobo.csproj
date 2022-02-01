@@ -90,6 +90,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProfiles.Designer.cs">
+      <DependentUpon>AllProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Events.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllProfiles.resx">
+      <DependentUpon>AllProfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Events.resx">
       <DependentUpon>Events.cs</DependentUpon>
     </EmbeddedResource>

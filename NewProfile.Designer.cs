@@ -29,82 +29,82 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lbl_Password = new System.Windows.Forms.Label();
+            this.lbl_lastName = new System.Windows.Forms.Label();
+            this.txt_Password = new System.Windows.Forms.TextBox();
+            this.txt_LastName = new System.Windows.Forms.TextBox();
+            this.lbl_ConfirmPassword = new System.Windows.Forms.Label();
+            this.txt_ConfirmPassword = new System.Windows.Forms.TextBox();
+            this.lbl_FirstName = new System.Windows.Forms.Label();
+            this.txt_FirstName = new System.Windows.Forms.TextBox();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_AddRacer = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label2
+            // lbl_Password
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Password";
+            this.lbl_Password.AutoSize = true;
+            this.lbl_Password.Location = new System.Drawing.Point(9, 192);
+            this.lbl_Password.Name = "lbl_Password";
+            this.lbl_Password.Size = new System.Drawing.Size(53, 13);
+            this.lbl_Password.TabIndex = 8;
+            this.lbl_Password.Text = "Password";
             // 
-            // label1
+            // lbl_lastName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Username";
+            this.lbl_lastName.AutoSize = true;
+            this.lbl_lastName.Location = new System.Drawing.Point(9, 121);
+            this.lbl_lastName.Name = "lbl_lastName";
+            this.lbl_lastName.Size = new System.Drawing.Size(58, 13);
+            this.lbl_lastName.TabIndex = 7;
+            this.lbl_lastName.Text = "Last Name";
             // 
-            // textBox2
+            // txt_Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 208);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 20);
-            this.textBox2.TabIndex = 6;
+            this.txt_Password.Location = new System.Drawing.Point(12, 208);
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.Size = new System.Drawing.Size(196, 20);
+            this.txt_Password.TabIndex = 6;
             // 
-            // textBox1
+            // txt_LastName
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 20);
-            this.textBox1.TabIndex = 5;
+            this.txt_LastName.Location = new System.Drawing.Point(12, 137);
+            this.txt_LastName.Name = "txt_LastName";
+            this.txt_LastName.Size = new System.Drawing.Size(196, 20);
+            this.txt_LastName.TabIndex = 5;
             // 
-            // label3
+            // lbl_ConfirmPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 246);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Confirm Password";
+            this.lbl_ConfirmPassword.AutoSize = true;
+            this.lbl_ConfirmPassword.Location = new System.Drawing.Point(9, 246);
+            this.lbl_ConfirmPassword.Name = "lbl_ConfirmPassword";
+            this.lbl_ConfirmPassword.Size = new System.Drawing.Size(91, 13);
+            this.lbl_ConfirmPassword.TabIndex = 10;
+            this.lbl_ConfirmPassword.Text = "Confirm Password";
             // 
-            // textBox3
+            // txt_ConfirmPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 262);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 20);
-            this.textBox3.TabIndex = 9;
+            this.txt_ConfirmPassword.Location = new System.Drawing.Point(12, 262);
+            this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
+            this.txt_ConfirmPassword.Size = new System.Drawing.Size(196, 20);
+            this.txt_ConfirmPassword.TabIndex = 9;
             // 
-            // label4
+            // lbl_FirstName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "First Name";
+            this.lbl_FirstName.AutoSize = true;
+            this.lbl_FirstName.Location = new System.Drawing.Point(9, 82);
+            this.lbl_FirstName.Name = "lbl_FirstName";
+            this.lbl_FirstName.Size = new System.Drawing.Size(57, 13);
+            this.lbl_FirstName.TabIndex = 12;
+            this.lbl_FirstName.Text = "First Name";
             // 
-            // textBox4
+            // txt_FirstName
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 20);
-            this.textBox4.TabIndex = 11;
+            this.txt_FirstName.Location = new System.Drawing.Point(12, 98);
+            this.txt_FirstName.Name = "txt_FirstName";
+            this.txt_FirstName.Size = new System.Drawing.Size(196, 20);
+            this.txt_FirstName.TabIndex = 11;
             // 
             // lbl_title
             // 
@@ -116,42 +116,44 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 13;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
-            // button1
+            // btn_AddRacer
             // 
-            this.button1.Location = new System.Drawing.Point(12, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Add Racer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_AddRacer.Location = new System.Drawing.Point(12, 364);
+            this.btn_AddRacer.Name = "btn_AddRacer";
+            this.btn_AddRacer.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddRacer.TabIndex = 14;
+            this.btn_AddRacer.Text = "Add Racer";
+            this.btn_AddRacer.UseVisualStyleBackColor = true;
+            this.btn_AddRacer.Click += new System.EventHandler(this.btn_AddRacer_Click);
             // 
-            // button2
+            // btn_Back
             // 
-            this.button2.Location = new System.Drawing.Point(12, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Back.Location = new System.Drawing.Point(12, 415);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.TabIndex = 15;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
             // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Back);
+            this.Controls.Add(this.btn_AddRacer);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbl_FirstName);
+            this.Controls.Add(this.txt_FirstName);
+            this.Controls.Add(this.lbl_ConfirmPassword);
+            this.Controls.Add(this.txt_ConfirmPassword);
+            this.Controls.Add(this.lbl_Password);
+            this.Controls.Add(this.lbl_lastName);
+            this.Controls.Add(this.txt_Password);
+            this.Controls.Add(this.txt_LastName);
             this.Name = "NewProfile";
             this.Text = "NewProfile";
+            this.Load += new System.EventHandler(this.NewProfile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,16 +161,16 @@ namespace ProjectChocobo
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lbl_Password;
+        private System.Windows.Forms.Label lbl_lastName;
+        private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.TextBox txt_LastName;
+        private System.Windows.Forms.Label lbl_ConfirmPassword;
+        private System.Windows.Forms.TextBox txt_ConfirmPassword;
+        private System.Windows.Forms.Label lbl_FirstName;
+        private System.Windows.Forms.TextBox txt_FirstName;
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_AddRacer;
+        private System.Windows.Forms.Button btn_Back;
     }
 }
