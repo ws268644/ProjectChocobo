@@ -23,6 +23,12 @@ namespace ProjectChocobo
         }
         static public void createNewUser(String strUsername, String strPassword)
         {
+            if (strUsername == "") {
+                MessageBox.Show("Please enter a username");
+            }
+            if (strPassword == "") {
+                MessageBox.Show("Please enter a password");
+            }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comCreateUser = new MySqlCommand("createNewUser", cnn);
             MySqlCommand comCheckUser = new MySqlCommand("usernameTakenCheck", cnn);
