@@ -17,5 +17,19 @@ namespace ProjectChocobo
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string username = txtUser.Text;
+            string password = txtPass.Text;
+
+            createNewUser(username, password);
+            
+        }
     }
 }
