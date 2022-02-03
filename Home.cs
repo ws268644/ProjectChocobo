@@ -47,5 +47,18 @@ namespace ProjectChocobo
             settingsPage.ShowDialog();
             this.Close();
         }
+
+        private void btn_tracks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Tracks tracksPage = new Tracks();
+            tracksPage.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

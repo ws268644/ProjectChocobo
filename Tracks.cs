@@ -16,5 +16,13 @@ namespace ProjectChocobo
         {
             InitializeComponent();
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home homePage = new Home();
+            homePage.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -75,6 +75,7 @@ namespace ProjectChocobo
             this.btn_tracks.TabIndex = 6;
             this.btn_tracks.Text = "Tracks";
             this.btn_tracks.UseVisualStyleBackColor = true;
+            this.btn_tracks.Click += new System.EventHandler(this.btn_tracks_Click);
             // 
             // btn_settings
             // 
@@ -94,6 +95,7 @@ namespace ProjectChocobo
             this.btn_quit.TabIndex = 8;
             this.btn_quit.Text = "Quit";
             this.btn_quit.UseVisualStyleBackColor = true;
+            this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
             // 
             // Home
             // 
