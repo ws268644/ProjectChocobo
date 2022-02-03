@@ -16,5 +16,26 @@ namespace ProjectChocobo
         {
             InitializeComponent();
         }
+
+        private void Events_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AllEvents allEventsPage = new AllEvents();
+            allEventsPage.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_newEvents_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NewEvent newEventPage = new NewEvent();
+            newEventPage.ShowDialog();
+            this.Close();
+        }
     }
 }

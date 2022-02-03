@@ -30,8 +30,8 @@ namespace ProjectChocobo
         private void InitializeComponent()
         {
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_allEvents = new System.Windows.Forms.Button();
+            this.btn_newEvents = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,23 +44,25 @@ namespace ProjectChocobo
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_allEvents
             // 
-            this.button2.Location = new System.Drawing.Point(12, 102);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(271, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "See All Events";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_allEvents.Location = new System.Drawing.Point(12, 102);
+            this.btn_allEvents.Name = "btn_allEvents";
+            this.btn_allEvents.Size = new System.Drawing.Size(271, 23);
+            this.btn_allEvents.TabIndex = 12;
+            this.btn_allEvents.Text = "See All Events";
+            this.btn_allEvents.UseVisualStyleBackColor = true;
+            this.btn_allEvents.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btn_newEvents
             // 
-            this.button1.Location = new System.Drawing.Point(12, 73);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "New Event";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_newEvents.Location = new System.Drawing.Point(12, 73);
+            this.btn_newEvents.Name = "btn_newEvents";
+            this.btn_newEvents.Size = new System.Drawing.Size(271, 23);
+            this.btn_newEvents.TabIndex = 11;
+            this.btn_newEvents.Text = "New Event";
+            this.btn_newEvents.UseVisualStyleBackColor = true;
+            this.btn_newEvents.Click += new System.EventHandler(this.btn_newEvents_Click);
             // 
             // lbl_title
             // 
@@ -79,10 +81,11 @@ namespace ProjectChocobo
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_allEvents);
+            this.Controls.Add(this.btn_newEvents);
             this.Name = "Events";
             this.Text = "Events";
+            this.Load += new System.EventHandler(this.Events_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,8 +94,8 @@ namespace ProjectChocobo
         #endregion
 
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_allEvents;
+        private System.Windows.Forms.Button btn_newEvents;
         private System.Windows.Forms.Label lbl_title;
     }
 }

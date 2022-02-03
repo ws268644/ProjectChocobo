@@ -16,5 +16,29 @@ namespace ProjectChocobo
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NewProfile newProfilePage = new NewProfile();
+            newProfilePage.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_seeAllProfiles_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AllProfiles allProfilesPage = new AllProfiles();
+            allProfilesPage.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home homePage = new Home();
+            homePage.ShowDialog();
+            this.Close();
+        }
     }
 }

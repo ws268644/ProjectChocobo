@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjectChocobo
 {
-    public partial class AllProfiles : Form
+    public partial class Settings : Form
     {
-        public AllProfiles()
+        public Settings()
         {
             InitializeComponent();
         }
@@ -20,8 +20,8 @@ namespace ProjectChocobo
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            profiles profilePage = new profiles();
-            profilePage.ShowDialog();
+            Home mainMenu = new Home();
+            mainMenu.ShowDialog();
             this.Close();
         }
     }
