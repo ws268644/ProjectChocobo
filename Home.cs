@@ -20,7 +20,7 @@ namespace ProjectChocobo
         private void btn_profiles_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AllProfiles profiles = new AllProfiles();
+            profiles profiles = new profiles();
             profiles.ShowDialog();
             this.Close();
 

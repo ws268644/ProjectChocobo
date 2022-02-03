@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectChocobo
 {
-    partial class AllEvents
+    partial class Tracks
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,18 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btn_back
+            // btn_Back
             // 
-            this.btn_back.Location = new System.Drawing.Point(13, 415);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(75, 23);
-            this.btn_back.TabIndex = 0;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            this.btn_Back.Location = new System.Drawing.Point(13, 415);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.TabIndex = 0;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
             // 
             // lbl_title
             // 
@@ -53,15 +52,15 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 17;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
-            // AllEvents
+            // Tracks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.btn_back);
-            this.Name = "AllEvents";
-            this.Text = "AllEvents";
+            this.Controls.Add(this.btn_Back);
+            this.Name = "Tracks";
+            this.Text = "Tracks";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,7 +68,7 @@ namespace ProjectChocobo
 
         #endregion
 
-        private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Label lbl_title;
     }
 }

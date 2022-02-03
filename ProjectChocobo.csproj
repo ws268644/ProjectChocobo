@@ -103,6 +103,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tracks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tracks.Designer.cs">
+      <DependentUpon>Tracks.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AllEvents.resx">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tracks.resx">
+      <DependentUpon>Tracks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

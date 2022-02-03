@@ -37,5 +37,13 @@ namespace ProjectChocobo
             newEventPage.ShowDialog();
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home mainMenu = new Home();
+            mainMenu.ShowDialog();
+            this.Close();
+        }
     }
 }
