@@ -22,8 +22,6 @@ namespace ProjectChocobo
 
         }
 
-    }
-}
         static public void createNewUser(String strUsername, String strPassword)
         {
             if (strUsername == "") {
@@ -73,4 +71,3 @@ namespace ProjectChocobo
     }
 
     }
-
