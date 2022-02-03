@@ -16,8 +16,8 @@ namespace ProjectChocobo
 
         static public void login(string strUser, string strPass) {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand mycom = new MySqlCommand("@checkLogin", cnn);
-            mycom.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            MySqlCommand comLogin = new MySqlCommand("@checkLogin", cnn);
+            comLogin.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
 
 
         }
