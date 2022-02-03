@@ -67,6 +67,42 @@ namespace ProjectChocobo
             }
             
         }
+        static public Boolean applyUserRole(string strUsername)
+        {
+            int intUserID = 0;
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comApplyUserRole = new MySqlCommand("applyUserRole", cnn);
+            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+            MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
+            comGetID.Parameters.AddWithValue("@username", strUsername);
+            checkUsername.Parameters.AddWithValue("@username", strUsername);
+            comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
+            try
+            {
+                cnn.Open();
+                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
+                if (usernameCheck == 0)
+                {
+                    cnn.Close();
+                    return false; //If the username doesn't exist then it won't try to apply the user role
+                }
+                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
+                cnn.Close();
+                if (intSuccess == 0)
+                {
+                    return false; //If something went wrong and the user wasn't added it will return a false.
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
 
     }
 
