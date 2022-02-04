@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,7 +104,23 @@ namespace ProjectChocobo
                 return false;
             }
         }
-
+        static public DataTable getAllUsers() {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetUsers = new MySqlCommand("@getAllUsers", cnn);
+            comGetUsers.CommandType = System.Data.CommandType.StoredProcedure;
+            try
+            {
+                cnn.Open();
+                    
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+            
+        }
     }
 
     }
