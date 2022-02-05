@@ -106,7 +106,7 @@ namespace ProjectChocobo
         }
         static public DataTable getAllUsers() {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comGetUsers = new MySqlCommand("@getAllUsers", cnn);
+            MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
             comGetUsers.CommandType = System.Data.CommandType.StoredProcedure;
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = comGetUsers;
