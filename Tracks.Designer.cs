@@ -31,6 +31,8 @@ namespace ProjectChocobo
         {
             this.btn_Back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -53,15 +55,25 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 17;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(775, 203);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // Tracks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.btn_Back);
             this.Name = "Tracks";
             this.Text = "Tracks";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,5 +83,6 @@ namespace ProjectChocobo
 
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -29,21 +29,11 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_ProfilesDisplay = new System.Windows.Forms.DataGridView();
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_ProfilesDisplay
-            // 
-            this.dgv_ProfilesDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ProfilesDisplay.Location = new System.Drawing.Point(12, 39);
-            this.dgv_ProfilesDisplay.Name = "dgv_ProfilesDisplay";
-            this.dgv_ProfilesDisplay.Size = new System.Drawing.Size(776, 342);
-            this.dgv_ProfilesDisplay.TabIndex = 0;
             // 
             // lbl_title
             // 
@@ -92,18 +82,15 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.dgv_ProfilesDisplay);
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).EndInit();
+            this.Load += new System.EventHandler(this.AllProfiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_ProfilesDisplay;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_delete;

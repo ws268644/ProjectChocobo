@@ -40,12 +40,13 @@ namespace ProjectChocobo
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_AddRacer = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
+            this.lbl_ProfilePageTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(9, 192);
+            this.lbl_Password.Location = new System.Drawing.Point(9, 243);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.lbl_Password.TabIndex = 8;
@@ -62,7 +63,7 @@ namespace ProjectChocobo
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(12, 208);
+            this.txt_Password.Location = new System.Drawing.Point(12, 259);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(196, 20);
             this.txt_Password.TabIndex = 6;
@@ -77,7 +78,7 @@ namespace ProjectChocobo
             // lbl_ConfirmPassword
             // 
             this.lbl_ConfirmPassword.AutoSize = true;
-            this.lbl_ConfirmPassword.Location = new System.Drawing.Point(9, 246);
+            this.lbl_ConfirmPassword.Location = new System.Drawing.Point(9, 297);
             this.lbl_ConfirmPassword.Name = "lbl_ConfirmPassword";
             this.lbl_ConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lbl_ConfirmPassword.TabIndex = 10;
@@ -85,7 +86,7 @@ namespace ProjectChocobo
             // 
             // txt_ConfirmPassword
             // 
-            this.txt_ConfirmPassword.Location = new System.Drawing.Point(12, 262);
+            this.txt_ConfirmPassword.Location = new System.Drawing.Point(12, 313);
             this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
             this.txt_ConfirmPassword.Size = new System.Drawing.Size(196, 20);
             this.txt_ConfirmPassword.TabIndex = 9;
@@ -118,7 +119,7 @@ namespace ProjectChocobo
             // 
             // btn_AddRacer
             // 
-            this.btn_AddRacer.Location = new System.Drawing.Point(12, 364);
+            this.btn_AddRacer.Location = new System.Drawing.Point(546, 415);
             this.btn_AddRacer.Name = "btn_AddRacer";
             this.btn_AddRacer.Size = new System.Drawing.Size(75, 23);
             this.btn_AddRacer.TabIndex = 14;
@@ -128,7 +129,7 @@ namespace ProjectChocobo
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(12, 415);
+            this.btn_Back.Location = new System.Drawing.Point(133, 415);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(75, 23);
             this.btn_Back.TabIndex = 15;
@@ -136,11 +137,22 @@ namespace ProjectChocobo
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
+            // lbl_ProfilePageTitle
+            // 
+            this.lbl_ProfilePageTitle.AutoSize = true;
+            this.lbl_ProfilePageTitle.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ProfilePageTitle.Location = new System.Drawing.Point(324, 52);
+            this.lbl_ProfilePageTitle.Name = "lbl_ProfilePageTitle";
+            this.lbl_ProfilePageTitle.Size = new System.Drawing.Size(144, 25);
+            this.lbl_ProfilePageTitle.TabIndex = 16;
+            this.lbl_ProfilePageTitle.Text = "New Profile";
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_ProfilePageTitle);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_AddRacer);
             this.Controls.Add(this.lbl_title);
@@ -173,5 +185,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_AddRacer;
         private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.Label lbl_ProfilePageTitle;
     }
 }

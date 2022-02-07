@@ -31,10 +31,11 @@ namespace ProjectChocobo
         {
             this.btn_Back = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mc_EventCalendar = new System.Windows.Forms.MonthCalendar();
+            this.lbl_EventLocation = new System.Windows.Forms.Label();
+            this.cbo_EventLocation = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -50,16 +51,10 @@ namespace ProjectChocobo
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(27, 80);
+            this.textBox1.MaxLength = 500;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 20);
             this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(27, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(223, 20);
-            this.textBox2.TabIndex = 2;
             // 
             // lbl_title
             // 
@@ -80,22 +75,41 @@ namespace ProjectChocobo
             this.label1.TabIndex = 17;
             this.label1.Text = "Event Name";
             // 
-            // monthCalendar1
+            // mc_EventCalendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(451, 122);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 18;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.mc_EventCalendar.Location = new System.Drawing.Point(451, 122);
+            this.mc_EventCalendar.Name = "mc_EventCalendar";
+            this.mc_EventCalendar.TabIndex = 18;
+            this.mc_EventCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
+            // lbl_EventLocation
+            // 
+            this.lbl_EventLocation.AutoSize = true;
+            this.lbl_EventLocation.Location = new System.Drawing.Point(24, 106);
+            this.lbl_EventLocation.Name = "lbl_EventLocation";
+            this.lbl_EventLocation.Size = new System.Drawing.Size(79, 13);
+            this.lbl_EventLocation.TabIndex = 19;
+            this.lbl_EventLocation.Text = "Event Location";
+            this.lbl_EventLocation.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // cbo_EventLocation
+            // 
+            this.cbo_EventLocation.FormattingEnabled = true;
+            this.cbo_EventLocation.Location = new System.Drawing.Point(27, 123);
+            this.cbo_EventLocation.Name = "cbo_EventLocation";
+            this.cbo_EventLocation.Size = new System.Drawing.Size(223, 21);
+            this.cbo_EventLocation.TabIndex = 20;
             // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.cbo_EventLocation);
+            this.Controls.Add(this.lbl_EventLocation);
+            this.Controls.Add(this.mc_EventCalendar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Back);
             this.Name = "NewEvent";
@@ -110,9 +124,10 @@ namespace ProjectChocobo
 
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mc_EventCalendar;
+        private System.Windows.Forms.Label lbl_EventLocation;
+        private System.Windows.Forms.ComboBox cbo_EventLocation;
     }
 }
