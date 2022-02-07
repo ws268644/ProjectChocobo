@@ -19,6 +19,25 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comLogin = new MySqlCommand("@checkLogin", cnn);
             comLogin.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comLogin.Parameters.AddWithValue("@loginUsername", strUser);
+            comLogin.Parameters.AddWithValue("@loginPassword", strPass);
+            try
+            {
+                cnn.Open();
+                int loginCheck = Convert.ToInt32(comLogin.ExecuteScalar());
+                if (loginCheck == 1)
+                {
+                    cnn.Close();
+                    return true;
+                }
+                cnn.Close();    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error:\n" + ex);
+            }
+            return false;
+        }
 
 
         }
