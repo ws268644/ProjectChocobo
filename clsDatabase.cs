@@ -123,6 +123,12 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        static public void getRaces()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comRaces = new MySqlCommand("getRaces", cnn);
+
+        }
 
     }
 
