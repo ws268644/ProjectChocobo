@@ -39,8 +39,22 @@ namespace ProjectChocobo
             }
             return false;
         }
+        static public void checkAccessLevel(string strUser)
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetCommand = new MySqlCommand("getUserID", cnn);
+            MySqlCommand comCheckAccess = new MySqlCommand("checkAccess", cnn);
+            comGetCommand.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comCheckAccess.CommandType = System.Data.CommandType.StoredProcedure;
+            try{
 
-    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("There was an error: \n"+ ex.ToString());
+            }
+
+        }
 
         static public void createNewUser(String strUsername, String strPassword)
         {
