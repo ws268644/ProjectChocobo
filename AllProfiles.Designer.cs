@@ -33,6 +33,8 @@ namespace ProjectChocobo
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -72,12 +74,23 @@ namespace ProjectChocobo
             this.btn_Edit.TabIndex = 16;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(771, 310);
+            this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // AllProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
@@ -85,6 +98,7 @@ namespace ProjectChocobo
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,5 +109,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
