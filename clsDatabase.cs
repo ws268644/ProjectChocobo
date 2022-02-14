@@ -125,6 +125,7 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        //This function is used to gather data from lots of users to create an Index. But the data isn't detailed. Usernames for example.
         static public DataTable getAllUsers() {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -145,6 +146,11 @@ namespace ProjectChocobo
             }
             return null;
             
+        }
+        //This function is used to get lots of data from one user. Such as their race history, the car they use etc.
+        static public DataTable getUser(string strUsername)
+        {
+
         }
     }
 
