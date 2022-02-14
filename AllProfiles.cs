@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -28,7 +28,7 @@ namespace ProjectChocobo
 
         private void AllProfiles_Load(object sender, EventArgs e)
         {
-            dgv_ProfilesDisplay.DataSource = clsDatabase.get
+            dgv_ProfilesDisplay.DataSource = getAllUsers();
         }
     }
 }
