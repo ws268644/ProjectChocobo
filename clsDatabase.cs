@@ -15,9 +15,11 @@ namespace ProjectChocobo
     {
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
 
-        static public Boolean login(string strUser, string strPass) {
+
+        static public Boolean login(string strUser, string strPass)
+        { //Login function
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comLogin = new MySqlCommand("@checkLogin", cnn);
+            MySqlCommand comLogin = new MySqlCommand("checkLogin", cnn);
             comLogin.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             comLogin.Parameters.AddWithValue("@loginUsername", strUser);
             comLogin.Parameters.AddWithValue("@loginPassword", strPass);
@@ -31,6 +33,7 @@ namespace ProjectChocobo
                     return true;
                 }
                 cnn.Close();    
+
             }
             catch (Exception ex)
             {
@@ -39,8 +42,7 @@ namespace ProjectChocobo
             return false;
         }
 
-
-        
+    
 
         static public void createNewUser(String strUsername, String strPassword)
         {
