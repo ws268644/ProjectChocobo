@@ -25,5 +25,10 @@ namespace ProjectChocobo
             this.Close();
 
         }
+
+        private void AllEvents_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

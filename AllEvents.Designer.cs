@@ -62,6 +62,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_back);
             this.Name = "AllEvents";
             this.Text = "AllEvents";
+            this.Load += new System.EventHandler(this.AllEvents_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
