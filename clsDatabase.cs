@@ -150,7 +150,21 @@ namespace ProjectChocobo
         //This function is used to get lots of data from one user. Such as their race history, the car they use etc.
         static public DataTable getUser(string strUsername)
         {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetUser = new MySqlCommand("getUser", cnn);
+            comGetUser.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = comGetUser;
+            DataTable dt = new DataTable();
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
         }
     }
 
