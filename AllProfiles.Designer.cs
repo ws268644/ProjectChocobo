@@ -95,6 +95,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.dgv_ProfilesDisplay);
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
+            this.Load += new System.EventHandler(this.AllProfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

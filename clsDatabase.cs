@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace ProjectChocobo
     {
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
 
+
         static public Boolean login(string strUser, string strPass)
         { //Login function
-
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comLogin = new MySqlCommand("checkLogin", cnn);
             comLogin.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
@@ -31,7 +32,8 @@ namespace ProjectChocobo
                     cnn.Close();
                     return true;
                 }
-                cnn.Close();
+                cnn.Close();    
+
             }
             catch (Exception ex)
             {
@@ -123,7 +125,27 @@ namespace ProjectChocobo
                 return false;
             }
         }
-
+        static public DataTable getAllUsers() {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
+            comGetUsers.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = comGetUsers;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+            
+        }
     }
 
     }
