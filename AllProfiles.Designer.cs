@@ -29,21 +29,14 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_ProfilesDisplay = new System.Windows.Forms.DataGridView();
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).BeginInit();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgv_ProfilesDisplay
-            // 
-            this.dgv_ProfilesDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ProfilesDisplay.Location = new System.Drawing.Point(12, 39);
-            this.dgv_ProfilesDisplay.Name = "dgv_ProfilesDisplay";
-            this.dgv_ProfilesDisplay.Size = new System.Drawing.Size(776, 342);
-            this.dgv_ProfilesDisplay.TabIndex = 0;
             // 
             // lbl_title
             // 
@@ -83,31 +76,47 @@ namespace ProjectChocobo
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(17, 49);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splitContainer1.Size = new System.Drawing.Size(771, 315);
+            this.splitContainer1.SplitterDistance = 257;
+            this.splitContainer1.TabIndex = 26;
+            // 
             // AllProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.dgv_ProfilesDisplay);
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_ProfilesDisplay;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

@@ -86,6 +86,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_newProfile);
             this.Name = "profiles";
             this.Text = "profiles";
+            this.Load += new System.EventHandler(this.profiles_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
