@@ -123,6 +123,23 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        //This is for stewards to add a race event
+        static public Boolean addRace(string strRaceSteward, string strTrackName, double intFee, string strStartTime, string strEndTime, string strDate, string strEnd_date)
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddRace = new MySqlCommand("addRace", cnn);
+            comAddRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+
+            comAddRace.Parameters.AddWithValue("@stewardName", strRaceSteward); //Provide the username of the race steward
+            comAddRace.Parameters.AddWithValue("@trackName", strTrackName);
+            comAddRace.Parameters.AddWithValue("@entryFee", intFee);
+            comAddRace.Parameters.AddWithValue("@startTime", strStartTime);
+            comAddRace.Parameters.AddWithValue("@endTime", strEndTime);
+            comAddRace.Parameters.AddWithValue("@startDate", strDate); //Must be formatted: YEAR-MONTH-DAY (eg. 22-02-14)
+            comAddRace.Parameters.AddWithValue("@endDate", strEnd_date); //It's ok to leave this blank
+
+
+        }
 
     }
 
