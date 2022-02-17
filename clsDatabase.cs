@@ -123,6 +123,9 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain) { 
+       
+        }
 
     }
 
