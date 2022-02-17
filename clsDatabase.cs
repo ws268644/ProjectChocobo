@@ -134,6 +134,25 @@ namespace ProjectChocobo
             comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
             comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
 
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comAddTrack.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
 
     }
