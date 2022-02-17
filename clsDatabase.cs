@@ -40,14 +40,16 @@ namespace ProjectChocobo
             return false;
         }
 
-    
+
 
         static public void createNewUser(String strUsername, String strPassword)
         {
-            if (strUsername == "") {
+            if (strUsername == "")
+            {
                 MessageBox.Show("Please enter a username");
             }
-            if (strPassword == "") {
+            if (strPassword == "")
+            {
                 MessageBox.Show("Please enter a password");
             }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
@@ -85,7 +87,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error:\n" + ex);
             }
-            
+
         }
         static public Boolean applyUserRole(string strUsername)
         {
@@ -129,8 +131,15 @@ namespace ProjectChocobo
             MySqlCommand comAddCar = new MySqlCommand("addCar", cnn);
             comAddCar.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
 
-            
+            comAddCar.Parameters.AddWithValue("@carName", strCarName);
+            comAddCar.Parameters.AddWithValue("@terrain", strTerrain);
+            comAddCar.Parameters.AddWithValue("@", strDriveTrain);
+
+
+
 
         }
 
     }
+}
+
