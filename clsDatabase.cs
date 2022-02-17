@@ -123,7 +123,14 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        static public Boolean addTrack(string strCarName, string strTerrain, string strDriveTrain)
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddCar = new MySqlCommand("addCar", cnn);
+            comAddCar.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
 
-    }
+            
+
+        }
 
     }
