@@ -138,6 +138,25 @@ namespace ProjectChocobo
             comAddRace.Parameters.AddWithValue("@startDate", strDate); //Must be formatted: YEAR-MONTH-DAY (eg. 22-02-14)
             comAddRace.Parameters.AddWithValue("@endDate", strEnd_date); //It's ok to leave this blank
 
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comAddRace.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
 
         }
 
