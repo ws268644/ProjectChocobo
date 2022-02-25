@@ -29,13 +29,16 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllProfiles));
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.spc_profilesSplit = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
             this.spc_profilesSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -78,7 +81,7 @@ namespace ProjectChocobo
             // 
             // spc_profilesSplit
             // 
-            this.spc_profilesSplit.Location = new System.Drawing.Point(17, 49);
+            this.spc_profilesSplit.Location = new System.Drawing.Point(17, 60);
             this.spc_profilesSplit.Name = "spc_profilesSplit";
             // 
             // spc_profilesSplit.Panel1
@@ -88,25 +91,38 @@ namespace ProjectChocobo
             // spc_profilesSplit.Panel2
             // 
             this.spc_profilesSplit.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.spc_profilesSplit.Size = new System.Drawing.Size(771, 315);
+            this.spc_profilesSplit.Size = new System.Drawing.Size(771, 304);
             this.spc_profilesSplit.SplitterDistance = 257;
             this.spc_profilesSplit.TabIndex = 26;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // AllProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.spc_profilesSplit);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.lbl_title);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).EndInit();
             this.spc_profilesSplit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +134,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.SplitContainer spc_profilesSplit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
