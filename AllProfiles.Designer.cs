@@ -36,7 +36,10 @@ namespace ProjectChocobo
             this.btn_Edit = new System.Windows.Forms.Button();
             this.spc_profilesSplit = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_selectedRace = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
+            this.spc_profilesSplit.Panel1.SuspendLayout();
             this.spc_profilesSplit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +89,8 @@ namespace ProjectChocobo
             // 
             // spc_profilesSplit.Panel1
             // 
+            this.spc_profilesSplit.Panel1.Controls.Add(this.label1);
+            this.spc_profilesSplit.Panel1.Controls.Add(this.cbo_selectedRace);
             this.spc_profilesSplit.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // spc_profilesSplit.Panel2
@@ -106,6 +111,24 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // cbo_selectedRace
+            // 
+            this.cbo_selectedRace.FormattingEnabled = true;
+            this.cbo_selectedRace.Location = new System.Drawing.Point(3, 26);
+            this.cbo_selectedRace.Name = "cbo_selectedRace";
+            this.cbo_selectedRace.Size = new System.Drawing.Size(250, 21);
+            this.cbo_selectedRace.TabIndex = 0;
+            this.cbo_selectedRace.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Selected Race";
+            // 
             // AllProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,6 +143,8 @@ namespace ProjectChocobo
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
+            this.spc_profilesSplit.Panel1.ResumeLayout(false);
+            this.spc_profilesSplit.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).EndInit();
             this.spc_profilesSplit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -135,5 +160,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.SplitContainer spc_profilesSplit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_selectedRace;
     }
 }
