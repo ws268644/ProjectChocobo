@@ -64,6 +64,13 @@ namespace ProjectChocobo
         {
 
 
+
+            // Fill panel 2 with information for the selected profile.
+            Label lbl_Name = new Label();
+            lbl_Name.Name = "lbl_name";
+            lbl_Name.Text = "";
+
+
         }
     }
 }
