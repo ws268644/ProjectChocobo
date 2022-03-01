@@ -45,7 +45,7 @@ namespace ProjectChocobo
         {
             string sSelectedRace = cbo_selectedRace.Text;
             
-
+            
         }
     }
 }

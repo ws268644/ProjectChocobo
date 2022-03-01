@@ -42,13 +42,15 @@ namespace ProjectChocobo
             this.btn_AddRacer = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_username = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(9, 192);
+            this.lbl_Password.Location = new System.Drawing.Point(9, 254);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(53, 13);
             this.lbl_Password.TabIndex = 8;
@@ -65,7 +67,7 @@ namespace ProjectChocobo
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(12, 208);
+            this.txt_Password.Location = new System.Drawing.Point(12, 270);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(196, 20);
             this.txt_Password.TabIndex = 6;
@@ -81,7 +83,7 @@ namespace ProjectChocobo
             // lbl_ConfirmPassword
             // 
             this.lbl_ConfirmPassword.AutoSize = true;
-            this.lbl_ConfirmPassword.Location = new System.Drawing.Point(9, 246);
+            this.lbl_ConfirmPassword.Location = new System.Drawing.Point(9, 308);
             this.lbl_ConfirmPassword.Name = "lbl_ConfirmPassword";
             this.lbl_ConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lbl_ConfirmPassword.TabIndex = 10;
@@ -89,7 +91,7 @@ namespace ProjectChocobo
             // 
             // txt_ConfirmPassword
             // 
-            this.txt_ConfirmPassword.Location = new System.Drawing.Point(12, 262);
+            this.txt_ConfirmPassword.Location = new System.Drawing.Point(12, 324);
             this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
             this.txt_ConfirmPassword.Size = new System.Drawing.Size(196, 20);
             this.txt_ConfirmPassword.TabIndex = 9;
@@ -153,11 +155,30 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Username";
+            // 
+            // txt_username
+            // 
+            this.txt_username.Location = new System.Drawing.Point(12, 182);
+            this.txt_username.MaxLength = 100;
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(196, 20);
+            this.txt_username.TabIndex = 21;
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_username);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_AddRacer);
             this.Controls.Add(this.lbl_title);
@@ -193,5 +214,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_AddRacer;
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_username;
     }
 }

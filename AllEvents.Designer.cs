@@ -34,7 +34,10 @@ namespace ProjectChocobo
             this.lbl_title = new System.Windows.Forms.Label();
             this.spc_AllEvents = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
+            this.lbl_selectedEventName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
+            this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +66,11 @@ namespace ProjectChocobo
             // 
             this.spc_AllEvents.Location = new System.Drawing.Point(12, 60);
             this.spc_AllEvents.Name = "spc_AllEvents";
+            // 
+            // spc_AllEvents.Panel1
+            // 
+            this.spc_AllEvents.Panel1.Controls.Add(this.lbl_selectedEventName);
+            this.spc_AllEvents.Panel1.Controls.Add(this.cbo_selectedEvent);
             this.spc_AllEvents.Size = new System.Drawing.Size(776, 349);
             this.spc_AllEvents.SplitterDistance = 258;
             this.spc_AllEvents.TabIndex = 18;
@@ -78,6 +86,24 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // cbo_selectedEvent
+            // 
+            this.cbo_selectedEvent.FormattingEnabled = true;
+            this.cbo_selectedEvent.Location = new System.Drawing.Point(3, 29);
+            this.cbo_selectedEvent.Name = "cbo_selectedEvent";
+            this.cbo_selectedEvent.Size = new System.Drawing.Size(251, 21);
+            this.cbo_selectedEvent.TabIndex = 0;
+            this.cbo_selectedEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lbl_selectedEventName
+            // 
+            this.lbl_selectedEventName.AutoSize = true;
+            this.lbl_selectedEventName.Location = new System.Drawing.Point(4, 10);
+            this.lbl_selectedEventName.Name = "lbl_selectedEventName";
+            this.lbl_selectedEventName.Size = new System.Drawing.Size(80, 13);
+            this.lbl_selectedEventName.TabIndex = 1;
+            this.lbl_selectedEventName.Text = "Selected Event";
+            // 
             // AllEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +116,8 @@ namespace ProjectChocobo
             this.Name = "AllEvents";
             this.Text = "AllEvents";
             this.Load += new System.EventHandler(this.AllEvents_Load);
+            this.spc_AllEvents.Panel1.ResumeLayout(false);
+            this.spc_AllEvents.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).EndInit();
             this.spc_AllEvents.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -104,5 +132,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.SplitContainer spc_AllEvents;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_selectedEventName;
+        private System.Windows.Forms.ComboBox cbo_selectedEvent;
     }
 }

@@ -31,7 +31,7 @@ namespace ProjectChocobo
 
 
 
-
+            /*
             int iProfiles = 4;
             int xLocation = 5;
             int yLocation = 5;
@@ -50,7 +50,7 @@ namespace ProjectChocobo
                 }
                 yLocation = yLocation + 25;
             }
-
+            */
 
 
 
@@ -64,12 +64,9 @@ namespace ProjectChocobo
 
         }
 
-
-
-
-
-
-
-
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedEvent = cbo_selectedEvent.Text;
+        }
     }
 }
