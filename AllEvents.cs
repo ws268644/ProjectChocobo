@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -30,43 +31,45 @@ namespace ProjectChocobo
         {
 
 
-
-            /*
-            int iProfiles = 4;
-            int xLocation = 5;
-            int yLocation = 5;
-
-            for (int iCount = 0; iCount < iProfiles; iCount++)
+            for(int iCount = 0; iCount < clsDatabase.getAllUsers().Rows.Count; iCount ++)
             {
-                {
-                    Button btn_newButton = new Button();
-                    btn_newButton.Name = "btn_newButton";
-                    btn_newButton.Text = "New Button";
-                    btn_newButton.Location = new System.Drawing.Point(xLocation, yLocation);
-                    btn_newButton.AutoSize = true;
-                    btn_newButton.Click += new EventHandler(btn_newButton_Click);
-                    //this.Controls.Add(btn_newButton);
-                    spc_AllEvents.Panel1.Controls.Add(btn_newButton);
-                }
-                yLocation = yLocation + 25;
+                cbo_selectedEvent.Items.Add(clsDatabase.getAllUsers().Rows.ToString());
             }
-            */
 
 
-
+            
+            
         }
 
 
 
-        void btn_newButton_Click(object sender, EventArgs e)
+        string PopulateSection(string selectedEvent)
         {
-            // Link to a Event profile
+            string eventInfo = "";
 
+            clsDatabase.getAllUsers();
+            
+            
+
+            return(eventInfo);
         }
+
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedEvent = cbo_selectedEvent.Text;
+
+
+
         }
+
+
+
+
+
+
+
     }
 }
