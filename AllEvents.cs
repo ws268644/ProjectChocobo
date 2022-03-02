@@ -33,7 +33,12 @@ namespace ProjectChocobo
 
             for(int iCount = 0; iCount < clsDatabase.getAllUsers().Rows.Count; iCount ++)
             {
-                cbo_selectedEvent.Items.Add(clsDatabase.getAllUsers().Rows.ToString());
+
+                string sContent = clsDatabase.getAllUsers().Rows[1]["fname"].ToString();
+
+                cbo_selectedEvent.Items.Add(sContent);
+                
+                
             }
 
 
