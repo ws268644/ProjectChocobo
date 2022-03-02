@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
@@ -31,24 +33,28 @@ namespace ProjectChocobo
         {
 
 
-            for(int iCount = 0; iCount < clsDatabase.getAllUsers().Rows.Count; iCount ++)
+
+
+            foreach (string iRacer in getUserLogins())
             {
-
-                string sContent = clsDatabase.getAllUsers().Rows[1]["fname"].ToString();
-
-                cbo_selectedEvent.Items.Add(sContent);
-                
-                
+                cbo_selectedEvent.Items.Add(iRacer);
             }
 
 
-            
-            
+
+
+
+
         }
 
 
 
-        string PopulateSection(string selectedEvent)
+
+
+
+
+
+            string PopulateSection(string selectedEvent)
         {
             string eventInfo = "";
 

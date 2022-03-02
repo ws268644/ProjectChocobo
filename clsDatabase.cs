@@ -168,6 +168,40 @@ namespace ProjectChocobo
             return null;
 
         }
+
+        static public List<string> getUserLogins()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_users.user_login FROM t_users;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+            
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+                
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
     }
 
     }
