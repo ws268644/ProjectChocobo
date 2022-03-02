@@ -146,6 +146,28 @@ namespace ProjectChocobo
             return null;
             
         }
+        static public DataTable getAllRacers()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetRacers = new MySqlCommand("getAllRacers", cnn);
+            comGetRacers.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = comGetRacers;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+
+        }
     }
 
     }
