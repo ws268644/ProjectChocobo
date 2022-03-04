@@ -169,6 +169,73 @@ namespace ProjectChocobo
 
         }
 
+
+        static public List<string> getRacerNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_racers.racer_name FROM t_racers;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
+        static public List<string> getStewardNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_stewards.steward_id FROM t_stewards;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
         static public List<string> getUserLogins()
         {
             MySqlConnection cnn = new MySqlConnection(conString);

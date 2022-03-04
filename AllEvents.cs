@@ -35,10 +35,7 @@ namespace ProjectChocobo
 
 
 
-            foreach (string iRacer in getUserLogins())
-            {
-                cbo_selectedEvent.Items.Add(iRacer);
-            }
+            
 
 
 

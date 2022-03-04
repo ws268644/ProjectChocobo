@@ -28,15 +28,22 @@ namespace ProjectChocobo
 
         private void AllProfiles_Load(object sender, EventArgs e)
         {
-            for (int iCount = 0; iCount < clsDatabase.getAllUsers().Rows.Count; iCount++)
+            // Fill combo box with all Racer Profile
+            foreach (string iRacer in getRacerNames())
             {
-
-                string sContent = clsDatabase.getAllUsers().Rows[1]["fname"].ToString();
-
-                cbo_selectedProfiles.Items.Add(sContent);
-
-
+                cbo_selectRacers.Items.Add(iRacer);
             }
+
+
+
+            // Fill in the steward list with all steward profiles
+            foreach (string iSteward in getStewardNames())
+            {
+                cbo_selectSteward.Items.Add(iSteward);
+            }
+
+
+
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -51,7 +58,7 @@ namespace ProjectChocobo
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sSelectedRace = cbo_selectedProfiles.Text;
+            string sSelectedRace = cbo_selectRacers.Text;
             
             
         }
