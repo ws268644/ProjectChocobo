@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
-    public partial class Form1 : Form
+    public partial class Settings : Form
     {
-        public Form1()
+        public Settings()
         {
             InitializeComponent();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Home mainMenu = new Home();
+            mainMenu.ShowDialog();
+            this.Close();
         }
     }
 }
