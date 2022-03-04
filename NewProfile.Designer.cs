@@ -44,7 +44,10 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Password
@@ -126,9 +129,9 @@ namespace ProjectChocobo
             // 
             // btn_AddRacer
             // 
-            this.btn_AddRacer.Location = new System.Drawing.Point(12, 364);
+            this.btn_AddRacer.Location = new System.Drawing.Point(569, 415);
             this.btn_AddRacer.Name = "btn_AddRacer";
-            this.btn_AddRacer.Size = new System.Drawing.Size(196, 23);
+            this.btn_AddRacer.Size = new System.Drawing.Size(219, 23);
             this.btn_AddRacer.TabIndex = 14;
             this.btn_AddRacer.Text = "Add Racer";
             this.btn_AddRacer.UseVisualStyleBackColor = true;
@@ -172,11 +175,29 @@ namespace ProjectChocobo
             this.txt_username.Size = new System.Drawing.Size(196, 20);
             this.txt_username.TabIndex = 21;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(569, 324);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 21);
+            this.comboBox1.TabIndex = 23;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(569, 82);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(219, 208);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.btn_Back);
@@ -195,6 +216,7 @@ namespace ProjectChocobo
             this.Text = "NewProfile";
             this.Load += new System.EventHandler(this.NewProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +238,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
