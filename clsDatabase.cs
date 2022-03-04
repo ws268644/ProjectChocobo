@@ -169,7 +169,37 @@ namespace ProjectChocobo
 
         }
 
+        static public List<string> getCarNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> cars = new List<string>();
+            MySqlCommand comGetCarNames = new MySqlCommand("getCarNames", cnn);
+            comGetCarNames.CommandType = System.Data.CommandType.StoredProcedure;
 
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = comGetCarNames.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    cars.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return cars;
+
+        }
         static public List<string> getRacerNames()
         {
             MySqlConnection cnn = new MySqlConnection(conString);
