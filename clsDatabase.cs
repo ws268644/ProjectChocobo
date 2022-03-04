@@ -146,6 +146,129 @@ namespace ProjectChocobo
             return null;
             
         }
+        static public DataTable getAllRacers()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetRacers = new MySqlCommand("getAllRacers", cnn);
+            comGetRacers.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = comGetRacers;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+
+        }
+
+
+        static public List<string> getRacerNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_racers.racer_name FROM t_racers;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
+        static public List<string> getStewardNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_stewards.steward_id FROM t_stewards;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
+        static public List<string> getUserLogins()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_users.user_login FROM t_users;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+            
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+                
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
+
     }
 
     }

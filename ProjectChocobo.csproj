@@ -154,6 +154,12 @@
     <Compile Include="Tracks.Designer.cs">
       <DependentUpon>Tracks.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewProfile.Designer.cs">
+      <DependentUpon>viewProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AllEvents.resx">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +200,9 @@
     <EmbeddedResource Include="Tracks.resx">
       <DependentUpon>Tracks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="viewProfile.resx">
+      <DependentUpon>viewProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -203,8 +212,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  <!--<ItemGroup> Visual Studio wouldn't load the program because of this-->
+    <!--<ItemGroup> Visual Studio wouldn't load the program because of this-->
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

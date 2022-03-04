@@ -40,5 +40,10 @@ namespace ProjectChocobo
             homePage.ShowDialog();
             this.Close();
         }
+
+        private void profiles_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
