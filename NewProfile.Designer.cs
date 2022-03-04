@@ -44,8 +44,11 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_userRole = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_roleAssign = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbo_userVehicle = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -175,13 +178,13 @@ namespace ProjectChocobo
             this.txt_username.Size = new System.Drawing.Size(196, 20);
             this.txt_username.TabIndex = 21;
             // 
-            // comboBox1
+            // cbo_userRole
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(569, 324);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 21);
-            this.comboBox1.TabIndex = 23;
+            this.cbo_userRole.FormattingEnabled = true;
+            this.cbo_userRole.Location = new System.Drawing.Point(569, 324);
+            this.cbo_userRole.Name = "cbo_userRole";
+            this.cbo_userRole.Size = new System.Drawing.Size(219, 21);
+            this.cbo_userRole.TabIndex = 23;
             // 
             // pictureBox2
             // 
@@ -191,13 +194,42 @@ namespace ProjectChocobo
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
+            // lbl_roleAssign
+            // 
+            this.lbl_roleAssign.AutoSize = true;
+            this.lbl_roleAssign.Location = new System.Drawing.Point(569, 305);
+            this.lbl_roleAssign.Name = "lbl_roleAssign";
+            this.lbl_roleAssign.Size = new System.Drawing.Size(29, 13);
+            this.lbl_roleAssign.TabIndex = 25;
+            this.lbl_roleAssign.Text = "Role";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(569, 352);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Vehicle";
+            // 
+            // cbo_userVehicle
+            // 
+            this.cbo_userVehicle.FormattingEnabled = true;
+            this.cbo_userVehicle.Location = new System.Drawing.Point(569, 371);
+            this.cbo_userVehicle.Name = "cbo_userVehicle";
+            this.cbo_userVehicle.Size = new System.Drawing.Size(219, 21);
+            this.cbo_userVehicle.TabIndex = 26;
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbo_userVehicle);
+            this.Controls.Add(this.lbl_roleAssign);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbo_userRole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.btn_Back);
@@ -238,7 +270,10 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_username;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_userRole;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_roleAssign;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbo_userVehicle;
     }
 }
