@@ -21,10 +21,24 @@ namespace ProjectChocobo
 
 
         }
-        static public Boolean applyUserRole(string strUsername) {
+        static public Boolean applyUserRole(string strUsername, string strRole) {
             int intUserID = 0;
+            string strCommand = "";
+            if (strRole == "admin")
+            {
+                strCommand = "addAdmin";
+            }
+            else if (strRole == "steward")
+            {
+                strCommand = "addSteward";
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. The role was probably wrong");
+                return false;
+            }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comApplyUserRole = new MySqlCommand("applyUserRole", cnn);
+            MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
             MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
             MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
