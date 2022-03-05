@@ -20,7 +20,18 @@ namespace ProjectChocobo
 
         private void NewProfile_Load(object sender, EventArgs e)
         {
+            cbo_userRole.Items.Add("Racer");
+            cbo_userRole.Items.Add("Steward");
+
+
+            foreach(string sCar in getCars())
+            {
+                cbo_userVehicle.Items.Add(sCar);
+            }
+
             
+
+
         }
 
         private void btn_AddRacer_Click(object sender, EventArgs e)

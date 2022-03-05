@@ -60,6 +60,10 @@ namespace ProjectChocobo
         {
             string sSelectedRace = cbo_selectRacers.Text;
             
+
+
+
+
             
         }
     }

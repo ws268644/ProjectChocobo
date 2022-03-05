@@ -204,6 +204,10 @@ namespace ProjectChocobo
 
 
 
+        
+
+
+
 
         static public Boolean applyUserRole(string strUsername, string strRole)
         {
@@ -257,7 +261,36 @@ namespace ProjectChocobo
         }
 
 
+        static public List<string> getCars()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> carNames = new List<string>();
+            string myCom = "SELECT t_cars.car_name FROM t_cars;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
 
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    carNames.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return carNames;
+
+        }
 
 
         static public List<string> getStewardNames()
@@ -291,6 +324,11 @@ namespace ProjectChocobo
             return uids;
 
         }
+
+
+
+
+
 
 
         static public List<string> getUserLogins()
