@@ -186,7 +186,7 @@ namespace ProjectChocobo
             {
                 cnn.Open();
                 int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
-                if (usernameCheck <= 0)
+                if (usernameCheck >= 0)
                 {
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
