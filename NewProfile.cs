@@ -50,7 +50,21 @@ namespace ProjectChocobo
                 // Make a profile and add to the database
 
                 createNewUser(sUsername, sPassword);
-                applyUserRole(sUsername, sRole);
+                
+
+                // Assign Role
+                switch(cbo_userRole.Text)
+                {
+                    case "Racer": applyRacerRole(sUsername, sFirstName + " " + sLastName, sVehicle).ToString();  break;
+                    case "Admin": applyUserRole(sUsername, sRole.ToLower()); break;
+                    case "steward": applyUserRole(sUsername, sRole.ToLower());  break;
+
+
+                    default: break;
+                }
+
+
+             
                 
 
             }
