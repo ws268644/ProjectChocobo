@@ -168,6 +168,44 @@ namespace ProjectChocobo
             return null;
 
         }
+        static public Boolean applyRacerRole(string strUsername, string strFullName, string strCarName)
+        {
+            int intUserID = 0;
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddRacer = new MySqlCommand("addRacer", cnn);
+            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+            MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            comAddRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
+            comGetID.Parameters.AddWithValue("@username", strUsername);
+            checkUsername.Parameters.AddWithValue("@username", strUsername);
+            comAddRacer.Parameters.AddWithValue("@userID", intUserID);
+            comAddRacer.Parameters.AddWithValue("@racerName", strFullName);
+            comAddRacer.Parameters.AddWithValue("@carName", strCarName);
+            try
+            {
+                cnn.Open();
+                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
+                if (usernameCheck <= 0)
+                {
+                    cnn.Close();
+                    return false; //If the username doesn't exist then it won't try to apply the user role
+                }
+                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
+                cnn.Close();
+                if (intSuccess == 0)
+                {
+                    return false; //If something went wrong and the user wasn't added it will return a false.
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
 
 
         static public List<string> getRacerNames()
