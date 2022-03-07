@@ -22,9 +22,10 @@ namespace ProjectChocobo
         {
             cbo_userRole.Items.Add("Racer");
             cbo_userRole.Items.Add("Steward");
+            cbo_userRole.Items.Add("Admin");
 
 
-            foreach(string sCar in getCars())
+            foreach (string sCar in getCars())
             {
                 cbo_userVehicle.Items.Add(sCar);
             }

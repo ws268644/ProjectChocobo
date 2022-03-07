@@ -136,7 +136,7 @@ namespace ProjectChocobo
             this.btn_AddRacer.Name = "btn_AddRacer";
             this.btn_AddRacer.Size = new System.Drawing.Size(219, 23);
             this.btn_AddRacer.TabIndex = 14;
-            this.btn_AddRacer.Text = "Add Racer";
+            this.btn_AddRacer.Text = "Add User";
             this.btn_AddRacer.UseVisualStyleBackColor = true;
             this.btn_AddRacer.Click += new System.EventHandler(this.btn_AddRacer_Click);
             // 
