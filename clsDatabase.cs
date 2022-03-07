@@ -89,7 +89,7 @@ namespace ProjectChocobo
             }
             
         }
-        static public Boolean applyUserRole(string strUsername)
+        /*static public Boolean applyUserRole(string strUsername)
         {
             int intUserID = 0;
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
@@ -124,7 +124,7 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
                 return false;
             }
-        }
+        }*/
         static public DataTable getAllUsers() {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -174,25 +174,27 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comAddRacer = new MySqlCommand("addRacer", cnn);
             MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
-            MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            //MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comAddRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             comGetID.CommandType = System.Data.CommandType.StoredProcedure;
             comGetID.Parameters.AddWithValue("@username", strUsername);
-            checkUsername.Parameters.AddWithValue("@username", strUsername);
+            //checkUsername.Parameters.AddWithValue("@username", strUsername);
             comAddRacer.Parameters.AddWithValue("@userID", intUserID);
             comAddRacer.Parameters.AddWithValue("@racerName", strFullName);
             comAddRacer.Parameters.AddWithValue("@carName", strCarName);
             try
             {
                 cnn.Open();
-                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
-                if (usernameCheck <= 0)
+                /*int usernameCheck = 1; //Convert.ToInt32(checkUsername.ExecuteScalar());
+                if (usernameCheck >= 0)
                 {
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
+                MessageBox.Show("Username is all good");*/ 
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
+                MessageBox.Show("Racer has been added successfully");
                 cnn.Close();
                 if (intSuccess == 0)
                 {
@@ -251,11 +253,11 @@ namespace ProjectChocobo
         {
             int intUserID = 0;
             string strCommand = "";
-            if (strRole.ToLower() == "admin")
+            if (strRole == "admin")
             {
                 strCommand = "addAdmin";
             }
-            else if (strRole.ToLower() == "steward")
+            else if (strRole == "steward")
             {
                 strCommand = "addSteward";
             }
@@ -266,23 +268,22 @@ namespace ProjectChocobo
             }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
-            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
-            MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+           //MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+           // MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
-            comGetID.Parameters.AddWithValue("@username", strUsername);
-            checkUsername.Parameters.AddWithValue("@username", strUsername);
-            comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
+            comApplyUserRole.Parameters.AddWithValue("@username", strUsername);
+            //checkUsername.Parameters.AddWithValue("@username", strUsername);
+            //comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
             try
             {
                 cnn.Open();
-                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
+                /*int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
                 if (usernameCheck == 0)
                 {
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
-                }
-                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                }*/
+                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
                 cnn.Close();
                 if (intSuccess == 0)

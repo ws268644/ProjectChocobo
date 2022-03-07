@@ -37,6 +37,7 @@ namespace ProjectChocobo
 
         private void btn_AddRacer_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Button pressed");
             string sFirstName = txt_FirstName.Text;
             string sLastName = txt_LastName.Text;
             string sUsername = txt_username.Text;
@@ -55,12 +56,12 @@ namespace ProjectChocobo
                 // Assign Role
                 switch(cbo_userRole.Text)
                 {
-                    case "Racer": applyRacerRole(sUsername, sFirstName + " " + sLastName, sVehicle).ToString();  break;
-                    case "Admin": applyUserRole(sUsername, sRole.ToLower()); break;
-                    case "steward": applyUserRole(sUsername, sRole.ToLower());  break;
+                    case "Racer": applyRacerRole(sUsername, sFirstName + " " + sLastName, sVehicle).ToString(); MessageBox.Show("Adding Racer");  break;
+                    case "Admin": applyUserRole(sUsername, sRole.ToLower()); MessageBox.Show("Adding Admin"); break;
+                    case "Steward": applyUserRole(sUsername, sRole.ToLower()); MessageBox.Show("Adding Steward"); break;
 
 
-                    default: break;
+                    default: MessageBox.Show("Jumped to default"); break;
                 }
 
 
