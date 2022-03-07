@@ -185,12 +185,13 @@ namespace ProjectChocobo
             try
             {
                 cnn.Open();
-                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
+                int usernameCheck = 1; //Convert.ToInt32(checkUsername.ExecuteScalar());
                 if (usernameCheck >= 0)
                 {
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
+                MessageBox.Show("Username is all good");
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
                 cnn.Close();
