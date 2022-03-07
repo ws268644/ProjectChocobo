@@ -194,6 +194,7 @@ namespace ProjectChocobo
                 MessageBox.Show("Username is all good");
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
+                MessageBox.Show("Racer has been added successfully");
                 cnn.Close();
                 if (intSuccess == 0)
                 {
