@@ -64,5 +64,30 @@ namespace ProjectChocobo
             profilePage.ShowDialog();
             this.Close();
         }
+
+        private void cbo_userRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /* Use for dynamic feature instantiation
+            if(this.Text == "Racer")
+            {
+
+                // Add new label
+                Label vehicleLabel = new Label();
+                vehicleLabel.Name = "lblVehicleLabel";
+                vehicleLabel.Location = new System.Drawing.Point(569, 352);
+
+
+                // Add combo box
+                ComboBox cboVehicleBox = new ComboBox();
+                cboVehicleBox.Name = "cboVehicleSelect";
+                cboVehicleBox.Location = new System.Drawing.Point(569, 371);
+            }
+            */
+        }
+
+        private void cbo_userVehicle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

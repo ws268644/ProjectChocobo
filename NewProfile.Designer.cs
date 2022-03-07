@@ -47,7 +47,7 @@ namespace ProjectChocobo
             this.cbo_userRole = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_roleAssign = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_vehicleLabel = new System.Windows.Forms.Label();
             this.cbo_userVehicle = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -185,6 +185,7 @@ namespace ProjectChocobo
             this.cbo_userRole.Name = "cbo_userRole";
             this.cbo_userRole.Size = new System.Drawing.Size(219, 21);
             this.cbo_userRole.TabIndex = 23;
+            this.cbo_userRole.SelectedIndexChanged += new System.EventHandler(this.cbo_userRole_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -203,14 +204,14 @@ namespace ProjectChocobo
             this.lbl_roleAssign.TabIndex = 25;
             this.lbl_roleAssign.Text = "Role";
             // 
-            // label2
+            // lbl_vehicleLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(569, 352);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Vehicle";
+            this.lbl_vehicleLabel.AutoSize = true;
+            this.lbl_vehicleLabel.Location = new System.Drawing.Point(569, 352);
+            this.lbl_vehicleLabel.Name = "lbl_vehicleLabel";
+            this.lbl_vehicleLabel.Size = new System.Drawing.Size(42, 13);
+            this.lbl_vehicleLabel.TabIndex = 27;
+            this.lbl_vehicleLabel.Text = "Vehicle";
             // 
             // cbo_userVehicle
             // 
@@ -219,13 +220,14 @@ namespace ProjectChocobo
             this.cbo_userVehicle.Name = "cbo_userVehicle";
             this.cbo_userVehicle.Size = new System.Drawing.Size(219, 21);
             this.cbo_userVehicle.TabIndex = 26;
+            this.cbo_userVehicle.SelectedIndexChanged += new System.EventHandler(this.cbo_userVehicle_SelectedIndexChanged);
             // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_vehicleLabel);
             this.Controls.Add(this.cbo_userVehicle);
             this.Controls.Add(this.lbl_roleAssign);
             this.Controls.Add(this.pictureBox2);
@@ -273,7 +275,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.ComboBox cbo_userRole;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_roleAssign;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_vehicleLabel;
         private System.Windows.Forms.ComboBox cbo_userVehicle;
     }
 }
