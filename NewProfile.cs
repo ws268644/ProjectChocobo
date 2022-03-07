@@ -103,5 +103,15 @@ namespace ProjectChocobo
         {
 
         }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileExplorer = new OpenFileDialog();
+
+            fileExplorer.ShowDialog();
+
+            // Work in progress
+            //Image selectedImage = fileExplorer.OpenFile();
+        }
     }
 }

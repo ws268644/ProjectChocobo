@@ -45,12 +45,12 @@ namespace ProjectChocobo
             this.label1 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.cbo_userRole = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_roleAssign = new System.Windows.Forms.Label();
             this.lbl_vehicleLabel = new System.Windows.Forms.Label();
             this.cbo_userVehicle = new System.Windows.Forms.ComboBox();
+            this.pnlImageUpload = new System.Windows.Forms.Panel();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Password
@@ -187,14 +187,6 @@ namespace ProjectChocobo
             this.cbo_userRole.TabIndex = 23;
             this.cbo_userRole.SelectedIndexChanged += new System.EventHandler(this.cbo_userRole_SelectedIndexChanged);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(569, 82);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(219, 208);
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
             // lbl_roleAssign
             // 
             this.lbl_roleAssign.AutoSize = true;
@@ -222,15 +214,33 @@ namespace ProjectChocobo
             this.cbo_userVehicle.TabIndex = 26;
             this.cbo_userVehicle.SelectedIndexChanged += new System.EventHandler(this.cbo_userVehicle_SelectedIndexChanged);
             // 
+            // pnlImageUpload
+            // 
+            this.pnlImageUpload.Location = new System.Drawing.Point(572, 82);
+            this.pnlImageUpload.Name = "pnlImageUpload";
+            this.pnlImageUpload.Size = new System.Drawing.Size(216, 208);
+            this.pnlImageUpload.TabIndex = 28;
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Location = new System.Drawing.Point(624, 295);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(109, 23);
+            this.btnUploadImage.TabIndex = 0;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUploadImage);
+            this.Controls.Add(this.pnlImageUpload);
             this.Controls.Add(this.lbl_vehicleLabel);
             this.Controls.Add(this.cbo_userVehicle);
             this.Controls.Add(this.lbl_roleAssign);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.cbo_userRole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_username);
@@ -250,7 +260,6 @@ namespace ProjectChocobo
             this.Text = "NewProfile";
             this.Load += new System.EventHandler(this.NewProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,9 +282,10 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.ComboBox cbo_userRole;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_roleAssign;
         private System.Windows.Forms.Label lbl_vehicleLabel;
         private System.Windows.Forms.ComboBox cbo_userVehicle;
+        private System.Windows.Forms.Panel pnlImageUpload;
+        private System.Windows.Forms.Button btnUploadImage;
     }
 }
