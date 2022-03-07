@@ -213,11 +213,11 @@ namespace ProjectChocobo
         {
             int intUserID = 0;
             string strCommand = "";
-            if (strRole == "admin")
+            if (strRole.ToLower() == "admin")
             {
                 strCommand = "addAdmin";
             }
-            else if (strRole == "steward")
+            else if (strRole.ToLower() == "steward")
             {
                 strCommand = "addSteward";
             }
