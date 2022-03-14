@@ -19,7 +19,7 @@ namespace ProjectChocobo
 
         private void Events_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = clsDatabase.getFutureRaces();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -44,6 +44,11 @@ namespace ProjectChocobo
             Home mainMenu = new Home();
             mainMenu.ShowDialog();
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

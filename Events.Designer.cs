@@ -33,6 +33,8 @@ namespace ProjectChocobo
             this.btn_allEvents = new System.Windows.Forms.Button();
             this.btn_newEvents = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button3
@@ -75,11 +77,21 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 14;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(140, 152);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(432, 210);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_allEvents);
@@ -87,6 +99,7 @@ namespace ProjectChocobo
             this.Name = "Events";
             this.Text = "Events";
             this.Load += new System.EventHandler(this.Events_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +111,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_allEvents;
         private System.Windows.Forms.Button btn_newEvents;
         private System.Windows.Forms.Label lbl_title;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
