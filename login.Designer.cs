@@ -88,9 +88,10 @@ namespace ProjectChocobo
             // lbl_ErrorMessage
             // 
             this.lbl_ErrorMessage.AutoSize = true;
-            this.lbl_ErrorMessage.Location = new System.Drawing.Point(335, 360);
+            this.lbl_ErrorMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ErrorMessage.Location = new System.Drawing.Point(215, 348);
             this.lbl_ErrorMessage.Name = "lbl_ErrorMessage";
-            this.lbl_ErrorMessage.Size = new System.Drawing.Size(157, 13);
+            this.lbl_ErrorMessage.Size = new System.Drawing.Size(395, 31);
             this.lbl_ErrorMessage.TabIndex = 6;
             this.lbl_ErrorMessage.Text = "WARNING: Incorrect Password";
             this.lbl_ErrorMessage.Visible = false;
