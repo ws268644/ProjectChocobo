@@ -357,11 +357,22 @@ namespace ProjectChocobo
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = comGetRaces;
             DataTable dt = new DataTable();
+           
             try
             {
                 cnn.Open();
                 dataAdapter.Fill(dt);
                 cnn.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string strRaceDate = dr["race_date"].ToString();
+                    DateTime today = DateTime.Today;
+                    DateTime dtRaceDate = Convert.ToDateTime(strRaceDate);
+                    if (dtRaceDate.Date < today.Date)
+                    {
+                        dr.Delete();
+                    }
+                }
                 return dt;
             }
             catch (Exception ex)
