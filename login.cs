@@ -22,5 +22,42 @@ namespace ProjectChocobo
         {
 
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            string sUsername = txtUsername.Text;
+            string sPassword = txtPassword.Text;
+
+            
+
+
+            Boolean bLogin = login(sUsername, sPassword);
+
+            if(bLogin == true)
+            {
+                this.Hide();
+                Home homePage = new Home();
+                homePage.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+
+                tmr_ErrorMessage.Start();
+                lbl_ErrorMessage.Show();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            tmr_ErrorMessage.Stop();
+            lbl_ErrorMessage.Hide();
+        }
     }
 }
+

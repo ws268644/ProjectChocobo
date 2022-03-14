@@ -336,14 +336,14 @@ namespace ProjectChocobo
         {
             MySqlConnection cnn = new MySqlConnection(conString);
             List<string> uids = new List<string>();
-            string myCom = "SELECT t_stewards.steward_id FROM t_stewards;";
-            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+            MySqlCommand comGetName = new MySqlCommand("getStewardUsernames", cnn);
+            
 
 
             try
             {
                 cnn.Open();
-                MySqlDataReader rdr = myCommand.ExecuteReader();
+                MySqlDataReader rdr = comGetName.ExecuteReader();
 
                 while (rdr.Read())
                 {
@@ -366,7 +366,37 @@ namespace ProjectChocobo
 
 
 
+        static public List<string> getAdminNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            MySqlCommand comGetName = new MySqlCommand("getAdminUsernames", cnn);
 
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = comGetName.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
 
 
 
