@@ -89,11 +89,25 @@ namespace ProjectChocobo
             }
             
         }
-        /*static public Boolean applyUserRole(string strUsername)
-        {
+
+        static public Boolean applyUserRole(string strUsername, string strRole) {
             int intUserID = 0;
+            string strCommand = "";
+            if (strRole == "admin")
+            {
+                strCommand = "addAdmin";
+            }
+            else if (strRole == "steward")
+            {
+                strCommand = "addSteward";
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. The role was probably wrong");
+                return false;
+            }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comApplyUserRole = new MySqlCommand("applyUserRole", cnn);
+            MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
             MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
             MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
@@ -124,7 +138,36 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
                 return false;
             }
-        }*/
+
+        }
+
+        static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain) {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddTrack = new MySqlCommand("addTrack", cnn);
+            comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+
+            comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
+
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comAddTrack.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+}
+
         static public DataTable getAllUsers() {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -201,6 +244,7 @@ namespace ProjectChocobo
                     return false; //If something went wrong and the user wasn't added it will return a false.
                 }
                 return true;
+
             }
             catch (Exception ex)
             {
@@ -210,6 +254,38 @@ namespace ProjectChocobo
         }
 
 
+
+        static public List<string> getCarNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> cars = new List<string>();
+            MySqlCommand comGetCarNames = new MySqlCommand("getCarNames", cnn);
+            comGetCarNames.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = comGetCarNames.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    cars.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return cars;
+
+        }
         static public List<string> getRacerNames()
         {
             MySqlConnection cnn = new MySqlConnection(conString);
@@ -431,7 +507,6 @@ namespace ProjectChocobo
             return uids;
 
         }
-
 
     }
 
