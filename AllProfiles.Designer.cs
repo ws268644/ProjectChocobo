@@ -29,21 +29,22 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_ProfilesDisplay = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllProfiles));
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).BeginInit();
+            this.spc_profilesSplit = new System.Windows.Forms.SplitContainer();
+            this.lbl_SelectRacer = new System.Windows.Forms.Label();
+            this.cbo_selectRacers = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
+            this.spc_profilesSplit.Panel1.SuspendLayout();
+            this.spc_profilesSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_ProfilesDisplay
-            // 
-            this.dgv_ProfilesDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ProfilesDisplay.Location = new System.Drawing.Point(12, 39);
-            this.dgv_ProfilesDisplay.Name = "dgv_ProfilesDisplay";
-            this.dgv_ProfilesDisplay.Size = new System.Drawing.Size(776, 342);
-            this.dgv_ProfilesDisplay.TabIndex = 0;
             // 
             // lbl_title
             // 
@@ -83,30 +84,106 @@ namespace ProjectChocobo
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
             // 
+            // spc_profilesSplit
+            // 
+            this.spc_profilesSplit.Location = new System.Drawing.Point(17, 60);
+            this.spc_profilesSplit.Name = "spc_profilesSplit";
+            // 
+            // spc_profilesSplit.Panel1
+            // 
+            this.spc_profilesSplit.Panel1.Controls.Add(this.label1);
+            this.spc_profilesSplit.Panel1.Controls.Add(this.cbo_selectSteward);
+            this.spc_profilesSplit.Panel1.Controls.Add(this.lbl_SelectRacer);
+            this.spc_profilesSplit.Panel1.Controls.Add(this.cbo_selectRacers);
+            this.spc_profilesSplit.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            // 
+            // spc_profilesSplit.Panel2
+            // 
+            this.spc_profilesSplit.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.spc_profilesSplit.Size = new System.Drawing.Size(771, 304);
+            this.spc_profilesSplit.SplitterDistance = 257;
+            this.spc_profilesSplit.TabIndex = 26;
+            // 
+            // lbl_SelectRacer
+            // 
+            this.lbl_SelectRacer.AutoSize = true;
+            this.lbl_SelectRacer.Location = new System.Drawing.Point(3, 10);
+            this.lbl_SelectRacer.Name = "lbl_SelectRacer";
+            this.lbl_SelectRacer.Size = new System.Drawing.Size(69, 13);
+            this.lbl_SelectRacer.TabIndex = 1;
+            this.lbl_SelectRacer.Text = "Select Racer";
+            // 
+            // cbo_selectRacers
+            // 
+            this.cbo_selectRacers.FormattingEnabled = true;
+            this.cbo_selectRacers.Location = new System.Drawing.Point(3, 26);
+            this.cbo_selectRacers.Name = "cbo_selectRacers";
+            this.cbo_selectRacers.Size = new System.Drawing.Size(250, 21);
+            this.cbo_selectRacers.TabIndex = 0;
+            this.cbo_selectRacers.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Select Steward";
+            // 
+            // cbo_selectSteward
+            // 
+            this.cbo_selectSteward.FormattingEnabled = true;
+            this.cbo_selectSteward.Location = new System.Drawing.Point(3, 96);
+            this.cbo_selectSteward.Name = "cbo_selectSteward";
+            this.cbo_selectSteward.Size = new System.Drawing.Size(250, 21);
+            this.cbo_selectSteward.TabIndex = 2;
+            // 
             // AllProfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_title);
+            this.Controls.Add(this.spc_profilesSplit);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.dgv_ProfilesDisplay);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "AllProfiles";
             this.Text = "AllProfiles";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ProfilesDisplay)).EndInit();
+            this.Load += new System.EventHandler(this.AllProfiles_Load);
+            this.spc_profilesSplit.Panel1.ResumeLayout(false);
+            this.spc_profilesSplit.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).EndInit();
+            this.spc_profilesSplit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_ProfilesDisplay;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.SplitContainer spc_profilesSplit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_SelectRacer;
+        private System.Windows.Forms.ComboBox cbo_selectRacers;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_selectSteward;
     }
 }

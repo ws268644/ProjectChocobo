@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -25,5 +28,56 @@ namespace ProjectChocobo
             this.Close();
 
         }
+
+        private void AllEvents_Load(object sender, EventArgs e)
+        {
+
+
+
+
+            
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+            string PopulateSection(string selectedEvent)
+        {
+            string eventInfo = "";
+
+            clsDatabase.getAllUsers();
+            
+            
+
+            return(eventInfo);
+        }
+
+
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedEvent = cbo_selectedEvent.Text;
+
+
+
+        }
+
+
+
+
+
+
+
     }
 }

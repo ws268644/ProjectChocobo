@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -23,6 +24,43 @@ namespace ProjectChocobo
             profiles profilePage = new profiles();
             profilePage.ShowDialog();
             this.Close();
+        }
+
+        private void AllProfiles_Load(object sender, EventArgs e)
+        {
+            // Fill combo box with all Racer Profile
+            foreach (string iRacer in getRacerNames())
+            {
+                cbo_selectRacers.Items.Add(iRacer);
+            }
+
+
+
+            // Fill in the steward list with all steward profiles
+            foreach (string iSteward in getStewardNames())
+            {
+                cbo_selectSteward.Items.Add(iSteward);
+            }
+
+
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sSelectedRace = cbo_selectRacers.Text;
+            
+            
         }
     }
 }
