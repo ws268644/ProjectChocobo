@@ -139,6 +139,34 @@ namespace ProjectChocobo
                 return false;
             }
         }
+
+        static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain) {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddTrack = new MySqlCommand("addTrack", cnn);
+            comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+
+            comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
+
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comAddTrack.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+}
+
         static public DataTable getAllUsers() {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -213,6 +241,7 @@ namespace ProjectChocobo
                     return false; //If something went wrong and the user wasn't added it will return a false.
                 }
                 return true;
+
             }
             catch (Exception ex)
             {
@@ -220,6 +249,8 @@ namespace ProjectChocobo
                 return false;
             }
         }
+
+
 
         static public List<string> getCarNames()
         {
@@ -349,7 +380,6 @@ namespace ProjectChocobo
             return uids;
 
         }
-
 
     }
 
