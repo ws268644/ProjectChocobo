@@ -353,7 +353,7 @@ namespace ProjectChocobo
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetRaces = new MySqlCommand("getRacesInProgress", cnn);
-            comGetRacers.CommandType = System.Data.CommandType.StoredProcedure;
+            comGetRaces.CommandType = System.Data.CommandType.StoredProcedure;
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = comGetRaces;
             DataTable dt = new DataTable();
