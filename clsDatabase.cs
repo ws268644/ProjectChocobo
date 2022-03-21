@@ -9,9 +9,9 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace ProjectChocobo
+namespace ProjectChocobo.Database
 {
-    static class clsDatabase
+    static public class clsDatabase
     {
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
 
