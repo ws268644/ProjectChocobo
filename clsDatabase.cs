@@ -89,8 +89,8 @@ namespace ProjectChocobo
             }
             
         }
-        static public Boolean applyUserRole(string strUsername, string strRole) {
 
+        static public Boolean applyUserRole(string strUsername, string strRole) {
             int intUserID = 0;
             string strCommand = "";
             if (strRole == "admin")
@@ -138,6 +138,7 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
                 return false;
             }
+
         }
 
         static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain) {
@@ -216,25 +217,27 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comAddRacer = new MySqlCommand("addRacer", cnn);
             MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
-            MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            //MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comAddRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             comGetID.CommandType = System.Data.CommandType.StoredProcedure;
             comGetID.Parameters.AddWithValue("@username", strUsername);
-            checkUsername.Parameters.AddWithValue("@username", strUsername);
+            //checkUsername.Parameters.AddWithValue("@username", strUsername);
             comAddRacer.Parameters.AddWithValue("@userID", intUserID);
             comAddRacer.Parameters.AddWithValue("@racerName", strFullName);
             comAddRacer.Parameters.AddWithValue("@carName", strCarName);
             try
             {
                 cnn.Open();
-                int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
-                if (usernameCheck <= 0)
+                /*int usernameCheck = 1; //Convert.ToInt32(checkUsername.ExecuteScalar());
+                if (usernameCheck >= 0)
                 {
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
+                MessageBox.Show("Username is all good");*/ 
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
+                MessageBox.Show("Racer has been added successfully");
                 cnn.Close();
                 if (intSuccess == 0)
                 {
@@ -316,18 +319,107 @@ namespace ProjectChocobo
         }
 
 
-        static public List<string> getStewardNames()
+
+        
+
+
+
+
+        static public Boolean applyUserRole(string strUsername, string strRole)
+        {
+            int intUserID = 0;
+            string strCommand = "";
+            if (strRole == "admin")
+            {
+                strCommand = "addAdmin";
+            }
+            else if (strRole == "steward")
+            {
+                strCommand = "addSteward";
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong. The role was probably wrong");
+                return false;
+            }
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
+           //MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+           // MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comApplyUserRole.Parameters.AddWithValue("@username", strUsername);
+            //checkUsername.Parameters.AddWithValue("@username", strUsername);
+            //comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
+            try
+            {
+                cnn.Open();
+                /*int usernameCheck = Convert.ToInt32(checkUsername.ExecuteScalar());
+                if (usernameCheck == 0)
+                {
+                    cnn.Close();
+                    return false; //If the username doesn't exist then it won't try to apply the user role
+                }*/
+                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
+                cnn.Close();
+                if (intSuccess == 0)
+                {
+                    return false; //If something went wrong and the user wasn't added it will return a false.
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
+
+
+        static public List<string> getCars()
         {
             MySqlConnection cnn = new MySqlConnection(conString);
-            List<string> uids = new List<string>();
-            string myCom = "SELECT t_stewards.steward_id FROM t_stewards;";
+            List<string> carNames = new List<string>();
+            string myCom = "SELECT t_cars.car_name FROM t_cars;";
             MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
-
 
             try
             {
                 cnn.Open();
                 MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    carNames.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return carNames;
+
+        }
+
+
+        static public List<string> getStewardNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            MySqlCommand comGetName = new MySqlCommand("getStewardUsernames", cnn);
+            
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = comGetName.ExecuteReader();
 
                 while (rdr.Read())
                 {
@@ -347,6 +439,41 @@ namespace ProjectChocobo
             return uids;
 
         }
+
+
+
+        static public List<string> getAdminNames()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            MySqlCommand comGetName = new MySqlCommand("getAdminUsernames", cnn);
+
+
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = comGetName.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+
+        }
+
 
 
         static public List<string> getUserLogins()

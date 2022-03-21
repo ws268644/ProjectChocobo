@@ -29,17 +29,17 @@ namespace ProjectChocobo
         private void AllProfiles_Load(object sender, EventArgs e)
         {
             // Fill combo box with all Racer Profile
-            foreach (string iRacer in getRacerNames())
+            foreach (string sRacer in getRacerNames())
             {
-                cbo_selectRacers.Items.Add(iRacer);
+                cbo_selectRacers.Items.Add(sRacer);
             }
 
 
 
             // Fill in the steward list with all steward profiles
-            foreach (string iSteward in getStewardNames())
+            foreach (string sSteward in getStewardNames())
             {
-                cbo_selectSteward.Items.Add(iSteward);
+                cbo_selectSteward.Items.Add(sSteward);
             }
 
 
@@ -60,6 +60,10 @@ namespace ProjectChocobo
         {
             string sSelectedRace = cbo_selectRacers.Text;
             
+
+
+
+
             
         }
     }

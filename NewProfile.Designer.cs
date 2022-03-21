@@ -44,6 +44,12 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
+            this.cbo_userRole = new System.Windows.Forms.ComboBox();
+            this.lbl_roleAssign = new System.Windows.Forms.Label();
+            this.lbl_vehicleLabel = new System.Windows.Forms.Label();
+            this.cbo_userVehicle = new System.Windows.Forms.ComboBox();
+            this.pnlImageUpload = new System.Windows.Forms.Panel();
+            this.btnUploadImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,11 +132,11 @@ namespace ProjectChocobo
             // 
             // btn_AddRacer
             // 
-            this.btn_AddRacer.Location = new System.Drawing.Point(12, 364);
+            this.btn_AddRacer.Location = new System.Drawing.Point(569, 415);
             this.btn_AddRacer.Name = "btn_AddRacer";
-            this.btn_AddRacer.Size = new System.Drawing.Size(196, 23);
+            this.btn_AddRacer.Size = new System.Drawing.Size(219, 23);
             this.btn_AddRacer.TabIndex = 14;
-            this.btn_AddRacer.Text = "Add Racer";
+            this.btn_AddRacer.Text = "Add User";
             this.btn_AddRacer.UseVisualStyleBackColor = true;
             this.btn_AddRacer.Click += new System.EventHandler(this.btn_AddRacer_Click);
             // 
@@ -172,11 +178,70 @@ namespace ProjectChocobo
             this.txt_username.Size = new System.Drawing.Size(196, 20);
             this.txt_username.TabIndex = 21;
             // 
+            // cbo_userRole
+            // 
+            this.cbo_userRole.FormattingEnabled = true;
+            this.cbo_userRole.Location = new System.Drawing.Point(569, 324);
+            this.cbo_userRole.Name = "cbo_userRole";
+            this.cbo_userRole.Size = new System.Drawing.Size(219, 21);
+            this.cbo_userRole.TabIndex = 23;
+            this.cbo_userRole.SelectedIndexChanged += new System.EventHandler(this.cbo_userRole_SelectedIndexChanged);
+            // 
+            // lbl_roleAssign
+            // 
+            this.lbl_roleAssign.AutoSize = true;
+            this.lbl_roleAssign.Location = new System.Drawing.Point(569, 305);
+            this.lbl_roleAssign.Name = "lbl_roleAssign";
+            this.lbl_roleAssign.Size = new System.Drawing.Size(29, 13);
+            this.lbl_roleAssign.TabIndex = 25;
+            this.lbl_roleAssign.Text = "Role";
+            // 
+            // lbl_vehicleLabel
+            // 
+            this.lbl_vehicleLabel.AutoSize = true;
+            this.lbl_vehicleLabel.Location = new System.Drawing.Point(569, 352);
+            this.lbl_vehicleLabel.Name = "lbl_vehicleLabel";
+            this.lbl_vehicleLabel.Size = new System.Drawing.Size(42, 13);
+            this.lbl_vehicleLabel.TabIndex = 27;
+            this.lbl_vehicleLabel.Text = "Vehicle";
+            // 
+            // cbo_userVehicle
+            // 
+            this.cbo_userVehicle.FormattingEnabled = true;
+            this.cbo_userVehicle.Location = new System.Drawing.Point(569, 371);
+            this.cbo_userVehicle.Name = "cbo_userVehicle";
+            this.cbo_userVehicle.Size = new System.Drawing.Size(219, 21);
+            this.cbo_userVehicle.TabIndex = 26;
+            this.cbo_userVehicle.SelectedIndexChanged += new System.EventHandler(this.cbo_userVehicle_SelectedIndexChanged);
+            // 
+            // pnlImageUpload
+            // 
+            this.pnlImageUpload.Location = new System.Drawing.Point(572, 82);
+            this.pnlImageUpload.Name = "pnlImageUpload";
+            this.pnlImageUpload.Size = new System.Drawing.Size(216, 208);
+            this.pnlImageUpload.TabIndex = 28;
+            // 
+            // btnUploadImage
+            // 
+            this.btnUploadImage.Location = new System.Drawing.Point(624, 295);
+            this.btnUploadImage.Name = "btnUploadImage";
+            this.btnUploadImage.Size = new System.Drawing.Size(109, 23);
+            this.btnUploadImage.TabIndex = 0;
+            this.btnUploadImage.Text = "Upload Image";
+            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUploadImage);
+            this.Controls.Add(this.pnlImageUpload);
+            this.Controls.Add(this.lbl_vehicleLabel);
+            this.Controls.Add(this.cbo_userVehicle);
+            this.Controls.Add(this.lbl_roleAssign);
+            this.Controls.Add(this.cbo_userRole);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.btn_Back);
@@ -216,5 +281,11 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.ComboBox cbo_userRole;
+        private System.Windows.Forms.Label lbl_roleAssign;
+        private System.Windows.Forms.Label lbl_vehicleLabel;
+        private System.Windows.Forms.ComboBox cbo_userVehicle;
+        private System.Windows.Forms.Panel pnlImageUpload;
+        private System.Windows.Forms.Button btnUploadImage;
     }
 }

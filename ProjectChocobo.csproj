@@ -148,6 +148,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="StewardMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StewardMenu.Designer.cs">
+      <DependentUpon>StewardMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tracks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StewardMenu.resx">
+      <DependentUpon>StewardMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tracks.resx">
       <DependentUpon>Tracks.cs</DependentUpon>
