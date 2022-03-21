@@ -90,7 +90,8 @@ namespace ProjectChocobo
             
         }
 
-        static public Boolean applyUserRole(string strUsername, string strRole) {
+        static public Boolean applyUserRole(string strUsername, string strRole) 
+        {
             int intUserID = 0;
             string strCommand = "";
             if (strRole == "admin")
@@ -165,6 +166,11 @@ namespace ProjectChocobo
                 {
                     return false;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+                return false;
             }
 }
 
@@ -324,7 +330,7 @@ namespace ProjectChocobo
 
 
 
-
+        /*
         static public Boolean applyUserRole(string strUsername, string strRole)
         {
             int intUserID = 0;
@@ -360,6 +366,7 @@ namespace ProjectChocobo
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }*/
                 //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                /*
                 int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
                 cnn.Close();
                 if (intSuccess == 0)
@@ -374,7 +381,7 @@ namespace ProjectChocobo
                 return false;
             }
         }
-
+       */
 
         static public List<string> getCars()
         {
