@@ -44,6 +44,10 @@ namespace ProjectChocobo
             this.nud_Racers = new System.Windows.Forms.NumericUpDown();
             this.lbl_racerCount = new System.Windows.Forms.Label();
             this.lbl_attendees = new System.Windows.Forms.Label();
+            this.txt_startTime = new System.Windows.Forms.TextBox();
+            this.txt_endTime = new System.Windows.Forms.TextBox();
+            this.lbl_startTime = new System.Windows.Forms.Label();
+            this.lbl_finishTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Attendees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Racers)).BeginInit();
             this.SuspendLayout();
@@ -95,9 +99,11 @@ namespace ProjectChocobo
             // dtp_StartDate
             // 
             this.dtp_StartDate.Location = new System.Drawing.Point(27, 139);
+            this.dtp_StartDate.MinDate = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             this.dtp_StartDate.Name = "dtp_StartDate";
             this.dtp_StartDate.Size = new System.Drawing.Size(200, 20);
             this.dtp_StartDate.TabIndex = 22;
+            this.dtp_StartDate.Value = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -175,11 +181,47 @@ namespace ProjectChocobo
             this.lbl_attendees.TabIndex = 31;
             this.lbl_attendees.Text = "Attendees";
             // 
+            // txt_startTime
+            // 
+            this.txt_startTime.Location = new System.Drawing.Point(271, 139);
+            this.txt_startTime.Name = "txt_startTime";
+            this.txt_startTime.Size = new System.Drawing.Size(100, 20);
+            this.txt_startTime.TabIndex = 32;
+            // 
+            // txt_endTime
+            // 
+            this.txt_endTime.Location = new System.Drawing.Point(271, 205);
+            this.txt_endTime.Name = "txt_endTime";
+            this.txt_endTime.Size = new System.Drawing.Size(100, 20);
+            this.txt_endTime.TabIndex = 33;
+            // 
+            // lbl_startTime
+            // 
+            this.lbl_startTime.AutoSize = true;
+            this.lbl_startTime.Location = new System.Drawing.Point(271, 120);
+            this.lbl_startTime.Name = "lbl_startTime";
+            this.lbl_startTime.Size = new System.Drawing.Size(55, 13);
+            this.lbl_startTime.TabIndex = 34;
+            this.lbl_startTime.Text = "Start Time";
+            // 
+            // lbl_finishTime
+            // 
+            this.lbl_finishTime.AutoSize = true;
+            this.lbl_finishTime.Location = new System.Drawing.Point(271, 189);
+            this.lbl_finishTime.Name = "lbl_finishTime";
+            this.lbl_finishTime.Size = new System.Drawing.Size(60, 13);
+            this.lbl_finishTime.TabIndex = 35;
+            this.lbl_finishTime.Text = "Finish Time";
+            // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_finishTime);
+            this.Controls.Add(this.lbl_startTime);
+            this.Controls.Add(this.txt_endTime);
+            this.Controls.Add(this.txt_startTime);
             this.Controls.Add(this.lbl_attendees);
             this.Controls.Add(this.lbl_racerCount);
             this.Controls.Add(this.nud_Racers);
@@ -222,5 +264,9 @@ namespace ProjectChocobo
         private System.Windows.Forms.NumericUpDown nud_Racers;
         private System.Windows.Forms.Label lbl_racerCount;
         private System.Windows.Forms.Label lbl_attendees;
+        private System.Windows.Forms.TextBox txt_startTime;
+        private System.Windows.Forms.TextBox txt_endTime;
+        private System.Windows.Forms.Label lbl_startTime;
+        private System.Windows.Forms.Label lbl_finishTime;
     }
 }
