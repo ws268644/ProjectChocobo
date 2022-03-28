@@ -42,15 +42,14 @@ namespace ProjectChocobo
             DateTime dtStartDate = dtp_StartDate.Value;
             DateTime dtEndDate = dtp_EndDate.Value;
 
-            decimal iRacers = nud_entryFee.Value;
-            decimal iAttendees = nud_Attendees.Value;
+            decimal iEntryfee = nud_entryFee.Value;
 
             string startTime = txt_startTime.Text;
             string endTime = txt_endTime.Text;
 
             string eventDesc = txt_description.Text;
 
-            createNewRace(sEventName, strStewardName, intEntryFee, dtStartDate, dtEndDate, startTime, endTime, eventDesc);
+            createNewRace(sEventName, strStewardName, iEntryfee, dtStartDate, dtEndDate, startTime, endTime, eventDesc);
         }
     }
 }

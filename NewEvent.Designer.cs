@@ -33,7 +33,7 @@ namespace ProjectChocobo
             this.txt_EventName = new System.Windows.Forms.TextBox();
             this.txt_description = new System.Windows.Forms.TextBox();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTrackName = new System.Windows.Forms.Label();
             this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtp_EndDate = new System.Windows.Forms.DateTimePicker();
@@ -85,14 +85,14 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 16;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
-            // label1
+            // lblTrackName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Event Name";
+            this.lblTrackName.AutoSize = true;
+            this.lblTrackName.Location = new System.Drawing.Point(24, 64);
+            this.lblTrackName.Name = "lblTrackName";
+            this.lblTrackName.Size = new System.Drawing.Size(66, 13);
+            this.lblTrackName.TabIndex = 17;
+            this.lblTrackName.Text = "Track Name";
             // 
             // dtp_StartDate
             // 
@@ -221,7 +221,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.dtp_EndDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtp_StartDate);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTrackName);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.txt_description);
             this.Controls.Add(this.txt_EventName);
@@ -241,7 +241,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.TextBox txt_EventName;
         private System.Windows.Forms.TextBox txt_description;
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTrackName;
         private System.Windows.Forms.DateTimePicker dtp_StartDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtp_EndDate;
