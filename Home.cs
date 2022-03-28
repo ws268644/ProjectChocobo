@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -59,6 +60,16 @@ namespace ProjectChocobo
         private void btn_quit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login loginPage = new login();
+            loginPage.ShowDialog();
+            logout();
+            this.Close();
+            
         }
     }
 }

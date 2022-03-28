@@ -37,6 +37,7 @@ namespace ProjectChocobo
             this.btn_settings = new System.Windows.Forms.Button();
             this.btn_quit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace ProjectChocobo
             // 
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(265, 9);
+            this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(285, 25);
             this.lbl_title.TabIndex = 0;
@@ -74,7 +75,7 @@ namespace ProjectChocobo
             // 
             this.btn_tracks.Location = new System.Drawing.Point(12, 215);
             this.btn_tracks.Name = "btn_tracks";
-            this.btn_tracks.Size = new System.Drawing.Size(393, 126);
+            this.btn_tracks.Size = new System.Drawing.Size(393, 117);
             this.btn_tracks.TabIndex = 6;
             this.btn_tracks.Text = "Tracks";
             this.btn_tracks.UseVisualStyleBackColor = true;
@@ -84,7 +85,7 @@ namespace ProjectChocobo
             // 
             this.btn_settings.Location = new System.Drawing.Point(401, 215);
             this.btn_settings.Name = "btn_settings";
-            this.btn_settings.Size = new System.Drawing.Size(387, 126);
+            this.btn_settings.Size = new System.Drawing.Size(387, 117);
             this.btn_settings.TabIndex = 7;
             this.btn_settings.Text = "Settings";
             this.btn_settings.UseVisualStyleBackColor = true;
@@ -92,9 +93,9 @@ namespace ProjectChocobo
             // 
             // btn_quit
             // 
-            this.btn_quit.Location = new System.Drawing.Point(12, 347);
+            this.btn_quit.Location = new System.Drawing.Point(401, 338);
             this.btn_quit.Name = "btn_quit";
-            this.btn_quit.Size = new System.Drawing.Size(776, 91);
+            this.btn_quit.Size = new System.Drawing.Size(387, 100);
             this.btn_quit.TabIndex = 8;
             this.btn_quit.Text = "Quit";
             this.btn_quit.UseVisualStyleBackColor = true;
@@ -111,11 +112,22 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_logout
+            // 
+            this.btn_logout.Location = new System.Drawing.Point(12, 338);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(393, 100);
+            this.btn_logout.TabIndex = 21;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_quit);
             this.Controls.Add(this.btn_settings);
             this.Controls.Add(this.btn_tracks);
@@ -141,6 +153,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_logout;
     }
 }
 

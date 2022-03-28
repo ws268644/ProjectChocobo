@@ -34,5 +34,16 @@ namespace ProjectChocobo
         {
 
         }
+
+        private void btn_addEvent_Click(object sender, EventArgs e)
+        {
+            string sEventName = txt_EventName.Text;
+            DateTime dtStartDate = dtp_StartDate.Value;
+            DateTime dtEndDate = dtp_EndDate.Value;
+
+            decimal iRacers = nud_Racers.Value;
+            decimal iAttendees = nud_Attendees.Value;
+            
+        }
     }
 }
