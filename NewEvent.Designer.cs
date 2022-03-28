@@ -40,16 +40,14 @@ namespace ProjectChocobo
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_addEvent = new System.Windows.Forms.Button();
-            this.nud_Attendees = new System.Windows.Forms.NumericUpDown();
-            this.nud_Racers = new System.Windows.Forms.NumericUpDown();
-            this.lbl_racerCount = new System.Windows.Forms.Label();
+            this.nud_entryFee = new System.Windows.Forms.NumericUpDown();
+            this.lbl_entryFee = new System.Windows.Forms.Label();
             this.lbl_attendees = new System.Windows.Forms.Label();
             this.txt_startTime = new System.Windows.Forms.TextBox();
             this.txt_endTime = new System.Windows.Forms.TextBox();
             this.lbl_startTime = new System.Windows.Forms.Label();
             this.lbl_finishTime = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Attendees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Racers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_entryFee)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -149,37 +147,29 @@ namespace ProjectChocobo
             this.btn_addEvent.UseVisualStyleBackColor = true;
             this.btn_addEvent.Click += new System.EventHandler(this.btn_addEvent_Click);
             // 
-            // nud_Attendees
+            // nud_entryFee
             // 
-            this.nud_Attendees.Location = new System.Drawing.Point(27, 314);
-            this.nud_Attendees.Name = "nud_Attendees";
-            this.nud_Attendees.Size = new System.Drawing.Size(120, 20);
-            this.nud_Attendees.TabIndex = 28;
+            this.nud_entryFee.Location = new System.Drawing.Point(27, 262);
+            this.nud_entryFee.Name = "nud_entryFee";
+            this.nud_entryFee.Size = new System.Drawing.Size(120, 20);
+            this.nud_entryFee.TabIndex = 29;
             // 
-            // nud_Racers
+            // lbl_entryFee
             // 
-            this.nud_Racers.Location = new System.Drawing.Point(27, 262);
-            this.nud_Racers.Name = "nud_Racers";
-            this.nud_Racers.Size = new System.Drawing.Size(120, 20);
-            this.nud_Racers.TabIndex = 29;
-            // 
-            // lbl_racerCount
-            // 
-            this.lbl_racerCount.AutoSize = true;
-            this.lbl_racerCount.Location = new System.Drawing.Point(27, 243);
-            this.lbl_racerCount.Name = "lbl_racerCount";
-            this.lbl_racerCount.Size = new System.Drawing.Size(41, 13);
-            this.lbl_racerCount.TabIndex = 30;
-            this.lbl_racerCount.Text = "Racers";
+            this.lbl_entryFee.AutoSize = true;
+            this.lbl_entryFee.Location = new System.Drawing.Point(27, 243);
+            this.lbl_entryFee.Name = "lbl_entryFee";
+            this.lbl_entryFee.Size = new System.Drawing.Size(52, 13);
+            this.lbl_entryFee.TabIndex = 30;
+            this.lbl_entryFee.Text = "Entry Fee";
             // 
             // lbl_attendees
             // 
             this.lbl_attendees.AutoSize = true;
             this.lbl_attendees.Location = new System.Drawing.Point(27, 298);
             this.lbl_attendees.Name = "lbl_attendees";
-            this.lbl_attendees.Size = new System.Drawing.Size(55, 13);
+            this.lbl_attendees.Size = new System.Drawing.Size(0, 13);
             this.lbl_attendees.TabIndex = 31;
-            this.lbl_attendees.Text = "Attendees";
             // 
             // txt_startTime
             // 
@@ -223,9 +213,8 @@ namespace ProjectChocobo
             this.Controls.Add(this.txt_endTime);
             this.Controls.Add(this.txt_startTime);
             this.Controls.Add(this.lbl_attendees);
-            this.Controls.Add(this.lbl_racerCount);
-            this.Controls.Add(this.nud_Racers);
-            this.Controls.Add(this.nud_Attendees);
+            this.Controls.Add(this.lbl_entryFee);
+            this.Controls.Add(this.nud_entryFee);
             this.Controls.Add(this.btn_addEvent);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -240,8 +229,7 @@ namespace ProjectChocobo
             this.Name = "NewEvent";
             this.Text = "NewEvent";
             this.Load += new System.EventHandler(this.NewEvent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Attendees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_Racers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_entryFee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,9 +248,8 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_addEvent;
-        private System.Windows.Forms.NumericUpDown nud_Attendees;
-        private System.Windows.Forms.NumericUpDown nud_Racers;
-        private System.Windows.Forms.Label lbl_racerCount;
+        private System.Windows.Forms.NumericUpDown nud_entryFee;
+        private System.Windows.Forms.Label lbl_entryFee;
         private System.Windows.Forms.Label lbl_attendees;
         private System.Windows.Forms.TextBox txt_startTime;
         private System.Windows.Forms.TextBox txt_endTime;
