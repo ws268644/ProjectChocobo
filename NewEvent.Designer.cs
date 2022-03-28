@@ -31,7 +31,7 @@ namespace ProjectChocobo
         {
             this.btn_Back = new System.Windows.Forms.Button();
             this.txt_EventName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_description = new System.Windows.Forms.TextBox();
             this.lbl_title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
@@ -69,13 +69,13 @@ namespace ProjectChocobo
             this.txt_EventName.Size = new System.Drawing.Size(223, 20);
             this.txt_EventName.TabIndex = 1;
             // 
-            // textBox2
+            // txt_description
             // 
-            this.textBox2.Location = new System.Drawing.Point(425, 80);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(343, 358);
-            this.textBox2.TabIndex = 2;
+            this.txt_description.Location = new System.Drawing.Point(425, 80);
+            this.txt_description.Multiline = true;
+            this.txt_description.Name = "txt_description";
+            this.txt_description.Size = new System.Drawing.Size(343, 358);
+            this.txt_description.TabIndex = 2;
             // 
             // lbl_title
             // 
@@ -234,7 +234,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.dtp_StartDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_description);
             this.Controls.Add(this.txt_EventName);
             this.Controls.Add(this.btn_Back);
             this.Name = "NewEvent";
@@ -251,7 +251,7 @@ namespace ProjectChocobo
 
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.TextBox txt_EventName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_description;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtp_StartDate;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -43,7 +44,13 @@ namespace ProjectChocobo
 
             decimal iRacers = nud_Racers.Value;
             decimal iAttendees = nud_Attendees.Value;
-            
+
+            string startTime = txt_startTime.Text;
+            string endTime = txt_endTime.Text;
+
+            string eventDesc = txt_description.Text;
+
+            createNewRace(sEventName, strStewardName, intEntryFee, dtStartDate, dtEndDate, startTime, endTime, eventDesc);
         }
     }
 }
