@@ -9,7 +9,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace ProjectChocobo.Database
+namespace ProjectChocobo
 {
     static public class clsDatabase
     {
@@ -32,7 +32,7 @@ namespace ProjectChocobo.Database
                     cnn.Close();
                     return true;
                 }
-                cnn.Close();    
+                cnn.Close();
 
             }
             catch (Exception ex)
@@ -40,6 +40,14 @@ namespace ProjectChocobo.Database
                 MessageBox.Show("There was an error:\n" + ex);
             }
             return false;
+        }
+
+
+        static public void logout()
+        {
+         // log the user out of the database.
+         
+
         }
 
     
