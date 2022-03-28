@@ -181,7 +181,7 @@ namespace ProjectChocobo
             // cbo_userRole
             // 
             this.cbo_userRole.FormattingEnabled = true;
-            this.cbo_userRole.Location = new System.Drawing.Point(569, 324);
+            this.cbo_userRole.Location = new System.Drawing.Point(307, 98);
             this.cbo_userRole.Name = "cbo_userRole";
             this.cbo_userRole.Size = new System.Drawing.Size(219, 21);
             this.cbo_userRole.TabIndex = 23;
@@ -190,7 +190,7 @@ namespace ProjectChocobo
             // lbl_roleAssign
             // 
             this.lbl_roleAssign.AutoSize = true;
-            this.lbl_roleAssign.Location = new System.Drawing.Point(569, 305);
+            this.lbl_roleAssign.Location = new System.Drawing.Point(304, 82);
             this.lbl_roleAssign.Name = "lbl_roleAssign";
             this.lbl_roleAssign.Size = new System.Drawing.Size(29, 13);
             this.lbl_roleAssign.TabIndex = 25;
@@ -199,7 +199,7 @@ namespace ProjectChocobo
             // lbl_vehicleLabel
             // 
             this.lbl_vehicleLabel.AutoSize = true;
-            this.lbl_vehicleLabel.Location = new System.Drawing.Point(569, 352);
+            this.lbl_vehicleLabel.Location = new System.Drawing.Point(304, 120);
             this.lbl_vehicleLabel.Name = "lbl_vehicleLabel";
             this.lbl_vehicleLabel.Size = new System.Drawing.Size(42, 13);
             this.lbl_vehicleLabel.TabIndex = 27;
@@ -208,7 +208,7 @@ namespace ProjectChocobo
             // cbo_userVehicle
             // 
             this.cbo_userVehicle.FormattingEnabled = true;
-            this.cbo_userVehicle.Location = new System.Drawing.Point(569, 371);
+            this.cbo_userVehicle.Location = new System.Drawing.Point(307, 136);
             this.cbo_userVehicle.Name = "cbo_userVehicle";
             this.cbo_userVehicle.Size = new System.Drawing.Size(219, 21);
             this.cbo_userVehicle.TabIndex = 26;

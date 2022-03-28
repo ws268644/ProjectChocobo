@@ -41,8 +41,7 @@ namespace ProjectChocobo
             DateTime dtStartDate = dtp_StartDate.Value;
             DateTime dtEndDate = dtp_EndDate.Value;
 
-            decimal iRacers = nud_Racers.Value;
-            decimal iAttendees = nud_Attendees.Value;
+            
             
         }
     }
