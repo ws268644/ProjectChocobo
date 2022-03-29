@@ -579,6 +579,14 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
+        static public List<string> getEvent(int raceID)
+        {
+            string strCommand = "getRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
+
+
+        }
 
     }
 
