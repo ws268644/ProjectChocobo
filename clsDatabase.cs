@@ -549,6 +549,26 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
+        static public void deleteRace(int raceID)
+        {
+            string strCommand = "deleteRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand deleteRace = new MySqlCommand(strCommand, cnn);
+
+            deleteRace.CommandType = System.Data.CommandType.StoredProcedure;
+            deleteRace.Parameters.AddWithValue("@raceID", raceID);
+
+            try
+            {
+                cnn.Open();
+                deleteRace.ExecuteNonQuery(); //Ran the stored procedure
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
     }
 
