@@ -522,6 +522,71 @@ namespace ProjectChocobo
             return uids;
 
         }
+        static public void createNewRace(string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc)
+        {
+            string strCommand = "addRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand addRace = new MySqlCommand(strCommand, cnn);
+
+            addRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            addRace.Parameters.AddWithValue("@trackName", strTrackName);
+            addRace.Parameters.AddWithValue("@stewardName", strStewardName);
+            addRace.Parameters.AddWithValue("@entryFee", intEntryFee);
+            addRace.Parameters.AddWithValue("@startTime", startTime);
+            addRace.Parameters.AddWithValue("@endTime", endTime);
+            addRace.Parameters.AddWithValue("@startDate", startDate);
+            addRace.Parameters.AddWithValue("@endDate", endDate);
+            addRace.Parameters.AddWithValue("@raceDescription", strRaceDesc);
+            //Added variables to be used in the stored procedure
+            try
+            {
+                cnn.Open();
+                    addRace.ExecuteNonQuery(); //Ran the stored procedure
+                cnn.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        static public void updateEvent(int raceID, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
+        {// REMEMBER!!!!!!!!!!!!!!!!!!!
+         // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
+            string strCommand = "updateRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
+
+            updateRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            updateRace.Parameters.AddWithValue("@raceID", raceID);
+            updateRace.Parameters.AddWithValue("@trackName", strTrackName);
+            updateRace.Parameters.AddWithValue("@stewardName", strStewardName);
+            updateRace.Parameters.AddWithValue("@entryFee", intEntryFee);
+            updateRace.Parameters.AddWithValue("@startTime", startTime);
+            updateRace.Parameters.AddWithValue("@endTime", endTime);
+            updateRace.Parameters.AddWithValue("@startDate", startDate);
+            updateRace.Parameters.AddWithValue("@endDate", endDate);
+            updateRace.Parameters.AddWithValue("@raceDescription", strRaceDesc);
+            updateRace.Parameters.AddWithValue("@raceComplete", raceCompleted);
+            //Added variables to be used in the stored procedure
+            try
+            {
+                cnn.Open();
+                updateRace.ExecuteNonQuery(); //Ran the stored procedure
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        static public List<string> getEvent(int raceID)
+        {
+            string strCommand = "getRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
+
+
+        }
 
     }
 
