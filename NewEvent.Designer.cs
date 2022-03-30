@@ -44,11 +44,12 @@ namespace ProjectChocobo
             this.txt_endTime = new System.Windows.Forms.TextBox();
             this.lbl_startTime = new System.Windows.Forms.Label();
             this.lbl_finishTime = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_TicketPrice = new System.Windows.Forms.TextBox();
             this.lbl_priceName = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdo_PoundSterlingToggle = new System.Windows.Forms.RadioButton();
             this.rdo_DollarToggle = new System.Windows.Forms.RadioButton();
-            this.rdo_PoundStirlingToggle = new System.Windows.Forms.RadioButton();
+            this.rdo_EuroToggle = new System.Windows.Forms.RadioButton();
+            this.lbl_NewEventError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -180,12 +181,12 @@ namespace ProjectChocobo
             this.lbl_finishTime.TabIndex = 35;
             this.lbl_finishTime.Text = "Finish Time";
             // 
-            // textBox1
+            // txt_TicketPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 36;
+            this.txt_TicketPrice.Location = new System.Drawing.Point(27, 264);
+            this.txt_TicketPrice.Name = "txt_TicketPrice";
+            this.txt_TicketPrice.Size = new System.Drawing.Size(200, 20);
+            this.txt_TicketPrice.TabIndex = 36;
             // 
             // lbl_priceName
             // 
@@ -197,21 +198,21 @@ namespace ProjectChocobo
             this.lbl_priceName.Text = "Ticket Price";
             this.lbl_priceName.Click += new System.EventHandler(this.label5_Click);
             // 
-            // radioButton1
+            // rdo_PoundSterlingToggle
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(271, 323);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 38;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdo_PoundSterlingToggle.AutoSize = true;
+            this.rdo_PoundSterlingToggle.Location = new System.Drawing.Point(271, 264);
+            this.rdo_PoundSterlingToggle.Name = "rdo_PoundSterlingToggle";
+            this.rdo_PoundSterlingToggle.Size = new System.Drawing.Size(31, 17);
+            this.rdo_PoundSterlingToggle.TabIndex = 38;
+            this.rdo_PoundSterlingToggle.TabStop = true;
+            this.rdo_PoundSterlingToggle.Text = "£";
+            this.rdo_PoundSterlingToggle.UseVisualStyleBackColor = true;
             // 
             // rdo_DollarToggle
             // 
             this.rdo_DollarToggle.AutoSize = true;
-            this.rdo_DollarToggle.Location = new System.Drawing.Point(271, 264);
+            this.rdo_DollarToggle.Location = new System.Drawing.Point(271, 286);
             this.rdo_DollarToggle.Name = "rdo_DollarToggle";
             this.rdo_DollarToggle.Size = new System.Drawing.Size(31, 17);
             this.rdo_DollarToggle.TabIndex = 39;
@@ -219,27 +220,39 @@ namespace ProjectChocobo
             this.rdo_DollarToggle.Text = "$";
             this.rdo_DollarToggle.UseVisualStyleBackColor = true;
             // 
-            // rdo_PoundStirlingToggle
+            // rdo_EuroToggle
             // 
-            this.rdo_PoundStirlingToggle.AutoSize = true;
-            this.rdo_PoundStirlingToggle.Location = new System.Drawing.Point(271, 287);
-            this.rdo_PoundStirlingToggle.Name = "rdo_PoundStirlingToggle";
-            this.rdo_PoundStirlingToggle.Size = new System.Drawing.Size(31, 17);
-            this.rdo_PoundStirlingToggle.TabIndex = 40;
-            this.rdo_PoundStirlingToggle.TabStop = true;
-            this.rdo_PoundStirlingToggle.Text = "€";
-            this.rdo_PoundStirlingToggle.UseVisualStyleBackColor = true;
+            this.rdo_EuroToggle.AutoSize = true;
+            this.rdo_EuroToggle.Location = new System.Drawing.Point(271, 309);
+            this.rdo_EuroToggle.Name = "rdo_EuroToggle";
+            this.rdo_EuroToggle.Size = new System.Drawing.Size(31, 17);
+            this.rdo_EuroToggle.TabIndex = 40;
+            this.rdo_EuroToggle.TabStop = true;
+            this.rdo_EuroToggle.Text = "€";
+            this.rdo_EuroToggle.UseVisualStyleBackColor = true;
+            // 
+            // lbl_NewEventError
+            // 
+            this.lbl_NewEventError.AutoSize = true;
+            this.lbl_NewEventError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NewEventError.Location = new System.Drawing.Point(10, 338);
+            this.lbl_NewEventError.Name = "lbl_NewEventError";
+            this.lbl_NewEventError.Size = new System.Drawing.Size(88, 16);
+            this.lbl_NewEventError.TabIndex = 41;
+            this.lbl_NewEventError.Text = "WARNING: ";
+            this.lbl_NewEventError.Visible = false;
             // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rdo_PoundStirlingToggle);
+            this.Controls.Add(this.lbl_NewEventError);
+            this.Controls.Add(this.rdo_EuroToggle);
             this.Controls.Add(this.rdo_DollarToggle);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rdo_PoundSterlingToggle);
             this.Controls.Add(this.lbl_priceName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_TicketPrice);
             this.Controls.Add(this.lbl_finishTime);
             this.Controls.Add(this.lbl_startTime);
             this.Controls.Add(this.txt_endTime);
@@ -280,10 +293,11 @@ namespace ProjectChocobo
         private System.Windows.Forms.TextBox txt_endTime;
         private System.Windows.Forms.Label lbl_startTime;
         private System.Windows.Forms.Label lbl_finishTime;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_TicketPrice;
         private System.Windows.Forms.Label lbl_priceName;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdo_PoundSterlingToggle;
         private System.Windows.Forms.RadioButton rdo_DollarToggle;
-        private System.Windows.Forms.RadioButton rdo_PoundStirlingToggle;
+        private System.Windows.Forms.RadioButton rdo_EuroToggle;
+        private System.Windows.Forms.Label lbl_NewEventError;
     }
 }
