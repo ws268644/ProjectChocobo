@@ -490,6 +490,36 @@ namespace ProjectChocobo
         }
 
 
+        static public List<string> getAllTracks()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_tracks.track_name FROM t_tracks;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+        }
+
 
         static public List<string> getUserLogins()
         {
@@ -579,15 +609,17 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        /*
         static public List<string> getEvent(int raceID)
         {
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
 
-
+            
         }
-
+        */
     }
 
     }

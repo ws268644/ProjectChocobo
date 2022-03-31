@@ -50,11 +50,15 @@ namespace ProjectChocobo
             this.rdo_DollarToggle = new System.Windows.Forms.RadioButton();
             this.rdo_EuroToggle = new System.Windows.Forms.RadioButton();
             this.lbl_NewEventError = new System.Windows.Forms.Label();
+            this.cbo_TrackName = new System.Windows.Forms.ComboBox();
+            this.lbl_TrackName = new System.Windows.Forms.Label();
+            this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
+            this.lbl_SelectSteward = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(13, 415);
+            this.btn_Back.Location = new System.Drawing.Point(13, 460);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(406, 23);
             this.btn_Back.TabIndex = 0;
@@ -98,7 +102,7 @@ namespace ProjectChocobo
             // 
             // dtp_StartDate
             // 
-            this.dtp_StartDate.Location = new System.Drawing.Point(27, 139);
+            this.dtp_StartDate.Location = new System.Drawing.Point(27, 301);
             this.dtp_StartDate.MinDate = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             this.dtp_StartDate.Name = "dtp_StartDate";
             this.dtp_StartDate.Size = new System.Drawing.Size(200, 20);
@@ -108,7 +112,7 @@ namespace ProjectChocobo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 123);
+            this.label3.Location = new System.Drawing.Point(24, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 23;
@@ -116,7 +120,7 @@ namespace ProjectChocobo
             // 
             // dtp_EndDate
             // 
-            this.dtp_EndDate.Location = new System.Drawing.Point(27, 205);
+            this.dtp_EndDate.Location = new System.Drawing.Point(27, 367);
             this.dtp_EndDate.Name = "dtp_EndDate";
             this.dtp_EndDate.Size = new System.Drawing.Size(200, 20);
             this.dtp_EndDate.TabIndex = 24;
@@ -124,7 +128,7 @@ namespace ProjectChocobo
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 189);
+            this.label4.Location = new System.Drawing.Point(24, 351);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 25;
@@ -141,7 +145,7 @@ namespace ProjectChocobo
             // 
             // btn_addEvent
             // 
-            this.btn_addEvent.Location = new System.Drawing.Point(13, 370);
+            this.btn_addEvent.Location = new System.Drawing.Point(13, 415);
             this.btn_addEvent.Name = "btn_addEvent";
             this.btn_addEvent.Size = new System.Drawing.Size(406, 23);
             this.btn_addEvent.TabIndex = 27;
@@ -151,14 +155,14 @@ namespace ProjectChocobo
             // 
             // txt_startTime
             // 
-            this.txt_startTime.Location = new System.Drawing.Point(271, 139);
+            this.txt_startTime.Location = new System.Drawing.Point(271, 301);
             this.txt_startTime.Name = "txt_startTime";
             this.txt_startTime.Size = new System.Drawing.Size(100, 20);
             this.txt_startTime.TabIndex = 32;
             // 
             // txt_endTime
             // 
-            this.txt_endTime.Location = new System.Drawing.Point(271, 205);
+            this.txt_endTime.Location = new System.Drawing.Point(271, 367);
             this.txt_endTime.Name = "txt_endTime";
             this.txt_endTime.Size = new System.Drawing.Size(100, 20);
             this.txt_endTime.TabIndex = 33;
@@ -166,7 +170,7 @@ namespace ProjectChocobo
             // lbl_startTime
             // 
             this.lbl_startTime.AutoSize = true;
-            this.lbl_startTime.Location = new System.Drawing.Point(271, 120);
+            this.lbl_startTime.Location = new System.Drawing.Point(271, 282);
             this.lbl_startTime.Name = "lbl_startTime";
             this.lbl_startTime.Size = new System.Drawing.Size(55, 13);
             this.lbl_startTime.TabIndex = 34;
@@ -175,7 +179,7 @@ namespace ProjectChocobo
             // lbl_finishTime
             // 
             this.lbl_finishTime.AutoSize = true;
-            this.lbl_finishTime.Location = new System.Drawing.Point(271, 189);
+            this.lbl_finishTime.Location = new System.Drawing.Point(271, 351);
             this.lbl_finishTime.Name = "lbl_finishTime";
             this.lbl_finishTime.Size = new System.Drawing.Size(60, 13);
             this.lbl_finishTime.TabIndex = 35;
@@ -183,7 +187,7 @@ namespace ProjectChocobo
             // 
             // txt_TicketPrice
             // 
-            this.txt_TicketPrice.Location = new System.Drawing.Point(27, 264);
+            this.txt_TicketPrice.Location = new System.Drawing.Point(29, 211);
             this.txt_TicketPrice.Name = "txt_TicketPrice";
             this.txt_TicketPrice.Size = new System.Drawing.Size(200, 20);
             this.txt_TicketPrice.TabIndex = 36;
@@ -191,7 +195,7 @@ namespace ProjectChocobo
             // lbl_priceName
             // 
             this.lbl_priceName.AutoSize = true;
-            this.lbl_priceName.Location = new System.Drawing.Point(26, 248);
+            this.lbl_priceName.Location = new System.Drawing.Point(28, 195);
             this.lbl_priceName.Name = "lbl_priceName";
             this.lbl_priceName.Size = new System.Drawing.Size(64, 13);
             this.lbl_priceName.TabIndex = 37;
@@ -201,7 +205,7 @@ namespace ProjectChocobo
             // rdo_PoundSterlingToggle
             // 
             this.rdo_PoundSterlingToggle.AutoSize = true;
-            this.rdo_PoundSterlingToggle.Location = new System.Drawing.Point(271, 264);
+            this.rdo_PoundSterlingToggle.Location = new System.Drawing.Point(273, 211);
             this.rdo_PoundSterlingToggle.Name = "rdo_PoundSterlingToggle";
             this.rdo_PoundSterlingToggle.Size = new System.Drawing.Size(31, 17);
             this.rdo_PoundSterlingToggle.TabIndex = 38;
@@ -212,7 +216,7 @@ namespace ProjectChocobo
             // rdo_DollarToggle
             // 
             this.rdo_DollarToggle.AutoSize = true;
-            this.rdo_DollarToggle.Location = new System.Drawing.Point(271, 286);
+            this.rdo_DollarToggle.Location = new System.Drawing.Point(273, 233);
             this.rdo_DollarToggle.Name = "rdo_DollarToggle";
             this.rdo_DollarToggle.Size = new System.Drawing.Size(31, 17);
             this.rdo_DollarToggle.TabIndex = 39;
@@ -223,7 +227,7 @@ namespace ProjectChocobo
             // rdo_EuroToggle
             // 
             this.rdo_EuroToggle.AutoSize = true;
-            this.rdo_EuroToggle.Location = new System.Drawing.Point(271, 309);
+            this.rdo_EuroToggle.Location = new System.Drawing.Point(273, 256);
             this.rdo_EuroToggle.Name = "rdo_EuroToggle";
             this.rdo_EuroToggle.Size = new System.Drawing.Size(31, 17);
             this.rdo_EuroToggle.TabIndex = 40;
@@ -235,18 +239,56 @@ namespace ProjectChocobo
             // 
             this.lbl_NewEventError.AutoSize = true;
             this.lbl_NewEventError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NewEventError.Location = new System.Drawing.Point(10, 338);
+            this.lbl_NewEventError.Location = new System.Drawing.Point(422, 441);
             this.lbl_NewEventError.Name = "lbl_NewEventError";
             this.lbl_NewEventError.Size = new System.Drawing.Size(88, 16);
             this.lbl_NewEventError.TabIndex = 41;
             this.lbl_NewEventError.Text = "WARNING: ";
             this.lbl_NewEventError.Visible = false;
             // 
+            // cbo_TrackName
+            // 
+            this.cbo_TrackName.FormattingEnabled = true;
+            this.cbo_TrackName.Location = new System.Drawing.Point(27, 124);
+            this.cbo_TrackName.Name = "cbo_TrackName";
+            this.cbo_TrackName.Size = new System.Drawing.Size(344, 21);
+            this.cbo_TrackName.TabIndex = 42;
+            // 
+            // lbl_TrackName
+            // 
+            this.lbl_TrackName.AutoSize = true;
+            this.lbl_TrackName.Location = new System.Drawing.Point(26, 108);
+            this.lbl_TrackName.Name = "lbl_TrackName";
+            this.lbl_TrackName.Size = new System.Drawing.Size(66, 13);
+            this.lbl_TrackName.TabIndex = 43;
+            this.lbl_TrackName.Text = "Track Name";
+            // 
+            // cbo_selectSteward
+            // 
+            this.cbo_selectSteward.FormattingEnabled = true;
+            this.cbo_selectSteward.Location = new System.Drawing.Point(27, 165);
+            this.cbo_selectSteward.Name = "cbo_selectSteward";
+            this.cbo_selectSteward.Size = new System.Drawing.Size(344, 21);
+            this.cbo_selectSteward.TabIndex = 44;
+            // 
+            // lbl_SelectSteward
+            // 
+            this.lbl_SelectSteward.AutoSize = true;
+            this.lbl_SelectSteward.Location = new System.Drawing.Point(26, 149);
+            this.lbl_SelectSteward.Name = "lbl_SelectSteward";
+            this.lbl_SelectSteward.Size = new System.Drawing.Size(79, 13);
+            this.lbl_SelectSteward.TabIndex = 45;
+            this.lbl_SelectSteward.Text = "Select Steward";
+            // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 510);
+            this.Controls.Add(this.lbl_SelectSteward);
+            this.Controls.Add(this.cbo_selectSteward);
+            this.Controls.Add(this.lbl_TrackName);
+            this.Controls.Add(this.cbo_TrackName);
             this.Controls.Add(this.lbl_NewEventError);
             this.Controls.Add(this.rdo_EuroToggle);
             this.Controls.Add(this.rdo_DollarToggle);
@@ -299,5 +341,9 @@ namespace ProjectChocobo
         private System.Windows.Forms.RadioButton rdo_DollarToggle;
         private System.Windows.Forms.RadioButton rdo_EuroToggle;
         private System.Windows.Forms.Label lbl_NewEventError;
+        private System.Windows.Forms.ComboBox cbo_TrackName;
+        private System.Windows.Forms.Label lbl_TrackName;
+        private System.Windows.Forms.ComboBox cbo_selectSteward;
+        private System.Windows.Forms.Label lbl_SelectSteward;
     }
 }
