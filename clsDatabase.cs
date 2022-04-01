@@ -645,11 +645,12 @@ namespace ProjectChocobo
 
 
 
-        static public DataTable getEvent(int raceID)
+        static public DataTable getEvent(string raceName)
         {
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand getRace = new MySqlCommand(strCommand, cnn);
+            getRace.Parameters.AddWithValue("raceName", raceName);
 
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = getRace;
