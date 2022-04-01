@@ -81,6 +81,9 @@ namespace ProjectChocobo
             var vCheckCurrency = bPound == false && bDollar == false && bEuro == false; // Check if no currency has been selected
             var vCheckTicketPrice = txt_TicketPrice.Text == null; // Check if ticket price has been entered
 
+
+
+            // There NEEDS to be some way to combine all of this into a switch statement.
             // Check if name is given
             if (txt_EventName == null)
             {

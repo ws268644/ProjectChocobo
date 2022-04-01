@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEvent));
             this.btn_Back = new System.Windows.Forms.Button();
             this.txt_EventName = new System.Windows.Forms.TextBox();
             this.txt_eventDescription = new System.Windows.Forms.TextBox();
@@ -54,6 +55,8 @@ namespace ProjectChocobo
             this.lbl_TrackName = new System.Windows.Forms.Label();
             this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
             this.lbl_SelectSteward = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -70,7 +73,7 @@ namespace ProjectChocobo
             // 
             this.txt_EventName.Location = new System.Drawing.Point(27, 80);
             this.txt_EventName.Name = "txt_EventName";
-            this.txt_EventName.Size = new System.Drawing.Size(344, 20);
+            this.txt_EventName.Size = new System.Drawing.Size(392, 20);
             this.txt_EventName.TabIndex = 1;
             // 
             // txt_eventDescription
@@ -251,7 +254,7 @@ namespace ProjectChocobo
             this.cbo_TrackName.FormattingEnabled = true;
             this.cbo_TrackName.Location = new System.Drawing.Point(27, 124);
             this.cbo_TrackName.Name = "cbo_TrackName";
-            this.cbo_TrackName.Size = new System.Drawing.Size(344, 21);
+            this.cbo_TrackName.Size = new System.Drawing.Size(392, 21);
             this.cbo_TrackName.TabIndex = 42;
             // 
             // lbl_TrackName
@@ -268,7 +271,7 @@ namespace ProjectChocobo
             this.cbo_selectSteward.FormattingEnabled = true;
             this.cbo_selectSteward.Location = new System.Drawing.Point(27, 165);
             this.cbo_selectSteward.Name = "cbo_selectSteward";
-            this.cbo_selectSteward.Size = new System.Drawing.Size(344, 21);
+            this.cbo_selectSteward.Size = new System.Drawing.Size(392, 21);
             this.cbo_selectSteward.TabIndex = 44;
             // 
             // lbl_SelectSteward
@@ -279,6 +282,17 @@ namespace ProjectChocobo
             this.lbl_SelectSteward.Size = new System.Drawing.Size(79, 13);
             this.lbl_SelectSteward.TabIndex = 45;
             this.lbl_SelectSteward.Text = "Select Steward";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(1, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
             // 
             // NewEvent
             // 
@@ -310,9 +324,11 @@ namespace ProjectChocobo
             this.Controls.Add(this.txt_eventDescription);
             this.Controls.Add(this.txt_EventName);
             this.Controls.Add(this.btn_Back);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "NewEvent";
             this.Text = "NewEvent";
             this.Load += new System.EventHandler(this.NewEvent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +361,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_TrackName;
         private System.Windows.Forms.ComboBox cbo_selectSteward;
         private System.Windows.Forms.Label lbl_SelectSteward;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
