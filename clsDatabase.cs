@@ -610,7 +610,7 @@ namespace ProjectChocobo
             }
         }
 
-        /*
+        
         static public List<string> getEvent(int raceID)
         {
             string strCommand = "getRace";
@@ -619,7 +619,7 @@ namespace ProjectChocobo
 
             
         }
-        */
+        
     }
 
     }
