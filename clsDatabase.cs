@@ -583,13 +583,14 @@ namespace ProjectChocobo
             return uids;
 
         }
-        static public void createNewRace(string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc)
+        static public void createNewRace(string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc)
         {
             string strCommand = "addRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand addRace = new MySqlCommand(strCommand, cnn);
 
             addRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            addRace.Parameters.AddWithValue("@raceName", strRaceName);
             addRace.Parameters.AddWithValue("@trackName", strTrackName);
             addRace.Parameters.AddWithValue("@stewardName", strStewardName);
             addRace.Parameters.AddWithValue("@entryFee", intEntryFee);
