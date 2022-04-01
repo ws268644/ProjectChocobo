@@ -579,13 +579,27 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
-        static public List<string> getEvent(int raceID)
+        static public DataTable getEvent(int raceID)
         {
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
+            MySqlCommand getRace = new MySqlCommand(strCommand, cnn);
 
-
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = getRace;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
         }
 
     }
