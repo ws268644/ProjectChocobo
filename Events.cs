@@ -45,5 +45,13 @@ namespace ProjectChocobo
             mainMenu.ShowDialog();
             this.Close();
         }
+
+        private void btn_UpdateEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UpdateEvent updateEventPage = new UpdateEvent();
+            updateEventPage.ShowDialog();
+            this.Close();
+        }
     }
 }

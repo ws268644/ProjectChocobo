@@ -160,6 +160,12 @@
     <Compile Include="Tracks.Designer.cs">
       <DependentUpon>Tracks.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateEvent.Designer.cs">
+      <DependentUpon>UpdateEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tracks.resx">
       <DependentUpon>Tracks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateEvent.resx">
+      <DependentUpon>UpdateEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewProfile.resx">
       <DependentUpon>viewProfile.cs</DependentUpon>

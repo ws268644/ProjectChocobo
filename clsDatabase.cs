@@ -521,6 +521,37 @@ namespace ProjectChocobo
         }
 
 
+        static public List<string> getAllRaces()
+        {
+            MySqlConnection cnn = new MySqlConnection(conString);
+            List<string> uids = new List<string>();
+            string myCom = "SELECT t_races.race_name FROM t_races;";
+            MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
+
+            try
+            {
+                cnn.Open();
+                MySqlDataReader rdr = myCommand.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    uids.Add(rdr.GetString(0));
+
+
+                }
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return uids;
+        }
+
+
         static public List<string> getUserLogins()
         {
             MySqlConnection cnn = new MySqlConnection(conString);
@@ -610,16 +641,33 @@ namespace ProjectChocobo
             }
         }
 
-        
-        static public List<string> getEvent(int raceID)
+
+
+
+
+        static public DataTable getEvent(int raceID)
         {
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand updateRace = new MySqlCommand(strCommand, cnn);
+            MySqlCommand getRace = new MySqlCommand(strCommand, cnn);
 
-            
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = getRace;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
         }
-        
+
     }
 
     }

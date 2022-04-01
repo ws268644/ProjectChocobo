@@ -98,6 +98,7 @@ namespace ProjectChocobo
             this.btn_UpdateEvent.TabIndex = 29;
             this.btn_UpdateEvent.Text = "Update Event";
             this.btn_UpdateEvent.UseVisualStyleBackColor = true;
+            this.btn_UpdateEvent.Click += new System.EventHandler(this.btn_UpdateEvent_Click);
             // 
             // Events
             // 
