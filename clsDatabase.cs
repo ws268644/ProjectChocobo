@@ -610,7 +610,7 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
-        static public void updateEvent(int raceID, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
+        static public void updateEvent(int raceID, string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
         {// REMEMBER!!!!!!!!!!!!!!!!!!!
          // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
             string strCommand = "updateRace";
@@ -619,6 +619,7 @@ namespace ProjectChocobo
 
             updateRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             updateRace.Parameters.AddWithValue("@raceID", raceID);
+            updateRace.Parameters.AddWithValue("@raceName", strRaceName);
             updateRace.Parameters.AddWithValue("@trackName", strTrackName);
             updateRace.Parameters.AddWithValue("@stewardName", strStewardName);
             updateRace.Parameters.AddWithValue("@entryFee", intEntryFee);
