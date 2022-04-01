@@ -154,6 +154,12 @@
     <Compile Include="StewardMenu.Designer.cs">
       <DependentUpon>StewardMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="testingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testingForm.Designer.cs">
+      <DependentUpon>testingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tracks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StewardMenu.resx">
       <DependentUpon>StewardMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testingForm.resx">
+      <DependentUpon>testingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tracks.resx">
       <DependentUpon>Tracks.cs</DependentUpon>
