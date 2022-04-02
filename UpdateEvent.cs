@@ -28,7 +28,7 @@ namespace ProjectChocobo
 
         private void UpdateEvent_Load(object sender, EventArgs e)
         {
-            cbo_EventSelect.Items.Add = getall
+            
         }
     }
 }

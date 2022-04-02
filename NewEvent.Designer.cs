@@ -41,8 +41,6 @@ namespace ProjectChocobo
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_addEvent = new System.Windows.Forms.Button();
-            this.txt_startTime = new System.Windows.Forms.TextBox();
-            this.txt_endTime = new System.Windows.Forms.TextBox();
             this.lbl_startTime = new System.Windows.Forms.Label();
             this.lbl_finishTime = new System.Windows.Forms.Label();
             this.txt_TicketPrice = new System.Windows.Forms.TextBox();
@@ -56,14 +54,16 @@ namespace ProjectChocobo
             this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
             this.lbl_SelectSteward = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtp_StartTime = new System.Windows.Forms.DateTimePicker();
+            this.dtp_FinishTime = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(13, 460);
+            this.btn_Back.Location = new System.Drawing.Point(27, 460);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(406, 23);
+            this.btn_Back.Size = new System.Drawing.Size(392, 23);
             this.btn_Back.TabIndex = 0;
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = true;
@@ -148,27 +148,13 @@ namespace ProjectChocobo
             // 
             // btn_addEvent
             // 
-            this.btn_addEvent.Location = new System.Drawing.Point(13, 415);
+            this.btn_addEvent.Location = new System.Drawing.Point(27, 415);
             this.btn_addEvent.Name = "btn_addEvent";
-            this.btn_addEvent.Size = new System.Drawing.Size(406, 23);
+            this.btn_addEvent.Size = new System.Drawing.Size(392, 23);
             this.btn_addEvent.TabIndex = 27;
             this.btn_addEvent.Text = "Add Event";
             this.btn_addEvent.UseVisualStyleBackColor = true;
             this.btn_addEvent.Click += new System.EventHandler(this.btn_addEvent_Click);
-            // 
-            // txt_startTime
-            // 
-            this.txt_startTime.Location = new System.Drawing.Point(271, 301);
-            this.txt_startTime.Name = "txt_startTime";
-            this.txt_startTime.Size = new System.Drawing.Size(100, 20);
-            this.txt_startTime.TabIndex = 32;
-            // 
-            // txt_endTime
-            // 
-            this.txt_endTime.Location = new System.Drawing.Point(271, 367);
-            this.txt_endTime.Name = "txt_endTime";
-            this.txt_endTime.Size = new System.Drawing.Size(100, 20);
-            this.txt_endTime.TabIndex = 33;
             // 
             // lbl_startTime
             // 
@@ -256,6 +242,7 @@ namespace ProjectChocobo
             this.cbo_TrackName.Name = "cbo_TrackName";
             this.cbo_TrackName.Size = new System.Drawing.Size(392, 21);
             this.cbo_TrackName.TabIndex = 42;
+            this.cbo_TrackName.SelectedIndexChanged += new System.EventHandler(this.cbo_TrackName_SelectedIndexChanged);
             // 
             // lbl_TrackName
             // 
@@ -294,11 +281,34 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
+            // dtp_StartTime
+            // 
+            this.dtp_StartTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtp_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_StartTime.Location = new System.Drawing.Point(271, 301);
+            this.dtp_StartTime.MinDate = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
+            this.dtp_StartTime.Name = "dtp_StartTime";
+            this.dtp_StartTime.ShowUpDown = true;
+            this.dtp_StartTime.Size = new System.Drawing.Size(100, 20);
+            this.dtp_StartTime.TabIndex = 47;
+            this.dtp_StartTime.Value = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
+            // 
+            // dtp_FinishTime
+            // 
+            this.dtp_FinishTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtp_FinishTime.Location = new System.Drawing.Point(271, 367);
+            this.dtp_FinishTime.Name = "dtp_FinishTime";
+            this.dtp_FinishTime.ShowUpDown = true;
+            this.dtp_FinishTime.Size = new System.Drawing.Size(100, 20);
+            this.dtp_FinishTime.TabIndex = 48;
+            // 
             // NewEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 510);
+            this.Controls.Add(this.dtp_FinishTime);
+            this.Controls.Add(this.dtp_StartTime);
             this.Controls.Add(this.lbl_SelectSteward);
             this.Controls.Add(this.cbo_selectSteward);
             this.Controls.Add(this.lbl_TrackName);
@@ -311,8 +321,6 @@ namespace ProjectChocobo
             this.Controls.Add(this.txt_TicketPrice);
             this.Controls.Add(this.lbl_finishTime);
             this.Controls.Add(this.lbl_startTime);
-            this.Controls.Add(this.txt_endTime);
-            this.Controls.Add(this.txt_startTime);
             this.Controls.Add(this.btn_addEvent);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -347,8 +355,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_addEvent;
-        private System.Windows.Forms.TextBox txt_startTime;
-        private System.Windows.Forms.TextBox txt_endTime;
         private System.Windows.Forms.Label lbl_startTime;
         private System.Windows.Forms.Label lbl_finishTime;
         private System.Windows.Forms.TextBox txt_TicketPrice;
@@ -362,5 +368,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.ComboBox cbo_selectSteward;
         private System.Windows.Forms.Label lbl_SelectSteward;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtp_StartTime;
+        private System.Windows.Forms.DateTimePicker dtp_FinishTime;
     }
 }

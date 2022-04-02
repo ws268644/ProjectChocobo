@@ -32,15 +32,10 @@ namespace ProjectChocobo
         private void AllEvents_Load(object sender, EventArgs e)
         {
 
-
-            
-
-            
-
-
-
-
-
+            foreach (string sRace in getAllRaces())
+            {
+                cbo_selectedEvent.Items.Add(sRace);
+            }
 
         }
 
@@ -68,6 +63,10 @@ namespace ProjectChocobo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedEvent = cbo_selectedEvent.Text;
+
+            List<string> sEvents = getAllRaces();
+
+
 
 
 

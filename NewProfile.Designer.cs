@@ -132,9 +132,9 @@ namespace ProjectChocobo
             // 
             // btn_AddRacer
             // 
-            this.btn_AddRacer.Location = new System.Drawing.Point(555, 415);
+            this.btn_AddRacer.Location = new System.Drawing.Point(523, 415);
             this.btn_AddRacer.Name = "btn_AddRacer";
-            this.btn_AddRacer.Size = new System.Drawing.Size(255, 23);
+            this.btn_AddRacer.Size = new System.Drawing.Size(216, 23);
             this.btn_AddRacer.TabIndex = 14;
             this.btn_AddRacer.Text = "Add User";
             this.btn_AddRacer.UseVisualStyleBackColor = true;
@@ -142,9 +142,9 @@ namespace ProjectChocobo
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(25, 415);
+            this.btn_Back.Location = new System.Drawing.Point(12, 415);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.Size = new System.Drawing.Size(196, 23);
             this.btn_Back.TabIndex = 15;
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = true;
@@ -181,7 +181,7 @@ namespace ProjectChocobo
             // cbo_userRole
             // 
             this.cbo_userRole.FormattingEnabled = true;
-            this.cbo_userRole.Location = new System.Drawing.Point(262, 98);
+            this.cbo_userRole.Location = new System.Drawing.Point(520, 341);
             this.cbo_userRole.Name = "cbo_userRole";
             this.cbo_userRole.Size = new System.Drawing.Size(219, 21);
             this.cbo_userRole.TabIndex = 23;
@@ -190,7 +190,7 @@ namespace ProjectChocobo
             // lbl_roleAssign
             // 
             this.lbl_roleAssign.AutoSize = true;
-            this.lbl_roleAssign.Location = new System.Drawing.Point(259, 82);
+            this.lbl_roleAssign.Location = new System.Drawing.Point(517, 325);
             this.lbl_roleAssign.Name = "lbl_roleAssign";
             this.lbl_roleAssign.Size = new System.Drawing.Size(29, 13);
             this.lbl_roleAssign.TabIndex = 25;
@@ -199,7 +199,7 @@ namespace ProjectChocobo
             // lbl_vehicleLabel
             // 
             this.lbl_vehicleLabel.AutoSize = true;
-            this.lbl_vehicleLabel.Location = new System.Drawing.Point(259, 121);
+            this.lbl_vehicleLabel.Location = new System.Drawing.Point(517, 364);
             this.lbl_vehicleLabel.Name = "lbl_vehicleLabel";
             this.lbl_vehicleLabel.Size = new System.Drawing.Size(42, 13);
             this.lbl_vehicleLabel.TabIndex = 27;
@@ -208,7 +208,7 @@ namespace ProjectChocobo
             // cbo_userVehicle
             // 
             this.cbo_userVehicle.FormattingEnabled = true;
-            this.cbo_userVehicle.Location = new System.Drawing.Point(262, 137);
+            this.cbo_userVehicle.Location = new System.Drawing.Point(520, 380);
             this.cbo_userVehicle.Name = "cbo_userVehicle";
             this.cbo_userVehicle.Size = new System.Drawing.Size(219, 21);
             this.cbo_userVehicle.TabIndex = 26;
@@ -216,14 +216,14 @@ namespace ProjectChocobo
             // 
             // pnlImageUpload
             // 
-            this.pnlImageUpload.Location = new System.Drawing.Point(555, 98);
+            this.pnlImageUpload.Location = new System.Drawing.Point(522, 98);
             this.pnlImageUpload.Name = "pnlImageUpload";
             this.pnlImageUpload.Size = new System.Drawing.Size(216, 208);
             this.pnlImageUpload.TabIndex = 28;
             // 
             // btnUploadImage
             // 
-            this.btnUploadImage.Location = new System.Drawing.Point(605, 312);
+            this.btnUploadImage.Location = new System.Drawing.Point(573, 312);
             this.btnUploadImage.Name = "btnUploadImage";
             this.btnUploadImage.Size = new System.Drawing.Size(109, 23);
             this.btnUploadImage.TabIndex = 0;
@@ -235,7 +235,7 @@ namespace ProjectChocobo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.ClientSize = new System.Drawing.Size(797, 450);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.pnlImageUpload);
             this.Controls.Add(this.lbl_vehicleLabel);

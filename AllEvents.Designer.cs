@@ -33,9 +33,9 @@ namespace ProjectChocobo
             this.btn_back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.spc_AllEvents = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
             this.lbl_selectedEventName = new System.Windows.Forms.Label();
+            this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
             this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.SuspendLayout();
@@ -46,7 +46,7 @@ namespace ProjectChocobo
             // 
             this.btn_back.Location = new System.Drawing.Point(13, 415);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.Size = new System.Drawing.Size(253, 23);
             this.btn_back.TabIndex = 0;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -75,16 +75,14 @@ namespace ProjectChocobo
             this.spc_AllEvents.SplitterDistance = 258;
             this.spc_AllEvents.TabIndex = 18;
             // 
-            // pictureBox1
+            // lbl_selectedEventName
             // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.lbl_selectedEventName.AutoSize = true;
+            this.lbl_selectedEventName.Location = new System.Drawing.Point(4, 10);
+            this.lbl_selectedEventName.Name = "lbl_selectedEventName";
+            this.lbl_selectedEventName.Size = new System.Drawing.Size(80, 13);
+            this.lbl_selectedEventName.TabIndex = 1;
+            this.lbl_selectedEventName.Text = "Selected Event";
             // 
             // cbo_selectedEvent
             // 
@@ -95,14 +93,16 @@ namespace ProjectChocobo
             this.cbo_selectedEvent.TabIndex = 0;
             this.cbo_selectedEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // lbl_selectedEventName
+            // pictureBox1
             // 
-            this.lbl_selectedEventName.AutoSize = true;
-            this.lbl_selectedEventName.Location = new System.Drawing.Point(4, 10);
-            this.lbl_selectedEventName.Name = "lbl_selectedEventName";
-            this.lbl_selectedEventName.Size = new System.Drawing.Size(80, 13);
-            this.lbl_selectedEventName.TabIndex = 1;
-            this.lbl_selectedEventName.Text = "Selected Event";
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // AllEvents
             // 

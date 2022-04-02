@@ -42,7 +42,7 @@ namespace ProjectChocobo
             // 
             this.btn_newProfile.Location = new System.Drawing.Point(12, 74);
             this.btn_newProfile.Name = "btn_newProfile";
-            this.btn_newProfile.Size = new System.Drawing.Size(271, 88);
+            this.btn_newProfile.Size = new System.Drawing.Size(381, 158);
             this.btn_newProfile.TabIndex = 8;
             this.btn_newProfile.Text = "New Profile";
             this.btn_newProfile.UseVisualStyleBackColor = true;
@@ -50,9 +50,9 @@ namespace ProjectChocobo
             // 
             // btn_seeAllProfiles
             // 
-            this.btn_seeAllProfiles.Location = new System.Drawing.Point(517, 74);
+            this.btn_seeAllProfiles.Location = new System.Drawing.Point(399, 74);
             this.btn_seeAllProfiles.Name = "btn_seeAllProfiles";
-            this.btn_seeAllProfiles.Size = new System.Drawing.Size(271, 88);
+            this.btn_seeAllProfiles.Size = new System.Drawing.Size(389, 158);
             this.btn_seeAllProfiles.TabIndex = 9;
             this.btn_seeAllProfiles.Text = "See All Profiles";
             this.btn_seeAllProfiles.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@ namespace ProjectChocobo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 450);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_seeAllProfiles);
