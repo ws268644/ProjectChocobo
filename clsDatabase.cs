@@ -583,14 +583,14 @@ namespace ProjectChocobo
             return uids;
 
         }
-        static public void createNewRace(string sEventName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc)
+        static public void createNewRace(string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc)
         {
             string strCommand = "addRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand addRace = new MySqlCommand(strCommand, cnn);
 
             addRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            addRace.Parameters.AddWithValue("@eventName", sEventName);
+            addRace.Parameters.AddWithValue("@raceName", strRaceName);
             addRace.Parameters.AddWithValue("@trackName", strTrackName);
             addRace.Parameters.AddWithValue("@stewardName", strStewardName);
             addRace.Parameters.AddWithValue("@entryFee", intEntryFee);
@@ -611,7 +611,7 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
-        static public void updateEvent(int raceID, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
+        static public void updateEvent(int raceID, string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
         {// REMEMBER!!!!!!!!!!!!!!!!!!!
          // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
             string strCommand = "updateRace";
@@ -620,6 +620,7 @@ namespace ProjectChocobo
 
             updateRace.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             updateRace.Parameters.AddWithValue("@raceID", raceID);
+            updateRace.Parameters.AddWithValue("@raceName", strRaceName);
             updateRace.Parameters.AddWithValue("@trackName", strTrackName);
             updateRace.Parameters.AddWithValue("@stewardName", strStewardName);
             updateRace.Parameters.AddWithValue("@entryFee", intEntryFee);
@@ -646,11 +647,12 @@ namespace ProjectChocobo
 
 
 
-        static public DataTable getEvent(int raceID)
+        static public DataTable getEvent(string raceName)
         {
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand getRace = new MySqlCommand(strCommand, cnn);
+            getRace.Parameters.AddWithValue("raceName", raceName);
 
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = getRace;
