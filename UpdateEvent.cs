@@ -28,6 +28,21 @@ namespace ProjectChocobo
 
         private void UpdateEvent_Load(object sender, EventArgs e)
         {
+            foreach(string sEvent in getAllRaces())
+            {
+                cbo_ExistingEventName.Items.Add(sEvent);
+            }
+
+
+
+        }
+
+        private void cbo_ExistingEventName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sSelectedEvent = this.Text;
+            DataTable dtSelectedEvent = getEvent(sSelectedEvent);
+
+            //txt_eventDescription.Text = dtSelectedEvent.
             
         }
     }
