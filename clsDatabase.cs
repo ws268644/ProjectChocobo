@@ -41,7 +41,25 @@ namespace ProjectChocobo
             }
             return false;
         }
-
+        static public int checkRole(string strUserName) {
+            int intCheck = 0;
+            string strCommand = "checkAdmin";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
+            checkRole.Parameters.AddWithValue("userName", strUserName);
+            try
+            {
+                cnn.Open();
+                intCheck = (int)checkRole.ExecuteScalar();
+                cnn.Close();
+            }
+             
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString()) ;
+            }
+            return intCheck;
+        }
 
         static public void logout()
         {
