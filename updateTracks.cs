@@ -33,5 +33,21 @@ namespace ProjectChocobo
                 cboTrackSelect.Items.Add(sTracks);
             }
         }
+
+        private void cboTrackSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sSelectedEvent = this.Text;
+            DataTable dtSelectedEvent = getEvent(sSelectedEvent);
+
+            // Populate the fields with the selected event
+            foreach (DataRow dr in dtSelectedEvent.AsEnumerable())
+            {
+                txtTrackName.Text = dr.ItemArray[0].ToString();
+                nudLapCount.Text = dr.ItemArray[1].ToString();
+                cboTrackType.Text = dr.ItemArray[2].ToString();
+                nudTrackCapacity.Text = dr.ItemArray[3].ToString();
+                cboDriveTrain.Text = dr.ItemArray[4].ToString();
+            }
+        }
     }
 }
