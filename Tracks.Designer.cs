@@ -87,6 +87,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.pictureBox1);
             this.Name = "Tracks";
             this.Text = "Tracks";
+            this.Load += new System.EventHandler(this.Tracks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -24,5 +24,10 @@ namespace ProjectChocobo
             homePage.ShowDialog();
             this.Close();
         }
+
+        private void Tracks_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
