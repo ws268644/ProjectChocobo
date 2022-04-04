@@ -555,8 +555,8 @@ namespace ProjectChocobo
             MySqlCommand addRacer = new MySqlCommand(strCommand, cnn);
 
             addRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            addRacer.Parameters.AddWithValue("@race_id", raceName);
-            addRacer.Parameters.AddWithValue("@racer_id", racerName);
+            addRacer.Parameters.AddWithValue("@raceName", raceName);
+            addRacer.Parameters.AddWithValue("@racerUser", racerName);
             addRacer.Parameters.AddWithValue("@startPosition", startPosition);
 
             try
