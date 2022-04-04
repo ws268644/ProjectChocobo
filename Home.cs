@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -20,11 +21,17 @@ namespace ProjectChocobo
 
         private void btn_profiles_Click(object sender, EventArgs e)
         {
+
+            profiles newProfiles = new profiles();
+
+            nextPage(this, newProfiles);
+
+            /*
             this.Hide();
             profiles profiles = new profiles();
             profiles.ShowDialog();
             this.Close();
-
+            */
 
         }
 

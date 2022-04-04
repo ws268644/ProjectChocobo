@@ -104,6 +104,8 @@
     <Compile Include="AllProfiles.Designer.cs">
       <DependentUpon>AllProfiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="clsUser.cs" />
+    <Compile Include="clsUtility.cs" />
     <Compile Include="Events.cs">
       <SubType>Form</SubType>
     </Compile>

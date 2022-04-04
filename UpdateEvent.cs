@@ -40,21 +40,21 @@ namespace ProjectChocobo
         private void cbo_ExistingEventName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string sSelectedEvent = this.Text;
+            string sSelectedEvent = cbo_ExistingEventName.SelectedItem.ToString();
             DataTable dtSelectedEvent = getEvent(sSelectedEvent);
 
             // Populate the fields with the selected event
-            foreach (DataRow dr in dtSelectedEvent.AsEnumerable())
+            foreach (DataRow dr in dtSelectedEvent.Rows)
             {
                 txt_NewEventName.Text = dr.ItemArray[0].ToString();
                 cbo_TrackName.Text = dr.ItemArray[1].ToString();
                 cbo_selectSteward.Text = dr.ItemArray[2].ToString();
                 txt_TicketPrice.Text = dr.ItemArray[3].ToString();
-                dtp_StartDate.Text = dr.ItemArray[4].ToString();
-                dtp_StartTime.Text = dr.ItemArray[5].ToString();
-                dtp_EndDate.Text = dr.ItemArray[6].ToString();
+                dtp_StartDate.Value = Convert.ToDateTime(dr.ItemArray[8].ToString());
+                dtp_StartTime.Value = Convert.ToDateTime(dr.ItemArray[6].ToString());
+                dtp_EndDate.Text = dr.ItemArray[9].ToString();
                 dtp_FinishTime.Text = dr.ItemArray[7].ToString();
-                txt_eventDescription.Text = dr.ItemArray[8].ToString();
+                txt_eventDescription.Text = dr.ItemArray[10].ToString();
 
             }
         }
