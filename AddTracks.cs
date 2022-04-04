@@ -34,7 +34,14 @@ namespace ProjectChocobo
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+            string strTrackName = txtTrackName.Text;
+            int iLaps = (int) nudLapCount.Value;
+            string strTrackType = cboTrackType.SelectedItem.ToString();
+            int  iTrackCapacity = (int) nudTrackCapacity.Value;
+            string strDriveTrain = cboDriveTrain.Text;
+            int adminID = 0;
+
+            addTrack(strTrackName, iLaps, strTrackType, iTrackCapacity, strDriveTrain);
         }
     }
 }

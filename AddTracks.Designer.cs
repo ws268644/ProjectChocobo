@@ -109,7 +109,7 @@ namespace ProjectChocobo
             // 
             this.nudLapCount.Location = new System.Drawing.Point(16, 130);
             this.nudLapCount.Name = "nudLapCount";
-            this.nudLapCount.Size = new System.Drawing.Size(35, 20);
+            this.nudLapCount.Size = new System.Drawing.Size(100, 20);
             this.nudLapCount.TabIndex = 33;
             // 
             // cboTrackType
