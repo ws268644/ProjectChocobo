@@ -17,17 +17,28 @@ namespace ProjectChocobo
             InitializeComponent();
         }
 
+        private void btn_addTracks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddTracks addtracksPage = new AddTracks();
+            addtracksPage.ShowDialog();
+            this.Close();
+        }
+
+        private void btnUpdateTracks_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            updateTracks updatetracksPage = new updateTracks();
+            updatetracksPage.ShowDialog();
+            this.Close();
+        }
+
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
             Home homePage = new Home();
             homePage.ShowDialog();
             this.Close();
-        }
-
-        private void Tracks_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

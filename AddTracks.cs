@@ -11,25 +11,25 @@ using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
-    public partial class frmAdmin : Form
+    public partial class AddTracks : Form
     {
-        public frmAdmin()
+        public AddTracks()
         {
             InitializeComponent();
         }
 
-        private void btn_quit_Click(object sender, EventArgs e)
+        private void btn_Back_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Home homePage = new Home();
+            homePage.ShowDialog();
             this.Close();
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void Tracks_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            login loginPage = new login();
-            loginPage.ShowDialog();
-            logout();
-            this.Close();
+            
+
         }
     }
 }
