@@ -50,7 +50,7 @@ namespace ProjectChocobo
         {
             string eventInfo = "";
 
-            clsDatabase.getAllUsers();
+            
             
             
 
@@ -73,6 +73,11 @@ namespace ProjectChocobo
         }
 
         private void spc_AllEvents_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void spc_AllEvents_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

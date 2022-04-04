@@ -35,7 +35,6 @@ namespace ProjectChocobo
             this.spc_AllEvents = new System.Windows.Forms.SplitContainer();
             this.lbl_selectedEventName = new System.Windows.Forms.Label();
             this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_UserNameHeadline = new System.Windows.Forms.Label();
             this.lbl_UserVehicle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,12 +48,13 @@ namespace ProjectChocobo
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
             this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.Panel2.SuspendLayout();
             this.spc_AllEvents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbl_WinsLosses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_back
@@ -86,6 +86,7 @@ namespace ProjectChocobo
             // 
             this.spc_AllEvents.Panel1.Controls.Add(this.lbl_selectedEventName);
             this.spc_AllEvents.Panel1.Controls.Add(this.cbo_selectedEvent);
+            this.spc_AllEvents.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.spc_AllEvents_Panel1_Paint);
             // 
             // spc_AllEvents.Panel2
             // 
@@ -122,17 +123,6 @@ namespace ProjectChocobo
             this.cbo_selectedEvent.Size = new System.Drawing.Size(251, 21);
             this.cbo_selectedEvent.TabIndex = 0;
             this.cbo_selectedEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
             // 
             // lbl_UserNameHeadline
             // 
@@ -258,6 +248,17 @@ namespace ProjectChocobo
             this.label2.TabIndex = 12;
             this.label2.Text = "Full Name: ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // AllEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,9 +277,9 @@ namespace ProjectChocobo
             this.spc_AllEvents.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).EndInit();
             this.spc_AllEvents.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tbl_WinsLosses.ResumeLayout(false);
             this.tbl_WinsLosses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

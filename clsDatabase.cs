@@ -182,7 +182,8 @@ namespace ProjectChocobo
             }
 }
 
-        static public DataTable getAllUsers() {
+        static public DataTable getAllUsers(string sUser) 
+        {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
             comGetUsers.CommandType = System.Data.CommandType.StoredProcedure;
@@ -200,7 +201,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
+            return dt;
             
         }
         static public DataTable getAllRacers()

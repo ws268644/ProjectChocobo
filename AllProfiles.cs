@@ -58,11 +58,14 @@ namespace ProjectChocobo
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string sSelectedRace = cbo_selectRacers.Text;
-            
-           foreach (string sRacerDetail in getRacerNames())
-            {
+            string sSelectedProfile = cbo_selectRacers.SelectedItem.ToString();
 
+
+            DataTable dtSelectedProfile = getAllUsers(sSelectedProfile);
+
+            foreach (string sRacerDetail in dtSelectedProfile.Rows)
+            {
+                
             }
 
 

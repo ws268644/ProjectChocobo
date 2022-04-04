@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsEvent;
 
 namespace ProjectChocobo
 {
@@ -42,6 +43,11 @@ namespace ProjectChocobo
 
             string sSelectedEvent = cbo_ExistingEventName.SelectedItem.ToString();
             DataTable dtSelectedEvent = getEvent(sSelectedEvent);
+
+
+
+            
+
 
             // Populate the fields with the selected event
             foreach (DataRow dr in dtSelectedEvent.Rows)
