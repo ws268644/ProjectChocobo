@@ -60,7 +60,10 @@ namespace ProjectChocobo
         {
             string sSelectedRace = cbo_selectRacers.Text;
             
+           foreach (string sRacerDetail in getRacerNames())
+            {
 
+            }
 
 
 

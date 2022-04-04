@@ -54,10 +54,11 @@ namespace ProjectChocobo
             this.dtp_StartDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_eventDescription = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.txt_NewEventName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_ExistingEventName = new System.Windows.Forms.ComboBox();
+            this.ckb_RaceCompleted = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,8 +222,9 @@ namespace ProjectChocobo
             this.btn_addEvent.Name = "btn_addEvent";
             this.btn_addEvent.Size = new System.Drawing.Size(392, 23);
             this.btn_addEvent.TabIndex = 58;
-            this.btn_addEvent.Text = "Add Event";
+            this.btn_addEvent.Text = "Update Event";
             this.btn_addEvent.UseVisualStyleBackColor = true;
+            this.btn_addEvent.Click += new System.EventHandler(this.btn_addEvent_Click);
             // 
             // label2
             // 
@@ -284,21 +286,22 @@ namespace ProjectChocobo
             this.txt_eventDescription.Size = new System.Drawing.Size(343, 358);
             this.txt_eventDescription.TabIndex = 51;
             // 
-            // button1
+            // btn_Back
             // 
-            this.button1.Location = new System.Drawing.Point(30, 522);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(392, 23);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Back.Location = new System.Drawing.Point(30, 522);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(392, 23);
+            this.btn_Back.TabIndex = 49;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txt_NewEventName
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 122);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(392, 20);
-            this.textBox1.TabIndex = 73;
+            this.txt_NewEventName.Location = new System.Drawing.Point(30, 122);
+            this.txt_NewEventName.Name = "txt_NewEventName";
+            this.txt_NewEventName.Size = new System.Drawing.Size(392, 20);
+            this.txt_NewEventName.TabIndex = 73;
             // 
             // label5
             // 
@@ -318,14 +321,25 @@ namespace ProjectChocobo
             this.cbo_ExistingEventName.TabIndex = 75;
             this.cbo_ExistingEventName.SelectedIndexChanged += new System.EventHandler(this.cbo_ExistingEventName_SelectedIndexChanged);
             // 
+            // ckb_RaceCompleted
+            // 
+            this.ckb_RaceCompleted.AutoSize = true;
+            this.ckb_RaceCompleted.Location = new System.Drawing.Point(433, 477);
+            this.ckb_RaceCompleted.Name = "ckb_RaceCompleted";
+            this.ckb_RaceCompleted.Size = new System.Drawing.Size(111, 17);
+            this.ckb_RaceCompleted.TabIndex = 76;
+            this.ckb_RaceCompleted.Text = "Race Completed?";
+            this.ckb_RaceCompleted.UseVisualStyleBackColor = true;
+            // 
             // UpdateEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 559);
+            this.Controls.Add(this.ckb_RaceCompleted);
             this.Controls.Add(this.cbo_ExistingEventName);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_NewEventName);
             this.Controls.Add(this.dtp_FinishTime);
             this.Controls.Add(this.dtp_StartTime);
             this.Controls.Add(this.lbl_SelectSteward);
@@ -348,7 +362,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.dtp_StartDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_eventDescription);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UpdateEvent";
@@ -385,9 +399,10 @@ namespace ProjectChocobo
         private System.Windows.Forms.DateTimePicker dtp_StartDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_eventDescription;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.TextBox txt_NewEventName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbo_ExistingEventName;
+        private System.Windows.Forms.CheckBox ckb_RaceCompleted;
     }
 }

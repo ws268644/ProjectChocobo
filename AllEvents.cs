@@ -72,11 +72,9 @@ namespace ProjectChocobo
 
         }
 
+        private void spc_AllEvents_Panel2_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
-
+        }
     }
 }
