@@ -88,12 +88,14 @@ namespace ProjectChocobo
             // Check if name is given
             if (vCheckName)
             {
+                tmr_Warning.Start();
                 lbl_NewEventError.Text = "WARNING: No name has been entered";
             }
 
             // Check if start date is not greater than end date or the end date being lesser than the start date
             if (vCheckDates)
             {
+                tmr_Warning.Start();
                 lbl_NewEventError.Text = "WARNING: Event dates are not compatable";
             }
 
@@ -101,6 +103,7 @@ namespace ProjectChocobo
             // Check if start time is not greater than finish time or the finish time being lesser than the start time
             if (vCheckTime)
             {
+                tmr_Warning.Start();
                 lbl_NewEventError.Text = "WARNING: Event dates are not compatable";
             }
 
@@ -109,12 +112,14 @@ namespace ProjectChocobo
             // Check if no currency has been selected
             if (vCheckCurrency)
             {
+                tmr_Warning.Start();
                 lbl_NewEventError.Text = "WARNING: No currency has been selected";
             }
 
             // Check if ticket price has been entered
             if(vCheckTicketPrice)
             {
+                tmr_Warning.Start();
                 lbl_NewEventError.Text = "WARNING: No ticket price has been entered.";
             }
 
@@ -140,6 +145,12 @@ namespace ProjectChocobo
         private void cbo_TrackName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tmr_Warning_Tick(object sender, EventArgs e)
+        {
+            tmr_Warning.Stop();
+            lbl_NewEventError.Hide();
         }
     }
 }

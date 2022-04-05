@@ -85,11 +85,13 @@ namespace ProjectChocobo
             // if there is nothing selected when submitted
             if (cbo_Events.SelectedIndex.ToString() == null)
             {
+                lbl_Warning.Visible = true;
                 lbl_Warning.Text = "WARNING: No Event has been selected!";
             }
             else
             {
                 // Add Racer to Event
+                
             }
         }
     }

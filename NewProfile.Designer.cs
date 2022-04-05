@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProfile));
             this.lbl_Password = new System.Windows.Forms.Label();
             this.lbl_lastName = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace ProjectChocobo
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_AddRacer = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.cbo_userRole = new System.Windows.Forms.ComboBox();
@@ -50,6 +50,9 @@ namespace ProjectChocobo
             this.cbo_userVehicle = new System.Windows.Forms.ComboBox();
             this.pnlImageUpload = new System.Windows.Forms.Panel();
             this.btnUploadImage = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmr_Warning = new System.Windows.Forms.Timer(this.components);
+            this.lbl_Warning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,17 +153,6 @@ namespace ProjectChocobo
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -231,11 +223,39 @@ namespace ProjectChocobo
             this.btnUploadImage.UseVisualStyleBackColor = true;
             this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 54);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tmr_Warning
+            // 
+            this.tmr_Warning.Interval = 5000;
+            this.tmr_Warning.Tick += new System.EventHandler(this.tmr_Warning_Tick);
+            // 
+            // lbl_Warning
+            // 
+            this.lbl_Warning.AutoSize = true;
+            this.lbl_Warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Warning.Location = new System.Drawing.Point(298, 420);
+            this.lbl_Warning.Name = "lbl_Warning";
+            this.lbl_Warning.Size = new System.Drawing.Size(86, 17);
+            this.lbl_Warning.TabIndex = 29;
+            this.lbl_Warning.Text = "WARNING:";
+            this.lbl_Warning.Visible = false;
+            // 
             // NewProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 450);
+            this.Controls.Add(this.lbl_Warning);
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.pnlImageUpload);
             this.Controls.Add(this.lbl_vehicleLabel);
@@ -287,5 +307,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.ComboBox cbo_userVehicle;
         private System.Windows.Forms.Panel pnlImageUpload;
         private System.Windows.Forms.Button btnUploadImage;
+        private System.Windows.Forms.Timer tmr_Warning;
+        private System.Windows.Forms.Label lbl_Warning;
     }
 }

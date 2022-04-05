@@ -343,6 +343,7 @@ namespace ProjectChocobo
             this.lbl_Warning.Size = new System.Drawing.Size(86, 17);
             this.lbl_Warning.TabIndex = 28;
             this.lbl_Warning.Text = "WARNING:";
+            this.lbl_Warning.Visible = false;
             // 
             // AllProfiles
             // 
