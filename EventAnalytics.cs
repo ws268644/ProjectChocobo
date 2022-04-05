@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -15,6 +16,12 @@ namespace ProjectChocobo
         public EventAnalytics()
         {
             InitializeComponent();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            Events eventsPage = new Events();
+            nextPage(this, eventsPage);
         }
     }
 }

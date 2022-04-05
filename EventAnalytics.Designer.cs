@@ -33,6 +33,15 @@ namespace ProjectChocobo
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,10 +51,19 @@ namespace ProjectChocobo
             this.tab_Prices = new System.Windows.Forms.TabPage();
             this.tab_MostUsedTracks = new System.Windows.Forms.TabPage();
             this.tab_Racers = new System.Windows.Forms.TabPage();
+            this.crt_EventPrices = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crt_MostUsedTracks = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crt_RacerStatistics = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crt_EventAnalytics)).BeginInit();
             this.tbc_Analytics.SuspendLayout();
             this.tab_EventAttendance.SuspendLayout();
+            this.tab_Prices.SuspendLayout();
+            this.tab_MostUsedTracks.SuspendLayout();
+            this.tab_Racers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_EventPrices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_MostUsedTracks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_RacerStatistics)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Back
@@ -56,6 +74,7 @@ namespace ProjectChocobo
             this.btn_Back.TabIndex = 0;
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // lbl_title
             // 
@@ -119,6 +138,7 @@ namespace ProjectChocobo
             // 
             // tab_Prices
             // 
+            this.tab_Prices.Controls.Add(this.crt_EventPrices);
             this.tab_Prices.Location = new System.Drawing.Point(4, 22);
             this.tab_Prices.Name = "tab_Prices";
             this.tab_Prices.Padding = new System.Windows.Forms.Padding(3);
@@ -129,6 +149,7 @@ namespace ProjectChocobo
             // 
             // tab_MostUsedTracks
             // 
+            this.tab_MostUsedTracks.Controls.Add(this.crt_MostUsedTracks);
             this.tab_MostUsedTracks.Location = new System.Drawing.Point(4, 22);
             this.tab_MostUsedTracks.Name = "tab_MostUsedTracks";
             this.tab_MostUsedTracks.Padding = new System.Windows.Forms.Padding(3);
@@ -139,6 +160,7 @@ namespace ProjectChocobo
             // 
             // tab_Racers
             // 
+            this.tab_Racers.Controls.Add(this.crt_RacerStatistics);
             this.tab_Racers.Location = new System.Drawing.Point(4, 22);
             this.tab_Racers.Name = "tab_Racers";
             this.tab_Racers.Padding = new System.Windows.Forms.Padding(3);
@@ -146,6 +168,54 @@ namespace ProjectChocobo
             this.tab_Racers.TabIndex = 3;
             this.tab_Racers.Text = "Racers";
             this.tab_Racers.UseVisualStyleBackColor = true;
+            // 
+            // crt_EventPrices
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.crt_EventPrices.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.crt_EventPrices.Legends.Add(legend2);
+            this.crt_EventPrices.Location = new System.Drawing.Point(5, 23);
+            this.crt_EventPrices.Name = "crt_EventPrices";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.crt_EventPrices.Series.Add(series2);
+            this.crt_EventPrices.Size = new System.Drawing.Size(753, 300);
+            this.crt_EventPrices.TabIndex = 32;
+            this.crt_EventPrices.Text = "Prices";
+            // 
+            // crt_MostUsedTracks
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.crt_MostUsedTracks.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.crt_MostUsedTracks.Legends.Add(legend3);
+            this.crt_MostUsedTracks.Location = new System.Drawing.Point(5, 23);
+            this.crt_MostUsedTracks.Name = "crt_MostUsedTracks";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.crt_MostUsedTracks.Series.Add(series3);
+            this.crt_MostUsedTracks.Size = new System.Drawing.Size(753, 300);
+            this.crt_MostUsedTracks.TabIndex = 32;
+            this.crt_MostUsedTracks.Text = "Tracks";
+            // 
+            // crt_RacerStatistics
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.crt_RacerStatistics.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.crt_RacerStatistics.Legends.Add(legend4);
+            this.crt_RacerStatistics.Location = new System.Drawing.Point(5, 23);
+            this.crt_RacerStatistics.Name = "crt_RacerStatistics";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.crt_RacerStatistics.Series.Add(series4);
+            this.crt_RacerStatistics.Size = new System.Drawing.Size(753, 300);
+            this.crt_RacerStatistics.TabIndex = 32;
+            this.crt_RacerStatistics.Text = "Racers";
             // 
             // EventAnalytics
             // 
@@ -162,6 +232,12 @@ namespace ProjectChocobo
             ((System.ComponentModel.ISupportInitialize)(this.crt_EventAnalytics)).EndInit();
             this.tbc_Analytics.ResumeLayout(false);
             this.tab_EventAttendance.ResumeLayout(false);
+            this.tab_Prices.ResumeLayout(false);
+            this.tab_MostUsedTracks.ResumeLayout(false);
+            this.tab_Racers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.crt_EventPrices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_MostUsedTracks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_RacerStatistics)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +254,8 @@ namespace ProjectChocobo
         private System.Windows.Forms.TabPage tab_Prices;
         private System.Windows.Forms.TabPage tab_MostUsedTracks;
         private System.Windows.Forms.TabPage tab_Racers;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_EventPrices;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_MostUsedTracks;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_RacerStatistics;
     }
 }

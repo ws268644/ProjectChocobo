@@ -42,6 +42,11 @@ namespace ProjectChocobo
                 cbo_selectSteward.Items.Add(sSteward);
             }
 
+            // Fill Events list with Events
+            foreach (string sEvent in getAllRaces())
+            {
+                cbo_Events.Items.Add(sEvent);
+            }
 
 
         }
@@ -59,18 +64,33 @@ namespace ProjectChocobo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sSelectedProfile = cbo_selectRacers.SelectedItem.ToString();
-
-
             DataTable dtSelectedProfile = getAllUsers(sSelectedProfile);
 
-            foreach (string sRacerDetail in dtSelectedProfile.Rows)
+
+            foreach (DataRow dt in dtSelectedProfile.Rows)
             {
+                lbl_FullName.Text = dt.ItemArray[1].ToString() + "" + dt.ItemArray[2].ToString();
+                lbl_UserName.Text = dt.ItemArray[3].ToString();
                 
+
             }
 
 
 
             
+        }
+
+        private void btn_AddRacerToRace_Click(object sender, EventArgs e)
+        {
+            // if there is nothing selected when submitted
+            if (cbo_Events.SelectedIndex.ToString() == null)
+            {
+                lbl_Warning.Text = "WARNING: No Event has been selected!";
+            }
+            else
+            {
+                // Add Racer to Event
+            }
         }
     }
 }

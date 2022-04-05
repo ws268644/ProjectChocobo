@@ -64,7 +64,7 @@ namespace ProjectChocobo
         {
             string selectedEvent = cbo_selectedEvent.Text;
 
-            List<string> sEvents = getAllRaces();
+            
 
 
 
