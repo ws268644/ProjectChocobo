@@ -127,9 +127,9 @@ namespace ProjectChocobo
             this.lbl_UserNameHeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_UserNameHeadline.Location = new System.Drawing.Point(186, 0);
             this.lbl_UserNameHeadline.Name = "lbl_UserNameHeadline";
-            this.lbl_UserNameHeadline.Size = new System.Drawing.Size(145, 17);
+            this.lbl_UserNameHeadline.Size = new System.Drawing.Size(153, 17);
             this.lbl_UserNameHeadline.TabIndex = 22;
-            this.lbl_UserNameHeadline.Text = "[Insert Event Here]";
+            this.lbl_UserNameHeadline.Text = "Please Select Event";
             // 
             // lbl_EventCompleted
             // 
