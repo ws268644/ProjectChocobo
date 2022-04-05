@@ -36,8 +36,8 @@ namespace ProjectChocobo
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home homePage = new Home();
-            homePage.ShowDialog();
+            frmAdmin adminPage = new frmAdmin();
+            adminPage.ShowDialog();
             this.Close();
         }
     }
