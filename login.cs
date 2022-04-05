@@ -41,12 +41,13 @@ namespace ProjectChocobo
             if(bLogin == true)
             {
                 this.Hide();
-                Home homePage;
+                Home homePage = new Home();
+                frmAdmin admin = new frmAdmin();
                 if (checkRole(sUsername) == 1)
-                { homePage = new Home(); }
+                { admin.ShowDialog(); }
                 else 
-                { homePage = new Home(); }
-                homePage.ShowDialog();
+                { homePage.ShowDialog(); }
+                
                 this.Close();
             }
             else
