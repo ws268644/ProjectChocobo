@@ -112,6 +112,7 @@ namespace ProjectChocobo
             this.crt_EventAnalytics.Size = new System.Drawing.Size(753, 300);
             this.crt_EventAnalytics.TabIndex = 31;
             this.crt_EventAnalytics.Text = "chart1";
+            this.crt_EventAnalytics.Click += new System.EventHandler(this.crt_EventAnalytics_Click);
             // 
             // tbc_Analytics
             // 

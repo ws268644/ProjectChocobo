@@ -23,5 +23,10 @@ namespace ProjectChocobo
             Events eventsPage = new Events();
             nextPage(this, eventsPage);
         }
+
+        private void crt_EventAnalytics_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

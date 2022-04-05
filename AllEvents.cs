@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -22,10 +23,8 @@ namespace ProjectChocobo
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Events eventsPage = new Events();
-            eventsPage.ShowDialog();
-            this.Close();
+            nextPage(this, eventsPage);
 
         }
 
@@ -64,9 +63,16 @@ namespace ProjectChocobo
         {
             string selectedEvent = cbo_selectedEvent.Text;
 
-            
+            DataTable dtSelectedEvent = getEvent(selectedEvent);
 
-
+            foreach(DataRow dt in dtSelectedEvent.Rows)
+            {
+                lbl_EventName.Text = dt.ItemArray[1].ToString();
+                lbl_EventDate.Text = dt.ItemArray[2].ToString();
+                lbl_Attendees.Text = dt.ItemArray[3].ToString();
+                lbl_EventCompleted.Text = dt.ItemArray[4].ToString();
+                txt_eventRacers.Text = dt.ItemArray[4].ToString();
+            }
 
 
 

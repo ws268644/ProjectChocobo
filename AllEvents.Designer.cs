@@ -36,24 +36,21 @@ namespace ProjectChocobo
             this.lbl_selectedEventName = new System.Windows.Forms.Label();
             this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
             this.lbl_UserNameHeadline = new System.Windows.Forms.Label();
-            this.lbl_UserVehicle = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_UserRole = new System.Windows.Forms.Label();
-            this.lbl_UserName = new System.Windows.Forms.Label();
-            this.lbl_FullName = new System.Windows.Forms.Label();
-            this.tbl_WinsLosses = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_EventCompleted = new System.Windows.Forms.Label();
+            this.lbl_EventCompletedTitle = new System.Windows.Forms.Label();
+            this.lbl_Attendees = new System.Windows.Forms.Label();
+            this.lbl_EventDate = new System.Windows.Forms.Label();
+            this.lbl_EventName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_AttendeesTitle = new System.Windows.Forms.Label();
+            this.lbl_EventDateTitle = new System.Windows.Forms.Label();
+            this.lbl_EventNameTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_eventRacers = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
             this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.Panel2.SuspendLayout();
             this.spc_AllEvents.SuspendLayout();
-            this.tbl_WinsLosses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +58,7 @@ namespace ProjectChocobo
             // 
             this.btn_back.Location = new System.Drawing.Point(13, 415);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(253, 23);
+            this.btn_back.Size = new System.Drawing.Size(772, 23);
             this.btn_back.TabIndex = 0;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
@@ -90,17 +87,17 @@ namespace ProjectChocobo
             // 
             // spc_AllEvents.Panel2
             // 
+            this.spc_AllEvents.Panel2.Controls.Add(this.txt_eventRacers);
             this.spc_AllEvents.Panel2.Controls.Add(this.lbl_UserNameHeadline);
-            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_UserVehicle);
-            this.spc_AllEvents.Panel2.Controls.Add(this.label10);
-            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_UserRole);
-            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_UserName);
-            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_FullName);
-            this.spc_AllEvents.Panel2.Controls.Add(this.tbl_WinsLosses);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventCompleted);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventCompletedTitle);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_Attendees);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventDate);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventName);
             this.spc_AllEvents.Panel2.Controls.Add(this.label5);
-            this.spc_AllEvents.Panel2.Controls.Add(this.label4);
-            this.spc_AllEvents.Panel2.Controls.Add(this.label3);
-            this.spc_AllEvents.Panel2.Controls.Add(this.label2);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_AttendeesTitle);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventDateTitle);
+            this.spc_AllEvents.Panel2.Controls.Add(this.lbl_EventNameTitle);
             this.spc_AllEvents.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.spc_AllEvents_Panel2_Paint);
             this.spc_AllEvents.Size = new System.Drawing.Size(776, 349);
             this.spc_AllEvents.SplitterDistance = 258;
@@ -134,83 +131,50 @@ namespace ProjectChocobo
             this.lbl_UserNameHeadline.TabIndex = 22;
             this.lbl_UserNameHeadline.Text = "[Insert Event Here]";
             // 
-            // lbl_UserVehicle
+            // lbl_EventCompleted
             // 
-            this.lbl_UserVehicle.AutoSize = true;
-            this.lbl_UserVehicle.Location = new System.Drawing.Point(330, 61);
-            this.lbl_UserVehicle.Name = "lbl_UserVehicle";
-            this.lbl_UserVehicle.Size = new System.Drawing.Size(96, 13);
-            this.lbl_UserVehicle.TabIndex = 21;
-            this.lbl_UserVehicle.Text = "[Insert Name Here]";
+            this.lbl_EventCompleted.AutoSize = true;
+            this.lbl_EventCompleted.Location = new System.Drawing.Point(330, 61);
+            this.lbl_EventCompleted.Name = "lbl_EventCompleted";
+            this.lbl_EventCompleted.Size = new System.Drawing.Size(102, 13);
+            this.lbl_EventCompleted.TabIndex = 21;
+            this.lbl_EventCompleted.Text = "[Insert vehicle Here]";
             // 
-            // label10
+            // lbl_EventCompletedTitle
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(264, 61);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Vehicle: ";
+            this.lbl_EventCompletedTitle.AutoSize = true;
+            this.lbl_EventCompletedTitle.Location = new System.Drawing.Point(264, 61);
+            this.lbl_EventCompletedTitle.Name = "lbl_EventCompletedTitle";
+            this.lbl_EventCompletedTitle.Size = new System.Drawing.Size(63, 13);
+            this.lbl_EventCompletedTitle.TabIndex = 20;
+            this.lbl_EventCompletedTitle.Text = "Completed: ";
             // 
-            // lbl_UserRole
+            // lbl_Attendees
             // 
-            this.lbl_UserRole.AutoSize = true;
-            this.lbl_UserRole.Location = new System.Drawing.Point(330, 37);
-            this.lbl_UserRole.Name = "lbl_UserRole";
-            this.lbl_UserRole.Size = new System.Drawing.Size(90, 13);
-            this.lbl_UserRole.TabIndex = 19;
-            this.lbl_UserRole.Text = "[Insert Role Here]";
+            this.lbl_Attendees.AutoSize = true;
+            this.lbl_Attendees.Location = new System.Drawing.Point(330, 37);
+            this.lbl_Attendees.Name = "lbl_Attendees";
+            this.lbl_Attendees.Size = new System.Drawing.Size(90, 13);
+            this.lbl_Attendees.TabIndex = 19;
+            this.lbl_Attendees.Text = "[Insert Role Here]";
             // 
-            // lbl_UserName
+            // lbl_EventDate
             // 
-            this.lbl_UserName.AutoSize = true;
-            this.lbl_UserName.Location = new System.Drawing.Point(71, 61);
-            this.lbl_UserName.Name = "lbl_UserName";
-            this.lbl_UserName.Size = new System.Drawing.Size(116, 13);
-            this.lbl_UserName.TabIndex = 18;
-            this.lbl_UserName.Text = "[Insert Username Here]";
+            this.lbl_EventDate.AutoSize = true;
+            this.lbl_EventDate.Location = new System.Drawing.Point(71, 61);
+            this.lbl_EventDate.Name = "lbl_EventDate";
+            this.lbl_EventDate.Size = new System.Drawing.Size(116, 13);
+            this.lbl_EventDate.TabIndex = 18;
+            this.lbl_EventDate.Text = "[Insert Username Here]";
             // 
-            // lbl_FullName
+            // lbl_EventName
             // 
-            this.lbl_FullName.AutoSize = true;
-            this.lbl_FullName.Location = new System.Drawing.Point(71, 34);
-            this.lbl_FullName.Name = "lbl_FullName";
-            this.lbl_FullName.Size = new System.Drawing.Size(96, 13);
-            this.lbl_FullName.TabIndex = 17;
-            this.lbl_FullName.Text = "[Insert Name Here]";
-            // 
-            // tbl_WinsLosses
-            // 
-            this.tbl_WinsLosses.ColumnCount = 2;
-            this.tbl_WinsLosses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbl_WinsLosses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tbl_WinsLosses.Controls.Add(this.label7, 1, 0);
-            this.tbl_WinsLosses.Controls.Add(this.label6, 0, 0);
-            this.tbl_WinsLosses.Location = new System.Drawing.Point(8, 128);
-            this.tbl_WinsLosses.Name = "tbl_WinsLosses";
-            this.tbl_WinsLosses.RowCount = 2;
-            this.tbl_WinsLosses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22F));
-            this.tbl_WinsLosses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78F));
-            this.tbl_WinsLosses.Size = new System.Drawing.Size(501, 110);
-            this.tbl_WinsLosses.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(253, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Losses";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Wins";
+            this.lbl_EventName.AutoSize = true;
+            this.lbl_EventName.Location = new System.Drawing.Point(80, 34);
+            this.lbl_EventName.Name = "lbl_EventName";
+            this.lbl_EventName.Size = new System.Drawing.Size(96, 13);
+            this.lbl_EventName.TabIndex = 17;
+            this.lbl_EventName.Text = "[Insert Name Here]";
             // 
             // label5
             // 
@@ -219,34 +183,34 @@ namespace ProjectChocobo
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Races:";
+            this.label5.Text = "Racers";
             // 
-            // label4
+            // lbl_AttendeesTitle
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(264, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Role:";
+            this.lbl_AttendeesTitle.AutoSize = true;
+            this.lbl_AttendeesTitle.Location = new System.Drawing.Point(264, 37);
+            this.lbl_AttendeesTitle.Name = "lbl_AttendeesTitle";
+            this.lbl_AttendeesTitle.Size = new System.Drawing.Size(58, 13);
+            this.lbl_AttendeesTitle.TabIndex = 14;
+            this.lbl_AttendeesTitle.Text = "Attendees:";
             // 
-            // label3
+            // lbl_EventDateTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Username:";
+            this.lbl_EventDateTitle.AutoSize = true;
+            this.lbl_EventDateTitle.Location = new System.Drawing.Point(5, 61);
+            this.lbl_EventDateTitle.Name = "lbl_EventDateTitle";
+            this.lbl_EventDateTitle.Size = new System.Drawing.Size(64, 13);
+            this.lbl_EventDateTitle.TabIndex = 13;
+            this.lbl_EventDateTitle.Text = "Event Date:";
             // 
-            // label2
+            // lbl_EventNameTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Full Name: ";
+            this.lbl_EventNameTitle.AutoSize = true;
+            this.lbl_EventNameTitle.Location = new System.Drawing.Point(5, 34);
+            this.lbl_EventNameTitle.Name = "lbl_EventNameTitle";
+            this.lbl_EventNameTitle.Size = new System.Drawing.Size(69, 13);
+            this.lbl_EventNameTitle.TabIndex = 12;
+            this.lbl_EventNameTitle.Text = "Event Name:";
             // 
             // pictureBox1
             // 
@@ -258,6 +222,15 @@ namespace ProjectChocobo
             this.pictureBox1.Size = new System.Drawing.Size(800, 54);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
+            // 
+            // txt_eventRacers
+            // 
+            this.txt_eventRacers.Location = new System.Drawing.Point(8, 129);
+            this.txt_eventRacers.Multiline = true;
+            this.txt_eventRacers.Name = "txt_eventRacers";
+            this.txt_eventRacers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_eventRacers.Size = new System.Drawing.Size(503, 217);
+            this.txt_eventRacers.TabIndex = 23;
             // 
             // AllEvents
             // 
@@ -277,8 +250,6 @@ namespace ProjectChocobo
             this.spc_AllEvents.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).EndInit();
             this.spc_AllEvents.ResumeLayout(false);
-            this.tbl_WinsLosses.ResumeLayout(false);
-            this.tbl_WinsLosses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -294,17 +265,15 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_selectedEventName;
         private System.Windows.Forms.ComboBox cbo_selectedEvent;
         private System.Windows.Forms.Label lbl_UserNameHeadline;
-        private System.Windows.Forms.Label lbl_UserVehicle;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbl_UserRole;
-        private System.Windows.Forms.Label lbl_UserName;
-        private System.Windows.Forms.Label lbl_FullName;
-        private System.Windows.Forms.TableLayoutPanel tbl_WinsLosses;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_EventCompleted;
+        private System.Windows.Forms.Label lbl_EventCompletedTitle;
+        private System.Windows.Forms.Label lbl_Attendees;
+        private System.Windows.Forms.Label lbl_EventDate;
+        private System.Windows.Forms.Label lbl_EventName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_AttendeesTitle;
+        private System.Windows.Forms.Label lbl_EventDateTitle;
+        private System.Windows.Forms.Label lbl_EventNameTitle;
+        private System.Windows.Forms.TextBox txt_eventRacers;
     }
 }

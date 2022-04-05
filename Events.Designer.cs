@@ -34,9 +34,9 @@ namespace ProjectChocobo
             this.btn_allEvents = new System.Windows.Forms.Button();
             this.btn_newEvents = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_UpdateEvent = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_EventAnalytics = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,26 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 14;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
+            // btn_UpdateEvent
+            // 
+            this.btn_UpdateEvent.Location = new System.Drawing.Point(12, 259);
+            this.btn_UpdateEvent.Name = "btn_UpdateEvent";
+            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 106);
+            this.btn_UpdateEvent.TabIndex = 29;
+            this.btn_UpdateEvent.Text = "Update Event";
+            this.btn_UpdateEvent.UseVisualStyleBackColor = true;
+            this.btn_UpdateEvent.Click += new System.EventHandler(this.btn_UpdateEvent_Click);
+            // 
+            // btn_EventAnalytics
+            // 
+            this.btn_EventAnalytics.Location = new System.Drawing.Point(402, 259);
+            this.btn_EventAnalytics.Name = "btn_EventAnalytics";
+            this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 106);
+            this.btn_EventAnalytics.TabIndex = 30;
+            this.btn_EventAnalytics.Text = "Event Analyitics";
+            this.btn_EventAnalytics.UseVisualStyleBackColor = true;
+            this.btn_EventAnalytics.Click += new System.EventHandler(this.btn_EventAnalytics_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -91,31 +111,12 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_UpdateEvent
-            // 
-            this.btn_UpdateEvent.Location = new System.Drawing.Point(12, 259);
-            this.btn_UpdateEvent.Name = "btn_UpdateEvent";
-            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 106);
-            this.btn_UpdateEvent.TabIndex = 29;
-            this.btn_UpdateEvent.Text = "Update Event";
-            this.btn_UpdateEvent.UseVisualStyleBackColor = true;
-            this.btn_UpdateEvent.Click += new System.EventHandler(this.btn_UpdateEvent_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(402, 259);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(384, 106);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Event Analyitics";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_EventAnalytics);
             this.Controls.Add(this.btn_UpdateEvent);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.button3);
@@ -139,6 +140,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_UpdateEvent;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_EventAnalytics;
     }
 }
