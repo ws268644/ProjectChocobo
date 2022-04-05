@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -17,6 +19,8 @@ namespace ProjectChocobo
             fPreviousForm.Close();
         }
 
+
+        
 
 
     }

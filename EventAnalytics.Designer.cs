@@ -45,7 +45,7 @@ namespace ProjectChocobo
             this.btn_Back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.crt_EventAnalytics = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.crt_EventAttendance = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbc_Analytics = new System.Windows.Forms.TabControl();
             this.tab_EventAttendance = new System.Windows.Forms.TabPage();
             this.tab_Prices = new System.Windows.Forms.TabPage();
@@ -55,7 +55,7 @@ namespace ProjectChocobo
             this.crt_MostUsedTracks = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.crt_RacerStatistics = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crt_EventAnalytics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_EventAttendance)).BeginInit();
             this.tbc_Analytics.SuspendLayout();
             this.tab_EventAttendance.SuspendLayout();
             this.tab_Prices.SuspendLayout();
@@ -97,22 +97,22 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // crt_EventAnalytics
+            // crt_EventAttendance
             // 
             chartArea1.Name = "ChartArea1";
-            this.crt_EventAnalytics.ChartAreas.Add(chartArea1);
+            this.crt_EventAttendance.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.crt_EventAnalytics.Legends.Add(legend1);
-            this.crt_EventAnalytics.Location = new System.Drawing.Point(3, 0);
-            this.crt_EventAnalytics.Name = "crt_EventAnalytics";
+            this.crt_EventAttendance.Legends.Add(legend1);
+            this.crt_EventAttendance.Location = new System.Drawing.Point(3, 0);
+            this.crt_EventAttendance.Name = "crt_EventAttendance";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.crt_EventAnalytics.Series.Add(series1);
-            this.crt_EventAnalytics.Size = new System.Drawing.Size(753, 300);
-            this.crt_EventAnalytics.TabIndex = 31;
-            this.crt_EventAnalytics.Text = "chart1";
-            this.crt_EventAnalytics.Click += new System.EventHandler(this.crt_EventAnalytics_Click);
+            series1.Name = "Attendance";
+            this.crt_EventAttendance.Series.Add(series1);
+            this.crt_EventAttendance.Size = new System.Drawing.Size(753, 300);
+            this.crt_EventAttendance.TabIndex = 31;
+            this.crt_EventAttendance.Text = "Attendance";
+            this.crt_EventAttendance.Click += new System.EventHandler(this.crt_EventAnalytics_Click);
             // 
             // tbc_Analytics
             // 
@@ -128,7 +128,7 @@ namespace ProjectChocobo
             // 
             // tab_EventAttendance
             // 
-            this.tab_EventAttendance.Controls.Add(this.crt_EventAnalytics);
+            this.tab_EventAttendance.Controls.Add(this.crt_EventAttendance);
             this.tab_EventAttendance.Location = new System.Drawing.Point(4, 22);
             this.tab_EventAttendance.Name = "tab_EventAttendance";
             this.tab_EventAttendance.Padding = new System.Windows.Forms.Padding(3);
@@ -229,8 +229,9 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_Back);
             this.Name = "EventAnalytics";
             this.Text = "EventAnalytics";
+            this.Load += new System.EventHandler(this.EventAnalytics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.crt_EventAnalytics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.crt_EventAttendance)).EndInit();
             this.tbc_Analytics.ResumeLayout(false);
             this.tab_EventAttendance.ResumeLayout(false);
             this.tab_Prices.ResumeLayout(false);
@@ -249,7 +250,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart crt_EventAnalytics;
+        private System.Windows.Forms.DataVisualization.Charting.Chart crt_EventAttendance;
         private System.Windows.Forms.TabControl tbc_Analytics;
         private System.Windows.Forms.TabPage tab_EventAttendance;
         private System.Windows.Forms.TabPage tab_Prices;
