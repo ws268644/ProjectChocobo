@@ -46,6 +46,8 @@ namespace ProjectChocobo
             string strCommand = "checkAdmin";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
+            checkRole.CommandType = System.Data.CommandType.StoredProcedure;
+
             checkRole.Parameters.AddWithValue("userName", strUserName);
             try
             {
