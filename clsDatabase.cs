@@ -53,7 +53,7 @@ namespace ProjectChocobo
             try
             {
                 cnn.Open();
-                intCheck = (int)checkRole.ExecuteScalar();
+                intCheck = Convert.ToInt32(checkRole.ExecuteScalar());
                 cnn.Close();
             }
 
