@@ -223,7 +223,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
+            return dt;
 
         }
         static public Boolean applyRacerRole(string strUsername, string strFullName, string strCarName)

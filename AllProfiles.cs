@@ -90,8 +90,11 @@ namespace ProjectChocobo
             }
             else
             {
+                string sEvent = cbo_Events.SelectedIndex.ToString();
+                string sRacer = cbo_selectRacers.SelectedIndex.ToString();
+                int iStartPosition = Convert.ToInt32(nud_startPosition.Value);
                 // Add Racer to Event
-                
+                addRacerToRace(sEvent, sRacer, iStartPosition);
             }
         }
     }
