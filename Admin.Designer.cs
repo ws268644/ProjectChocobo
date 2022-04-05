@@ -34,8 +34,8 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_quit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTracks = new System.Windows.Forms.Button();
+            this.btnEvents = new System.Windows.Forms.Button();
             this.btn_settings = new System.Windows.Forms.Button();
             this.btn_profiles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,23 +82,25 @@ namespace ProjectChocobo
             this.btn_quit.UseVisualStyleBackColor = true;
             this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
             // 
-            // button1
+            // btnTracks
             // 
-            this.button1.Location = new System.Drawing.Point(12, 195);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(393, 117);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Tracks";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTracks.Location = new System.Drawing.Point(12, 195);
+            this.btnTracks.Name = "btnTracks";
+            this.btnTracks.Size = new System.Drawing.Size(393, 117);
+            this.btnTracks.TabIndex = 6;
+            this.btnTracks.Text = "Tracks";
+            this.btnTracks.UseVisualStyleBackColor = true;
+            this.btnTracks.Click += new System.EventHandler(this.btnTracks_Click);
             // 
-            // button2
+            // btnEvents
             // 
-            this.button2.Location = new System.Drawing.Point(401, 60);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(387, 117);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Events";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEvents.Location = new System.Drawing.Point(401, 60);
+            this.btnEvents.Name = "btnEvents";
+            this.btnEvents.Size = new System.Drawing.Size(387, 117);
+            this.btnEvents.TabIndex = 5;
+            this.btnEvents.Text = "Events";
+            this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
             // 
             // btn_settings
             // 
@@ -108,6 +110,7 @@ namespace ProjectChocobo
             this.btn_settings.TabIndex = 25;
             this.btn_settings.Text = "Settings";
             this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // btn_profiles
             // 
@@ -117,6 +120,7 @@ namespace ProjectChocobo
             this.btn_profiles.TabIndex = 26;
             this.btn_profiles.Text = "Profiles";
             this.btn_profiles.UseVisualStyleBackColor = true;
+            this.btn_profiles.Click += new System.EventHandler(this.btn_profiles_Click);
             // 
             // frmAdmin
             // 
@@ -128,8 +132,8 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_quit);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTracks);
+            this.Controls.Add(this.btnEvents);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmAdmin";
             this.Text = "Admin page";
@@ -145,8 +149,8 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_quit;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTracks;
+        private System.Windows.Forms.Button btnEvents;
         private System.Windows.Forms.Button btn_settings;
         private System.Windows.Forms.Button btn_profiles;
     }
