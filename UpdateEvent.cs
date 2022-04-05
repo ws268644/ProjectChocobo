@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsDatabase;
-using static ProjectChocobo.clsEvent;
 
 namespace ProjectChocobo
 {
