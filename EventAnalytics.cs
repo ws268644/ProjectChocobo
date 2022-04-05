@@ -35,20 +35,7 @@ namespace ProjectChocobo
 
 
 
-
-
-            DataTable dtSelectedEvent = getAllRaces();
-
-            foreach (DataRow dt in dtSelectedEvent.Rows)
-            {
-                lbl_EventName.Text = dt.ItemArray[1].ToString();
-                lbl_UserNameHeadline.Text = dt.ItemArray[1].ToString();
-                lbl_EventDate.Text = dt.ItemArray[2].ToString();
-                lbl_Attendees.Text = dt.ItemArray[3].ToString();
-                lbl_EventCompleted.Text = dt.ItemArray[4].ToString();
-                txt_eventRacers.Text = dt.ItemArray[4].ToString();
-            }
-
+            
             // Y axis change, but X axis dont
             crt_EventAttendance.Series["Attendance"].Points.AddXY(getAllRaces());
 
