@@ -21,8 +21,8 @@ namespace ProjectChocobo
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home homePage = new Home();
-            homePage.ShowDialog();
+            Tracks tracksPage = new Tracks();
+            tracksPage.ShowDialog();
             this.Close();
         }
 
