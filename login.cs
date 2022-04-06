@@ -40,9 +40,15 @@ namespace ProjectChocobo
 
             if(bLogin == true)
             {
+                int iAdmin = checkRole(sUsername, "admin");
                 this.Hide();
                 Home homePage = new Home();
-                homePage.ShowDialog();
+                frmAdmin admin = new frmAdmin();
+                if (iAdmin == 1)
+                { admin.ShowDialog(); }
+                else 
+                { homePage.ShowDialog(); }
+                
                 this.Close();
             }
             else
