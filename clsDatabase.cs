@@ -776,19 +776,19 @@ namespace ProjectChocobo
         static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comAddTrack = new MySqlCommand("updateTrack", cnn);
-            comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            comAddTrack.Parameters.AddWithValue("@trackIndex", strIndex);
-            comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
-            comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
-            comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);
-            comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
-            comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
+            MySqlCommand comUpdateTrack = new MySqlCommand("updateTrack", cnn);
+            comUpdateTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comUpdateTrack.Parameters.AddWithValue("@trackIndex", strIndex);
+            comUpdateTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comUpdateTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comUpdateTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comUpdateTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comUpdateTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
 
             try
             {
                 cnn.Open();
-                int success = Convert.ToInt32(comAddTrack.ExecuteNonQuery());//Runs the stored procedure
+                int success = Convert.ToInt32(comUpdateTrack.ExecuteNonQuery());//Runs the stored procedure
                 cnn.Close();
                 if (success == 1)
                 {
