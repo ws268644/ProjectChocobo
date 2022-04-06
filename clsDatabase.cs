@@ -182,7 +182,7 @@ namespace ProjectChocobo
             }
         }
 
-        static public DataTable getAllUsers(string sUser) 
+        static public DataTable getUser(string sUser) 
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -378,8 +378,6 @@ namespace ProjectChocobo
             return uids;
 
         }
-
-
 
 
 
@@ -733,6 +731,49 @@ namespace ProjectChocobo
             {
                 cnn.Open();
                 getRace.Prepare();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+
+            return dt;
+        }
+
+        static public DataTable getAllUsers(string sRole)
+        {
+            string strCommand = "";
+            switch (sRole)
+            {
+                case "admin":
+                    strCommand = "getAllAdmins";
+                    break;
+
+                case "steward":
+                    strCommand = "getAllStewards";
+                    break;
+
+                case "racer":
+                    strCommand = "getAllRacerUsers";
+                    break;
+                default:
+                    break;
+            }
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand getUsers = new MySqlCommand(strCommand, cnn);
+            getUsers.CommandType = CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = getUsers;
+
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                getUsers.Prepare();
                 dataAdapter.Fill(dt);
                 cnn.Close();
             }

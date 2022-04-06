@@ -64,7 +64,7 @@ namespace ProjectChocobo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sSelectedProfile = cbo_selectRacers.SelectedItem.ToString();
-            DataTable dtSelectedProfile = getAllUsers(sSelectedProfile);
+            DataTable dtSelectedProfile = getUser(sSelectedProfile);
 
 
             foreach (DataRow dt in dtSelectedProfile.Rows)
