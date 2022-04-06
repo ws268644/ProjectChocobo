@@ -63,7 +63,6 @@ namespace ProjectChocobo
 
                     default: MessageBox.Show("Jumped to default"); break;
                 }
-                MessageBox.Show(success.ToString());
 
              
 

@@ -131,6 +131,7 @@ namespace ProjectChocobo
             if (vCheckName == false && vCheckDates == false && vCheckCurrency == false && vCheckTime == false && vCheckTicketPrice == false)
             {
                 createNewRace(sEventName, sTrack, sSteward, iPrice, dtStartDate, dtEndDate, sStartTime, sFinishTime, sEventDescription);
+                MessageBox.Show(sEventName+" has been added");
             }
 
 

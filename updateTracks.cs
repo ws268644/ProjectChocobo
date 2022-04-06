@@ -64,6 +64,7 @@ namespace ProjectChocobo
             int iCapacity = (int)nudTrackCapacity.Value;
             string driveTrain = cboDriveTrain.SelectedItem.ToString();
             updateTrack(index, trackName, iLaps, trackType, iCapacity, driveTrain);
+            MessageBox.Show(trackName +" has been updated");
         }
     }
 }
