@@ -11,9 +11,9 @@ using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
-    public partial class AllProfiles : Form
+    public partial class AllRacers : Form
     {
-        public AllProfiles()
+        public AllRacers()
         {
             InitializeComponent();
         }
@@ -36,11 +36,7 @@ namespace ProjectChocobo
 
 
 
-            // Fill in the steward list with all steward profiles
-            foreach (string sSteward in getStewardNames())
-            {
-                cbo_selectSteward.Items.Add(sSteward);
-            }
+            
 
             // Fill Events list with Events
             foreach (string sEvent in getAllRaces())
@@ -64,7 +60,7 @@ namespace ProjectChocobo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sSelectedProfile = cbo_selectRacers.SelectedItem.ToString();
-            DataTable dtSelectedProfile = getAllUsers();
+            DataTable dtSelectedProfile = getUser(sSelectedProfile);
 
 
             foreach (DataRow dt in dtSelectedProfile.Rows)
@@ -75,9 +71,17 @@ namespace ProjectChocobo
 
             }
 
+            // If Admin selects themselves, then remove the delete button
+            if (checkRole(sUsername, "Admin") == 0)
+            {
+                btn_delete.Hide();
+            }
+            else if (checkRole(sUsername, "Admin") == 1)
+            {
+                btn_delete.Show();
+            }
 
 
-            
         }
 
         private void btn_AddRacerToRace_Click(object sender, EventArgs e)
@@ -96,6 +100,11 @@ namespace ProjectChocobo
                 // Add Racer to Event
                 addRacerToRace(sEvent, sRacer, iStartPosition);
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
