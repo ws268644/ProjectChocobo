@@ -773,12 +773,12 @@ namespace ProjectChocobo
             }
             return null;
         }
-        static public Boolean updateTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
+        static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comAddTrack = new MySqlCommand("updateTrack", cnn);
             comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-
+            comAddTrack.Parameters.AddWithValue("@trackIndex", strIndex);
             comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
             comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
             comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);

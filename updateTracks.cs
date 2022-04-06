@@ -59,11 +59,11 @@ namespace ProjectChocobo
         {
             string index = cboTrackSelect.SelectedItem.ToString();
             string trackName = txtTrackName.Text;
-            string trackType = cboTrackType.SelectedIndex.ToString();
+            string trackType = cboTrackType.SelectedItem.ToString();
             int iLaps = (int)nudLapCount.Value;
             int iCapacity = (int)nudTrackCapacity.Value;
             string driveTrain = cboDriveTrain.SelectedItem.ToString();
-            updateTrack(trackName, iLaps, trackType, iCapacity, driveTrain);
+            updateTrack(index, trackName, iLaps, trackType, iCapacity, driveTrain);
         }
     }
 }

@@ -65,8 +65,10 @@ namespace ProjectChocobo
             // Convert the start and end times to integers for processing
             DateTime dtStartTime = dtp_StartTime.Value;
             DateTime dtFinishTime = dtp_FinishTime.Value;
-            string sStartTime = dtp_StartTime.Value.ToString();
-            string sFinishTime = dtp_FinishTime.Value.ToString();
+            string[] sTime1 = dtp_StartTime.Value.ToString().Split(' ');
+            string sStartTime = sTime1[1];
+            string[] sTime2 = dtp_FinishTime.Value.ToString().Split(' ');
+            string sFinishTime = sTime2[1];
 
 
 
