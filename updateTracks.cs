@@ -54,5 +54,17 @@ namespace ProjectChocobo
             }
             
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string index = cboTrackSelect.SelectedItem.ToString();
+            string trackName = txtTrackName.Text;
+            string trackType = cboTrackType.SelectedItem.ToString();
+            int iLaps = (int)nudLapCount.Value;
+            int iCapacity = (int)nudTrackCapacity.Value;
+            string driveTrain = cboDriveTrain.SelectedItem.ToString();
+            updateTrack(index, trackName, iLaps, trackType, iCapacity, driveTrain);
+            MessageBox.Show(trackName +" has been updated");
+        }
     }
 }

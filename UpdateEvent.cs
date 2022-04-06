@@ -66,7 +66,7 @@ namespace ProjectChocobo
 
         private void btn_addEvent_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Event has been updated");
         }
 
         private void button1_Click(object sender, EventArgs e)

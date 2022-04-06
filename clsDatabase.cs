@@ -160,28 +160,30 @@ namespace ProjectChocobo
         {
             int intUserID = 0;
             string strCommand = "";
-            if (strRole == "admin")
-            {
-                strCommand = "addAdmin";
-            }
-            else if (strRole == "steward")
-            {
-                strCommand = "addSteward";
-            }
-            else
-            {
-                MessageBox.Show("Something went wrong. The role was probably wrong");
-                return false;
+            switch (strRole){
+                case "admin":
+                    strCommand = "addAdmin";
+                    break;
+
+                case "steward":
+                    strCommand = "addSteward";
+                    break;
+
+                default:
+                    MessageBox.Show("Something went wrong. The role was probably wrong");
+                    return false;
+
             }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
-            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+            //MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
             MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
+            checkUsername.CommandType = System.Data.CommandType.StoredProcedure;
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
-            comGetID.Parameters.AddWithValue("@username", strUsername);
-            checkUsername.Parameters.AddWithValue("@username", strUsername);
-            comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
+            //comGetID.CommandType = System.Data.CommandType.StoredProcedure;
+            //comGetID.Parameters.AddWithValue("@username", strUsername);
+            checkUsername.Parameters.AddWithValue("username", strUsername);
+            comApplyUserRole.Parameters.AddWithValue("username", strUsername);
             try
             {
                 cnn.Open();
@@ -191,7 +193,7 @@ namespace ProjectChocobo
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
-                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
                 cnn.Close();
                 if (intSuccess == 0)
@@ -364,13 +366,13 @@ namespace ProjectChocobo
             int intUserID = 0;
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comAddRacer = new MySqlCommand("addRacer", cnn);
-            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+            ///MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
             //MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             comAddRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
-            comGetID.Parameters.AddWithValue("@username", strUsername);
+            ///comGetID.CommandType = System.Data.CommandType.StoredProcedure;
+            //comGetID.Parameters.AddWithValue("@username", strUsername);
             //checkUsername.Parameters.AddWithValue("@username", strUsername);
-            comAddRacer.Parameters.AddWithValue("@userID", intUserID);
+            comAddRacer.Parameters.AddWithValue("@username", strUsername);
             comAddRacer.Parameters.AddWithValue("@racerName", strFullName);
             comAddRacer.Parameters.AddWithValue("@carName", strCarName);
             try
@@ -383,7 +385,7 @@ namespace ProjectChocobo
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
                 MessageBox.Show("Username is all good");*/
-                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
                 MessageBox.Show("Racer has been added successfully");
                 cnn.Close();
@@ -848,14 +850,27 @@ namespace ProjectChocobo
                 default:
                     break;
             }
+
+            return null;
+        }
+        static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
+        {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand getUsers = new MySqlCommand(strCommand, cnn);
-            getUsers.CommandType = CommandType.StoredProcedure;
+            MySqlCommand comAddTrack = new MySqlCommand("updateTrack", cnn);
+            comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comAddTrack.Parameters.AddWithValue("@trackIndex", strIndex);
+            comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
+
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-            dataAdapter.SelectCommand = getUsers;
+            dataAdapter.SelectCommand = comAddTrack;
 
 
             DataTable dt = new DataTable();
+
 
             try
             {
