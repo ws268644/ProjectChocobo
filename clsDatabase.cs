@@ -764,6 +764,31 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
+        static public DataTable getTrack(string trackName)
+        {
+            string strCommand = "getTrack";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand getTrack = new MySqlCommand(strCommand, cnn);
+            getTrack.CommandType = CommandType.StoredProcedure;
+            getTrack.Parameters.AddWithValue("@trackName", trackName);
+
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = getTrack;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+        }
+        }
         static public void updateEvent(int raceID, string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
         {// REMEMBER!!!!!!!!!!!!!!!!!!!
          // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
