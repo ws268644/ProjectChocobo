@@ -15,9 +15,19 @@ namespace ProjectChocobo
     {
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
 
+        // Save logged in person
+        static public string sUsername;
+        static public string sUserRole;
+
+
 
         static public Boolean login(string strUser, string strPass)
-        { //Login function
+        {
+            //Login function
+            sUsername = strUser;
+            
+
+
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comLogin = new MySqlCommand("checkLogin", cnn);
             comLogin.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
@@ -26,6 +36,7 @@ namespace ProjectChocobo
             try
             {
                 cnn.Open();
+                
                 int loginCheck = Convert.ToInt32(comLogin.ExecuteScalar());
                 if (loginCheck == 1)
                 {
@@ -46,11 +57,11 @@ namespace ProjectChocobo
         static public void logout()
         {
             // log the user out of the database.
-
+            sUsername = "";
 
         }
 
-
+        
 
         static public void createNewUser(String strUsername, String strPassword)
         {
@@ -97,6 +108,53 @@ namespace ProjectChocobo
             }
 
         }
+
+
+        static public int checkRole(string strUserName, string role)
+        {
+            
+
+            int iCheck = 0;
+            string strCommand;
+            switch (role.ToLower())
+            {
+                case "admin":
+                    strCommand = "checkAdmin";
+                    break;
+
+                case "steward":
+                    strCommand = "checkSteward";
+                    break;
+
+                case "racer":
+                    strCommand = "checkRacer";
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid account, please try again.");
+                    return 0;
+
+            }
+
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
+            checkRole.CommandType = System.Data.CommandType.StoredProcedure;
+
+            checkRole.Parameters.AddWithValue("userName", strUserName);
+            try
+            {
+                cnn.Open();
+                iCheck = Convert.ToInt32(checkRole.ExecuteScalar());
+                cnn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return iCheck;
+        }
+
 
         static public Boolean applyUserRole(string strUsername, string strRole)
         {

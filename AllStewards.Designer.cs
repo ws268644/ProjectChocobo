@@ -48,8 +48,8 @@ namespace ProjectChocobo
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.dgv_StewardRaces = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbx_RaceComplete = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
             this.spc_profilesSplit.Panel1.SuspendLayout();
             this.spc_profilesSplit.Panel2.SuspendLayout();
@@ -132,6 +132,7 @@ namespace ProjectChocobo
             this.cbo_selectStewards.Name = "cbo_selectStewards";
             this.cbo_selectStewards.Size = new System.Drawing.Size(250, 21);
             this.cbo_selectStewards.TabIndex = 0;
+            this.cbo_selectStewards.SelectedIndexChanged += new System.EventHandler(this.cbo_selectStewards_SelectedIndexChanged);
             // 
             // lbl_UserRole
             // 
@@ -242,6 +243,16 @@ namespace ProjectChocobo
             this.dgv_StewardRaces.Size = new System.Drawing.Size(500, 110);
             this.dgv_StewardRaces.TabIndex = 33;
             // 
+            // cbx_RaceComplete
+            // 
+            this.cbx_RaceComplete.AutoSize = true;
+            this.cbx_RaceComplete.Location = new System.Drawing.Point(339, 240);
+            this.cbx_RaceComplete.Name = "cbx_RaceComplete";
+            this.cbx_RaceComplete.Size = new System.Drawing.Size(99, 17);
+            this.cbx_RaceComplete.TabIndex = 34;
+            this.cbx_RaceComplete.Text = "Race Complete";
+            this.cbx_RaceComplete.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -252,16 +263,6 @@ namespace ProjectChocobo
             this.pictureBox1.Size = new System.Drawing.Size(801, 54);
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
-            // 
-            // cbx_RaceComplete
-            // 
-            this.cbx_RaceComplete.AutoSize = true;
-            this.cbx_RaceComplete.Location = new System.Drawing.Point(339, 240);
-            this.cbx_RaceComplete.Name = "cbx_RaceComplete";
-            this.cbx_RaceComplete.Size = new System.Drawing.Size(99, 17);
-            this.cbx_RaceComplete.TabIndex = 34;
-            this.cbx_RaceComplete.Text = "Race Complete";
-            this.cbx_RaceComplete.UseVisualStyleBackColor = true;
             // 
             // AllStewards
             // 

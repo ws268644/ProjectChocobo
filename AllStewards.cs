@@ -35,5 +35,18 @@ namespace ProjectChocobo
             profiles profilePage = new profiles();
             nextPage(this, profilePage);
         }
+
+        private void cbo_selectStewards_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // If Admin selects themselves, then remove the delete button
+            if (checkRole(sUsername, "Admin") == 1)
+            {
+                btn_delete.Hide();
+            }
+            else
+            {
+                btn_delete.Show();
+            }
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace ProjectChocobo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllAdmins));
             this.cbx_RaceComplete = new System.Windows.Forms.CheckBox();
-            this.dgv_StewardRaces = new System.Windows.Forms.DataGridView();
+            this.dgv_AllUsers = new System.Windows.Forms.DataGridView();
             this.btn_AddStewardToRace = new System.Windows.Forms.Button();
             this.lbl_AddToRace = new System.Windows.Forms.Label();
             this.cbo_Events = new System.Windows.Forms.ComboBox();
@@ -48,14 +48,14 @@ namespace ProjectChocobo
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Warning = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spc_profilesSplit = new System.Windows.Forms.SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_StewardRaces)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
             this.spc_profilesSplit.Panel1.SuspendLayout();
             this.spc_profilesSplit.Panel2.SuspendLayout();
             this.spc_profilesSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbx_RaceComplete
@@ -68,13 +68,13 @@ namespace ProjectChocobo
             this.cbx_RaceComplete.Text = "Race Complete";
             this.cbx_RaceComplete.UseVisualStyleBackColor = true;
             // 
-            // dgv_StewardRaces
+            // dgv_AllUsers
             // 
-            this.dgv_StewardRaces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_StewardRaces.Location = new System.Drawing.Point(7, 108);
-            this.dgv_StewardRaces.Name = "dgv_StewardRaces";
-            this.dgv_StewardRaces.Size = new System.Drawing.Size(500, 110);
-            this.dgv_StewardRaces.TabIndex = 33;
+            this.dgv_AllUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AllUsers.Location = new System.Drawing.Point(7, 108);
+            this.dgv_AllUsers.Name = "dgv_AllUsers";
+            this.dgv_AllUsers.Size = new System.Drawing.Size(500, 110);
+            this.dgv_AllUsers.TabIndex = 33;
             // 
             // btn_AddStewardToRace
             // 
@@ -82,7 +82,7 @@ namespace ProjectChocobo
             this.btn_AddStewardToRace.Name = "btn_AddStewardToRace";
             this.btn_AddStewardToRace.Size = new System.Drawing.Size(494, 23);
             this.btn_AddStewardToRace.TabIndex = 30;
-            this.btn_AddStewardToRace.Text = "Add Steward";
+            this.btn_AddStewardToRace.Text = "Add Admin";
             this.btn_AddStewardToRace.UseVisualStyleBackColor = true;
             // 
             // lbl_AddToRace
@@ -164,6 +164,7 @@ namespace ProjectChocobo
             this.cbo_selectAdmins.Name = "cbo_selectAdmins";
             this.cbo_selectAdmins.Size = new System.Drawing.Size(250, 21);
             this.cbo_selectAdmins.TabIndex = 0;
+            this.cbo_selectAdmins.SelectedIndexChanged += new System.EventHandler(this.cbo_selectAdmins_SelectedIndexChanged);
             // 
             // btn_back
             // 
@@ -222,17 +223,6 @@ namespace ProjectChocobo
             this.lbl_title.TabIndex = 36;
             this.lbl_title.Text = "Sommerset Racing Group";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
             // spc_profilesSplit
             // 
             this.spc_profilesSplit.Location = new System.Drawing.Point(17, 58);
@@ -247,7 +237,7 @@ namespace ProjectChocobo
             // spc_profilesSplit.Panel2
             // 
             this.spc_profilesSplit.Panel2.Controls.Add(this.cbx_RaceComplete);
-            this.spc_profilesSplit.Panel2.Controls.Add(this.dgv_StewardRaces);
+            this.spc_profilesSplit.Panel2.Controls.Add(this.dgv_AllUsers);
             this.spc_profilesSplit.Panel2.Controls.Add(this.btn_AddStewardToRace);
             this.spc_profilesSplit.Panel2.Controls.Add(this.lbl_AddToRace);
             this.spc_profilesSplit.Panel2.Controls.Add(this.cbo_Events);
@@ -261,6 +251,17 @@ namespace ProjectChocobo
             this.spc_profilesSplit.Size = new System.Drawing.Size(771, 304);
             this.spc_profilesSplit.SplitterDistance = 257;
             this.spc_profilesSplit.TabIndex = 40;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
             // 
             // AllAdmins
             // 
@@ -276,14 +277,15 @@ namespace ProjectChocobo
             this.Controls.Add(this.pictureBox1);
             this.Name = "AllAdmins";
             this.Text = "AllAdmins";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_StewardRaces)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.AllAdmins_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AllUsers)).EndInit();
             this.spc_profilesSplit.Panel1.ResumeLayout(false);
             this.spc_profilesSplit.Panel1.PerformLayout();
             this.spc_profilesSplit.Panel2.ResumeLayout(false);
             this.spc_profilesSplit.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).EndInit();
             this.spc_profilesSplit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,7 +294,7 @@ namespace ProjectChocobo
         #endregion
 
         private System.Windows.Forms.CheckBox cbx_RaceComplete;
-        private System.Windows.Forms.DataGridView dgv_StewardRaces;
+        private System.Windows.Forms.DataGridView dgv_AllUsers;
         private System.Windows.Forms.Button btn_AddStewardToRace;
         private System.Windows.Forms.Label lbl_AddToRace;
         private System.Windows.Forms.ComboBox cbo_Events;
