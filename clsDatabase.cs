@@ -868,8 +868,39 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
+            return null;
+        }
+        static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comUpdateTrack = new MySqlCommand("updateTrack", cnn);
+            comUpdateTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            comUpdateTrack.Parameters.AddWithValue("@trackIndex", strIndex);
+            comUpdateTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comUpdateTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comUpdateTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comUpdateTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comUpdateTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
 
-            return dt;
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comUpdateTrack.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+                return false;
+            }
         }
     }
 
