@@ -35,9 +35,9 @@ namespace ProjectChocobo
 
 
 
-            
+            // Axing this feature for time.
             // Y axis change, but X axis dont
-            crt_EventAttendance.Series["Attendance"].Points.AddXY(getAllRaces());
+            //crt_EventAttendance.Series["Attendance"].Points.AddXY(getAllRaces());
 
 
         }
