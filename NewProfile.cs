@@ -37,7 +37,7 @@ namespace ProjectChocobo
 
         private void btn_AddRacer_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Button pressed");
+            //MessageBox.Show("Button pressed");
             string sFirstName = txt_FirstName.Text;
             string sLastName = txt_LastName.Text;
             string sUsername = txt_username.Text;
