@@ -65,10 +65,8 @@ namespace ProjectChocobo
             // Convert the start and end times to integers for processing
             DateTime dtStartTime = dtp_StartTime.Value;
             DateTime dtFinishTime = dtp_FinishTime.Value;
-            string[] sTime1 = dtp_StartTime.Value.ToString().Split(' ');
-            string sStartTime = sTime1[1];
-            string[] sTime2 = dtp_FinishTime.Value.ToString().Split(' ');
-            string sFinishTime = sTime2[1];
+            string sStartTime = dtp_StartTime.Value.ToString();
+            string sFinishTime = dtp_FinishTime.Value.ToString();
 
 
 
@@ -131,7 +129,6 @@ namespace ProjectChocobo
             if (vCheckName == false && vCheckDates == false && vCheckCurrency == false && vCheckTime == false && vCheckTicketPrice == false)
             {
                 createNewRace(sEventName, sTrack, sSteward, iPrice, dtStartDate, dtEndDate, sStartTime, sFinishTime, sEventDescription);
-                MessageBox.Show(sEventName+" has been added");
             }
 
 

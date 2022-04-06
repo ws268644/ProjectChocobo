@@ -42,7 +42,6 @@ namespace ProjectChocobo
             int adminID = 0;
 
             addTrack(strTrackName, iLaps, strTrackType, iTrackCapacity, strDriveTrain);
-            MessageBox.Show(strTrackName+" has been added");
         }
     }
 }
