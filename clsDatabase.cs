@@ -41,10 +41,30 @@ namespace ProjectChocobo
             }
             return false;
         }
-        static public int checkRole(string strUserName)
+        static public int checkRole(string strUserName, string role)
         {
             int intCheck = 0;
-            string strCommand = "checkAdmin";
+            string strCommand;
+            switch (role)
+            {
+                case "admin":
+                    strCommand = "checkAdmin";
+                    break;
+
+                case "steward":
+                    strCommand = "checkSteward";
+                    break;
+
+                case "racer":
+                    strCommand = "checkRacer";
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid account, please try again.");
+                    return 0;
+                    
+            }
+            
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
             checkRole.CommandType = System.Data.CommandType.StoredProcedure;
