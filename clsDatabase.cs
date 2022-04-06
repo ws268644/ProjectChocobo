@@ -250,6 +250,35 @@ namespace ProjectChocobo
             }
             return dt;
         }
+
+
+        static public void deleteUser(string sName)
+        {
+            string strCommand = "deleteUser";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comDelUser = new MySqlCommand(strCommand, cnn);
+            comDelUser.CommandType = System.Data.CommandType.StoredProcedure;
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            comDelUser.Parameters.AddWithValue("@userName", sName);
+            dataAdapter.SelectCommand = comDelUser;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            
+        }
+
+
+
+
         static public DataTable getAllRacers()
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection

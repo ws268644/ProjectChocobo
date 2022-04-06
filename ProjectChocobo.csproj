@@ -91,6 +91,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllAdmins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllAdmins.Designer.cs">
+      <DependentUpon>AllAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllStewards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllStewards.Designer.cs">
+      <DependentUpon>AllStewards.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsDatabase.cs" />
     <!--<Compile Include="Form1.cs"> Visual Studio wouldn't load the program because of this-->
     <Compile Include="AllEvents.cs">
@@ -99,11 +111,11 @@
     <Compile Include="AllEvents.Designer.cs">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </Compile>
-    <Compile Include="AllProfiles.cs">
+    <Compile Include="AllRacers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllProfiles.Designer.cs">
-      <DependentUpon>AllProfiles.cs</DependentUpon>
+    <Compile Include="AllRacers.Designer.cs">
+      <DependentUpon>AllRacers.cs</DependentUpon>
     </Compile>
     <Compile Include="clsUser.cs" />
     <Compile Include="clsUtility.cs" />
@@ -181,11 +193,17 @@
     <Compile Include="viewProfile.Designer.cs">
       <DependentUpon>viewProfile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllAdmins.resx">
+      <DependentUpon>AllAdmins.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllEvents.resx">
       <DependentUpon>AllEvents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllProfiles.resx">
-      <DependentUpon>AllProfiles.cs</DependentUpon>
+    <EmbeddedResource Include="AllRacers.resx">
+      <DependentUpon>AllRacers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllStewards.resx">
+      <DependentUpon>AllStewards.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventAnalytics.resx">
       <DependentUpon>EventAnalytics.cs</DependentUpon>

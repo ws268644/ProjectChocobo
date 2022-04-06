@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectChocobo
 {
-    partial class AllProfiles
+    partial class AllRacers
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllProfiles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllRacers));
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.spc_profilesSplit = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
             this.lbl_SelectRacer = new System.Windows.Forms.Label();
             this.cbo_selectRacers = new System.Windows.Forms.ComboBox();
+            this.lbl_startPosition = new System.Windows.Forms.Label();
             this.btn_AddRacerToRace = new System.Windows.Forms.Button();
+            this.nud_startPosition = new System.Windows.Forms.NumericUpDown();
             this.lbl_AddToRace = new System.Windows.Forms.Label();
             this.cbo_Events = new System.Windows.Forms.ComboBox();
             this.lbl_UserNameHeadline = new System.Windows.Forms.Label();
@@ -55,17 +55,15 @@ namespace ProjectChocobo
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Warning = new System.Windows.Forms.Label();
-            this.nud_startPosition = new System.Windows.Forms.NumericUpDown();
-            this.lbl_startPosition = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).BeginInit();
             this.spc_profilesSplit.Panel1.SuspendLayout();
             this.spc_profilesSplit.Panel2.SuspendLayout();
             this.spc_profilesSplit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_startPosition)).BeginInit();
             this.tbl_WinsLosses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_startPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -96,6 +94,7 @@ namespace ProjectChocobo
             this.btn_delete.TabIndex = 15;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_Edit
             // 
@@ -113,8 +112,6 @@ namespace ProjectChocobo
             // 
             // spc_profilesSplit.Panel1
             // 
-            this.spc_profilesSplit.Panel1.Controls.Add(this.label1);
-            this.spc_profilesSplit.Panel1.Controls.Add(this.cbo_selectSteward);
             this.spc_profilesSplit.Panel1.Controls.Add(this.lbl_SelectRacer);
             this.spc_profilesSplit.Panel1.Controls.Add(this.cbo_selectRacers);
             this.spc_profilesSplit.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
@@ -142,23 +139,6 @@ namespace ProjectChocobo
             this.spc_profilesSplit.SplitterDistance = 257;
             this.spc_profilesSplit.TabIndex = 26;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Select Steward";
-            // 
-            // cbo_selectSteward
-            // 
-            this.cbo_selectSteward.FormattingEnabled = true;
-            this.cbo_selectSteward.Location = new System.Drawing.Point(3, 96);
-            this.cbo_selectSteward.Name = "cbo_selectSteward";
-            this.cbo_selectSteward.Size = new System.Drawing.Size(250, 21);
-            this.cbo_selectSteward.TabIndex = 2;
-            // 
             // lbl_SelectRacer
             // 
             this.lbl_SelectRacer.AutoSize = true;
@@ -177,6 +157,15 @@ namespace ProjectChocobo
             this.cbo_selectRacers.TabIndex = 0;
             this.cbo_selectRacers.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lbl_startPosition
+            // 
+            this.lbl_startPosition.AutoSize = true;
+            this.lbl_startPosition.Location = new System.Drawing.Point(329, 224);
+            this.lbl_startPosition.Name = "lbl_startPosition";
+            this.lbl_startPosition.Size = new System.Drawing.Size(73, 13);
+            this.lbl_startPosition.TabIndex = 32;
+            this.lbl_startPosition.Text = "Race Position";
+            // 
             // btn_AddRacerToRace
             // 
             this.btn_AddRacerToRace.Location = new System.Drawing.Point(173, 281);
@@ -186,6 +175,13 @@ namespace ProjectChocobo
             this.btn_AddRacerToRace.Text = "Add Racer";
             this.btn_AddRacerToRace.UseVisualStyleBackColor = true;
             this.btn_AddRacerToRace.Click += new System.EventHandler(this.btn_AddRacerToRace_Click);
+            // 
+            // nud_startPosition
+            // 
+            this.nud_startPosition.Location = new System.Drawing.Point(332, 240);
+            this.nud_startPosition.Name = "nud_startPosition";
+            this.nud_startPosition.Size = new System.Drawing.Size(120, 20);
+            this.nud_startPosition.TabIndex = 31;
             // 
             // lbl_AddToRace
             // 
@@ -328,17 +324,6 @@ namespace ProjectChocobo
             this.label2.TabIndex = 0;
             this.label2.Text = "Full Name: ";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // lbl_Warning
             // 
             this.lbl_Warning.AutoSize = true;
@@ -350,23 +335,18 @@ namespace ProjectChocobo
             this.lbl_Warning.Text = "WARNING:";
             this.lbl_Warning.Visible = false;
             // 
-            // nud_startPosition
+            // pictureBox1
             // 
-            this.nud_startPosition.Location = new System.Drawing.Point(332, 240);
-            this.nud_startPosition.Name = "nud_startPosition";
-            this.nud_startPosition.Size = new System.Drawing.Size(120, 20);
-            this.nud_startPosition.TabIndex = 31;
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
-            // lbl_startPosition
-            // 
-            this.lbl_startPosition.AutoSize = true;
-            this.lbl_startPosition.Location = new System.Drawing.Point(329, 224);
-            this.lbl_startPosition.Name = "lbl_startPosition";
-            this.lbl_startPosition.Size = new System.Drawing.Size(71, 13);
-            this.lbl_startPosition.TabIndex = 32;
-            this.lbl_startPosition.Text = "Add To Race";
-            // 
-            // AllProfiles
+            // AllRacers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,7 +358,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "AllProfiles";
+            this.Name = "AllRacers";
             this.Text = "AllProfiles";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
             this.spc_profilesSplit.Panel1.ResumeLayout(false);
@@ -387,10 +367,10 @@ namespace ProjectChocobo
             this.spc_profilesSplit.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spc_profilesSplit)).EndInit();
             this.spc_profilesSplit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_startPosition)).EndInit();
             this.tbl_WinsLosses.ResumeLayout(false);
             this.tbl_WinsLosses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_startPosition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,8 +385,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_SelectRacer;
         private System.Windows.Forms.ComboBox cbo_selectRacers;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbo_selectSteward;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

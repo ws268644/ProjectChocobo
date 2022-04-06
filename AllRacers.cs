@@ -11,9 +11,9 @@ using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
-    public partial class AllProfiles : Form
+    public partial class AllRacers : Form
     {
-        public AllProfiles()
+        public AllRacers()
         {
             InitializeComponent();
         }
@@ -36,11 +36,7 @@ namespace ProjectChocobo
 
 
 
-            // Fill in the steward list with all steward profiles
-            foreach (string sSteward in getStewardNames())
-            {
-                cbo_selectSteward.Items.Add(sSteward);
-            }
+            
 
             // Fill Events list with Events
             foreach (string sEvent in getAllRaces())
@@ -96,6 +92,11 @@ namespace ProjectChocobo
                 // Add Racer to Event
                 addRacerToRace(sEvent, sRacer, iStartPosition);
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
