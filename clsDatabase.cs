@@ -41,7 +41,48 @@ namespace ProjectChocobo
             }
             return false;
         }
+        static public int checkRole(string strUserName, string role)
+        {
+            int intCheck = 0;
+            string strCommand;
+            switch (role)
+            {
+                case "admin":
+                    strCommand = "checkAdmin";
+                    break;
 
+                case "steward":
+                    strCommand = "checkSteward";
+                    break;
+
+                case "racer":
+                    strCommand = "checkRacer";
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid account, please try again.");
+                    return 0;
+                    
+            }
+            
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
+            checkRole.CommandType = System.Data.CommandType.StoredProcedure;
+
+            checkRole.Parameters.AddWithValue("userName", strUserName);
+            try
+            {
+                cnn.Open();
+                intCheck = Convert.ToInt32(checkRole.ExecuteScalar());
+                cnn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            return intCheck;
+        }
 
         static public void logout()
         {
@@ -54,10 +95,12 @@ namespace ProjectChocobo
 
         static public void createNewUser(String strUsername, String strPassword)
         {
-            if (strUsername == "") {
+            if (strUsername == "")
+            {
                 MessageBox.Show("Please enter a username");
             }
-            if (strPassword == "") {
+            if (strPassword == "")
+            {
                 MessageBox.Show("Please enter a password");
             }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
@@ -152,7 +195,8 @@ namespace ProjectChocobo
 
         }
 
-        static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain) {
+        static public Boolean addTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
+        {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comAddTrack = new MySqlCommand("addTrack", cnn);
             comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
@@ -184,7 +228,9 @@ namespace ProjectChocobo
             }
         }
 
-        static public DataTable getAllUsers(string sUser) 
+
+        static public DataTable getAllUsers()
+
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -203,6 +249,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
+
             return dt;
             
         }
@@ -628,9 +675,10 @@ namespace ProjectChocobo
             {
                 cnn.Open();
                 addRacer.ExecuteNonQuery();
+
                 cnn.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -676,9 +724,10 @@ namespace ProjectChocobo
             string strCommand = "getRace";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand getRace = new MySqlCommand(strCommand, cnn);
-            getRace.CommandType = CommandType.StoredProcedure;
 
             getRace.Parameters.AddWithValue("raceName", raceName);
+            getRace.CommandType = CommandType.StoredProcedure;
+
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             dataAdapter.SelectCommand = getRace;
             
@@ -699,6 +748,62 @@ namespace ProjectChocobo
 
             return dt;
         }
-    }
 
+        static public DataTable getTrack(string trackName)
+        {
+            string strCommand = "getTrack";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand getTrack = new MySqlCommand(strCommand, cnn);
+            getTrack.CommandType = CommandType.StoredProcedure;
+            getTrack.Parameters.AddWithValue("@trackName", trackName);
+
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = getTrack;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return null;
+        }
+        static public Boolean updateTrack(string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
+        {
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comAddTrack = new MySqlCommand("updateTrack", cnn);
+            comAddTrack.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+
+            comAddTrack.Parameters.AddWithValue("@trackName", strTrackName);
+            comAddTrack.Parameters.AddWithValue("@trackLaps", intLaps);
+            comAddTrack.Parameters.AddWithValue("@trackType", strTrackType);
+            comAddTrack.Parameters.AddWithValue("@trackCapacity", intTrackCapacity);
+            comAddTrack.Parameters.AddWithValue("@trackDriveTrain", strDriveTrain);
+
+            try
+            {
+                cnn.Open();
+                int success = Convert.ToInt32(comAddTrack.ExecuteNonQuery());//Runs the stored procedure
+                cnn.Close();
+                if (success == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+                return false;
+            }
+        }
     }
+  }
