@@ -45,12 +45,12 @@ namespace ProjectChocobo
 
         static public void logout()
         {
-         // log the user out of the database.
-         
+            // log the user out of the database.
+
 
         }
 
-    
+
 
         static public void createNewUser(String strUsername, String strPassword)
         {
@@ -95,10 +95,10 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error:\n" + ex);
             }
-            
+
         }
 
-        static public Boolean applyUserRole(string strUsername, string strRole) 
+        static public Boolean applyUserRole(string strUsername, string strRole)
         {
             int intUserID = 0;
             string strCommand = "";
@@ -180,9 +180,10 @@ namespace ProjectChocobo
                 MessageBox.Show("There was an error: \n" + ex.ToString());
                 return false;
             }
-}
+        }
 
-        static public DataTable getAllUsers() {
+        static public DataTable getAllUsers(string sUser) 
+        {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
             comGetUsers.CommandType = System.Data.CommandType.StoredProcedure;
@@ -200,7 +201,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
+            return dt;
             
         }
         static public DataTable getAllRacers()
@@ -222,7 +223,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
+            return dt;
 
         }
         static public Boolean applyRacerRole(string strUsername, string strFullName, string strCarName)
@@ -248,7 +249,7 @@ namespace ProjectChocobo
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
-                MessageBox.Show("Username is all good");*/ 
+                MessageBox.Show("Username is all good");*/
                 intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comAddRacer.ExecuteNonQuery());
                 MessageBox.Show("Racer has been added successfully");
@@ -334,7 +335,7 @@ namespace ProjectChocobo
 
 
 
-        
+
 
 
 
@@ -373,23 +374,23 @@ namespace ProjectChocobo
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }*/
-                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
-                /*
-                int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
-                cnn.Close();
-                if (intSuccess == 0)
-                {
-                    return false; //If something went wrong and the user wasn't added it will return a false.
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return false;
-            }
+        //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+        /*
+        int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
+        cnn.Close();
+        if (intSuccess == 0)
+        {
+            return false; //If something went wrong and the user wasn't added it will return a false.
         }
-       */
+        return true;
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(ex.ToString());
+        return false;
+    }
+}
+*/
 
         static public List<string> getCars()
         {
@@ -428,7 +429,7 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString);
             List<string> uids = new List<string>();
             MySqlCommand comGetName = new MySqlCommand("getStewardUsernames", cnn);
-            
+
 
 
             try
@@ -559,12 +560,12 @@ namespace ProjectChocobo
             string myCom = "SELECT t_users.user_login FROM t_users;";
             MySqlCommand myCommand = new MySqlCommand(myCom, cnn);
 
-            
+
             try
             {
                 cnn.Open();
                 MySqlDataReader rdr = myCommand.ExecuteReader();
-                
+
                 while (rdr.Read())
                 {
                     uids.Add(rdr.GetString(0));
@@ -573,7 +574,7 @@ namespace ProjectChocobo
                 }
 
                 cnn.Close();
-                
+
             }
             catch (Exception ex)
             {
@@ -603,7 +604,28 @@ namespace ProjectChocobo
             try
             {
                 cnn.Open();
-                    addRace.ExecuteNonQuery(); //Ran the stored procedure
+                addRace.ExecuteNonQuery(); //Ran the stored procedure
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        static public void addRacerToRace(string raceName, string racerName, int startPosition){
+            string strCommand = "addRacerToRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand addRacer = new MySqlCommand(strCommand, cnn);
+
+            addRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            addRacer.Parameters.AddWithValue("@raceName", raceName);
+            addRacer.Parameters.AddWithValue("@racerUser", racerName);
+            addRacer.Parameters.AddWithValue("@startPosition", startPosition);
+
+            try
+            {
+                cnn.Open();
+                addRacer.ExecuteNonQuery();
                 cnn.Close();
             }
             catch(Exception ex)
@@ -675,7 +697,6 @@ namespace ProjectChocobo
 
             return dt;
         }
-
     }
 
     }

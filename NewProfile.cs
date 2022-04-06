@@ -69,6 +69,11 @@ namespace ProjectChocobo
                 
 
             }
+            else if (txt_Password.Text != txt_ConfirmPassword.Text)
+            {
+                tmr_Warning.Start();
+                lbl_Warning.Text = "WARNING: Passwords do not match";
+            }
 
         }
 
@@ -98,6 +103,12 @@ namespace ProjectChocobo
 
             // Work in progress
             //Image selectedImage = fileExplorer.OpenFile();
+        }
+
+        private void tmr_Warning_Tick(object sender, EventArgs e)
+        {
+            tmr_Warning.Stop();
+            lbl_Warning.Hide();
         }
     }
 }

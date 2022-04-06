@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -24,34 +25,36 @@ namespace ProjectChocobo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             AllEvents allEventsPage = new AllEvents();
-            allEventsPage.ShowDialog();
-            this.Close();
+            nextPage(this, allEventsPage);
         }
 
         private void btn_newEvents_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             NewEvent newEventPage = new NewEvent();
-            newEventPage.ShowDialog();
-            this.Close();
+            nextPage(this, newEventPage);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Home mainMenu = new Home();
-            mainMenu.ShowDialog();
-            this.Close();
+            nextPage(this, mainMenu);
         }
 
         private void btn_UpdateEvent_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             UpdateEvent updateEventPage = new UpdateEvent();
-            updateEventPage.ShowDialog();
-            this.Close();
+            nextPage(this, updateEventPage);
+        }
+
+        private void btn_EventAnalytics_Click(object sender, EventArgs e)
+        {
+            EventAnalytics eaPage = new EventAnalytics();
+            nextPage(this, eaPage);
         }
     }
 }

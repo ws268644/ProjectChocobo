@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewEvent));
             this.btn_Back = new System.Windows.Forms.Button();
             this.txt_EventName = new System.Windows.Forms.TextBox();
@@ -53,9 +54,10 @@ namespace ProjectChocobo
             this.lbl_TrackName = new System.Windows.Forms.Label();
             this.cbo_selectSteward = new System.Windows.Forms.ComboBox();
             this.lbl_SelectSteward = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtp_StartTime = new System.Windows.Forms.DateTimePicker();
             this.dtp_FinishTime = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmr_Warning = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,17 +272,6 @@ namespace ProjectChocobo
             this.lbl_SelectSteward.TabIndex = 45;
             this.lbl_SelectSteward.Text = "Select Steward";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(1, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
-            // 
             // dtp_StartTime
             // 
             this.dtp_StartTime.Cursor = System.Windows.Forms.Cursors.Default;
@@ -301,6 +292,22 @@ namespace ProjectChocobo
             this.dtp_FinishTime.ShowUpDown = true;
             this.dtp_FinishTime.Size = new System.Drawing.Size(100, 20);
             this.dtp_FinishTime.TabIndex = 48;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::ProjectChocobo.Properties.Resources.Flag;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(1, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 54);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tmr_Warning
+            // 
+            this.tmr_Warning.Interval = 5000;
+            this.tmr_Warning.Tick += new System.EventHandler(this.tmr_Warning_Tick);
             // 
             // NewEvent
             // 
@@ -370,5 +377,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtp_StartTime;
         private System.Windows.Forms.DateTimePicker dtp_FinishTime;
+        private System.Windows.Forms.Timer tmr_Warning;
     }
 }
