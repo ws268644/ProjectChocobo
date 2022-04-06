@@ -122,10 +122,10 @@ namespace ProjectChocobo
             MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             checkUsername.CommandType = System.Data.CommandType.StoredProcedure;
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
-            comGetID.CommandType = System.Data.CommandType.StoredProcedure;
-            comGetID.Parameters.AddWithValue("@username", strUsername);
+            //comGetID.CommandType = System.Data.CommandType.StoredProcedure;
+            //comGetID.Parameters.AddWithValue("@username", strUsername);
             checkUsername.Parameters.AddWithValue("@username", strUsername);
-            comApplyUserRole.Parameters.AddWithValue("@userID", intUserID);
+            comApplyUserRole.Parameters.AddWithValue("@username", strUsername);
             try
             {
                 cnn.Open();
@@ -135,7 +135,7 @@ namespace ProjectChocobo
                     cnn.Close();
                     return false; //If the username doesn't exist then it won't try to apply the user role
                 }
-                intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
+                //intUserID = Convert.ToInt32(comGetID.ExecuteScalar());
                 int intSuccess = Convert.ToInt32(comApplyUserRole.ExecuteNonQuery());
                 cnn.Close();
                 if (intSuccess == 0)
