@@ -26,12 +26,14 @@ namespace ProjectChocobo
 
             nextPage(this, newProfiles);
 
+
             /*
             this.Hide();
             NewProfile profiles = new NewProfile();
             profiles.ShowDialog();
             this.Close();
             */
+
 
         }
 
@@ -47,10 +49,10 @@ namespace ProjectChocobo
 
         private void btn_settings_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Settings settingsPage = new Settings();
-            settingsPage.ShowDialog();
-            this.Close();
+            nextPage(this, settingsPage);
+            
         }
 
         private void btn_tracks_Click(object sender, EventArgs e)
@@ -65,11 +67,13 @@ namespace ProjectChocobo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             login loginPage = new login();
-            loginPage.ShowDialog();
+            
             logout();
-            this.Close();
+            nextPage(this, loginPage);
+
+            
             
         }
     }

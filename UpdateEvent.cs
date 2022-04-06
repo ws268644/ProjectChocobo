@@ -43,6 +43,11 @@ namespace ProjectChocobo
             string sSelectedEvent = cbo_ExistingEventName.SelectedItem.ToString();
             DataTable dtSelectedEvent = getEvent(sSelectedEvent);
 
+
+
+            
+
+
             // Populate the fields with the selected event
             foreach (DataRow dr in dtSelectedEvent.Rows)
             {

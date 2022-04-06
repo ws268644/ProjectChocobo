@@ -226,7 +226,9 @@ namespace ProjectChocobo
             }
         }
 
+
         static public DataTable getAllUsers()
+
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comGetUsers = new MySqlCommand("getAllUsers", cnn);
@@ -245,8 +247,9 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
 
+            return dt;
+            
         }
         static public DataTable getAllRacers()
         {
@@ -267,7 +270,7 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-            return null;
+            return dt;
 
         }
         static public Boolean applyRacerRole(string strUsername, string strFullName, string strCarName)
@@ -656,6 +659,28 @@ namespace ProjectChocobo
                 MessageBox.Show(ex.ToString());
             }
         }
+        static public void addRacerToRace(string raceName, string racerName, int startPosition){
+            string strCommand = "addRacerToRace";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand addRacer = new MySqlCommand(strCommand, cnn);
+
+            addRacer.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
+            addRacer.Parameters.AddWithValue("@raceName", raceName);
+            addRacer.Parameters.AddWithValue("@racerUser", racerName);
+            addRacer.Parameters.AddWithValue("@startPosition", startPosition);
+
+            try
+            {
+                cnn.Open();
+                addRacer.ExecuteNonQuery();
+
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         static public void updateEvent(int raceID, string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
         {// REMEMBER!!!!!!!!!!!!!!!!!!!
          // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
@@ -721,6 +746,7 @@ namespace ProjectChocobo
 
             return dt;
         }
+
         static public DataTable getTrack(string trackName)
         {
             string strCommand = "getTrack";
@@ -777,6 +803,6 @@ namespace ProjectChocobo
                 return false;
             }
         }
-
     }
+  }
 }
