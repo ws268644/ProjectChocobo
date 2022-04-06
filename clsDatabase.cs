@@ -206,8 +206,9 @@ namespace ProjectChocobo
         }
         static public DataTable getRacer(string sUser)
         {
+            string strCommand = "getRacerHistory";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand comGetRacers = new MySqlCommand("getRacerHistory", cnn);
+            MySqlCommand comGetRacers = new MySqlCommand(strCommand, cnn);
             comGetRacers.CommandType = System.Data.CommandType.StoredProcedure;
             comGetRacers.Parameters.AddWithValue("@username", sUser);
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
@@ -226,6 +227,28 @@ namespace ProjectChocobo
             }
             return dt;
 
+        }
+        static public DataTable getSteward(string sUser) {
+            string strCommand = "getStewardRaces";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand comGetRacers = new MySqlCommand(strCommand, cnn);
+            comGetRacers.CommandType = System.Data.CommandType.StoredProcedure;
+            comGetRacers.Parameters.AddWithValue("@username", sUser);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            dataAdapter.SelectCommand = comGetRacers;
+            DataTable dt = new DataTable();
+            try
+            {
+                cnn.Open();
+                dataAdapter.Fill(dt);
+                cnn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+            return dt;
         }
         static public DataTable getAllRacers()
         {
