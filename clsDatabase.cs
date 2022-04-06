@@ -118,14 +118,14 @@ namespace ProjectChocobo
             }
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comApplyUserRole = new MySqlCommand(strCommand, cnn);
-            MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
+            //MySqlCommand comGetID = new MySqlCommand("getUserID", cnn);
             MySqlCommand checkUsername = new MySqlCommand("usernameTakenCheck", cnn);
             checkUsername.CommandType = System.Data.CommandType.StoredProcedure;
             comApplyUserRole.CommandType = System.Data.CommandType.StoredProcedure; //Tells C# to treat the command as a stored procedure
             //comGetID.CommandType = System.Data.CommandType.StoredProcedure;
             //comGetID.Parameters.AddWithValue("@username", strUsername);
-            checkUsername.Parameters.AddWithValue("@username", strUsername);
-            comApplyUserRole.Parameters.AddWithValue("@username", strUsername);
+            checkUsername.Parameters.AddWithValue("username", strUsername);
+            comApplyUserRole.Parameters.AddWithValue("username", strUsername);
             try
             {
                 cnn.Open();
