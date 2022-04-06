@@ -227,5 +227,11 @@
   <ItemGroup>
     <None Include="Resources\Flag.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UnitTesting\UnitTesting.csproj">
+      <Project>{ba14d905-359e-4753-b098-bb646f77baa9}</Project>
+      <Name>UnitTesting</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
