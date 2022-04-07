@@ -47,9 +47,9 @@ namespace ProjectChocobo
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(285, 25);
+            this.lbl_title.Size = new System.Drawing.Size(269, 25);
             this.lbl_title.TabIndex = 0;
-            this.lbl_title.Text = "Sommerset Racing Group";
+            this.lbl_title.Text = "Somerset Racing Group";
             // 
             // btn_profiles
             // 

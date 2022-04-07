@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsUtility;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -19,10 +21,13 @@ namespace ProjectChocobo
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Home homePage = new Home();
-            homePage.ShowDialog();
-            this.Close();
+            Events eventsPage = new Events();
+            nextPage(this, eventsPage);
+        }
+
+        private void btn_pastRaces_Click(object sender, EventArgs e)
+        {
+            dgv_RaceViewer.DataSource = getAllRaces();
         }
     }
 }

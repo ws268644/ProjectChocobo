@@ -63,5 +63,11 @@ namespace ProjectChocobo
             EventAnalytics eaPage = new EventAnalytics();
             nextPage(this, eaPage);
         }
+
+        private void btn_stewardsMenu_Click(object sender, EventArgs e)
+        {
+            StewardMenu stewardsPage = new StewardMenu();
+            nextPage(this, stewardsPage);
+        }
     }
 }

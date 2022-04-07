@@ -35,6 +35,7 @@ namespace ProjectChocobo
             this.spc_AllEvents = new System.Windows.Forms.SplitContainer();
             this.lbl_selectedEventName = new System.Windows.Forms.Label();
             this.cbo_selectedEvent = new System.Windows.Forms.ComboBox();
+            this.txt_eventRacers = new System.Windows.Forms.TextBox();
             this.lbl_UserNameHeadline = new System.Windows.Forms.Label();
             this.lbl_EventCompleted = new System.Windows.Forms.Label();
             this.lbl_EventCompletedTitle = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace ProjectChocobo
             this.lbl_EventDateTitle = new System.Windows.Forms.Label();
             this.lbl_EventNameTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_eventRacers = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
             this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.Panel2.SuspendLayout();
@@ -70,9 +70,9 @@ namespace ProjectChocobo
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(8, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(285, 25);
+            this.lbl_title.Size = new System.Drawing.Size(269, 25);
             this.lbl_title.TabIndex = 17;
-            this.lbl_title.Text = "Sommerset Racing Group";
+            this.lbl_title.Text = "Somerset Racing Group";
             // 
             // spc_AllEvents
             // 
@@ -120,6 +120,15 @@ namespace ProjectChocobo
             this.cbo_selectedEvent.Size = new System.Drawing.Size(251, 21);
             this.cbo_selectedEvent.TabIndex = 0;
             this.cbo_selectedEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // txt_eventRacers
+            // 
+            this.txt_eventRacers.Location = new System.Drawing.Point(8, 129);
+            this.txt_eventRacers.Multiline = true;
+            this.txt_eventRacers.Name = "txt_eventRacers";
+            this.txt_eventRacers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_eventRacers.Size = new System.Drawing.Size(503, 217);
+            this.txt_eventRacers.TabIndex = 23;
             // 
             // lbl_UserNameHeadline
             // 
@@ -222,15 +231,6 @@ namespace ProjectChocobo
             this.pictureBox1.Size = new System.Drawing.Size(800, 54);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            // 
-            // txt_eventRacers
-            // 
-            this.txt_eventRacers.Location = new System.Drawing.Point(8, 129);
-            this.txt_eventRacers.Multiline = true;
-            this.txt_eventRacers.Name = "txt_eventRacers";
-            this.txt_eventRacers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_eventRacers.Size = new System.Drawing.Size(503, 217);
-            this.txt_eventRacers.TabIndex = 23;
             // 
             // AllEvents
             // 

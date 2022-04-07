@@ -49,20 +49,20 @@ namespace ProjectChocobo
             this.tbc_Analytics = new System.Windows.Forms.TabControl();
             this.tab_EventAttendance = new System.Windows.Forms.TabPage();
             this.tab_Prices = new System.Windows.Forms.TabPage();
-            this.tab_MostUsedTracks = new System.Windows.Forms.TabPage();
-            this.tab_Racers = new System.Windows.Forms.TabPage();
             this.crt_EventPrices = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tab_MostUsedTracks = new System.Windows.Forms.TabPage();
             this.crt_MostUsedTracks = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tab_Racers = new System.Windows.Forms.TabPage();
             this.crt_RacerStatistics = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.crt_EventAttendance)).BeginInit();
             this.tbc_Analytics.SuspendLayout();
             this.tab_EventAttendance.SuspendLayout();
             this.tab_Prices.SuspendLayout();
-            this.tab_MostUsedTracks.SuspendLayout();
-            this.tab_Racers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crt_EventPrices)).BeginInit();
+            this.tab_MostUsedTracks.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crt_MostUsedTracks)).BeginInit();
+            this.tab_Racers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crt_RacerStatistics)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,9 +82,9 @@ namespace ProjectChocobo
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(285, 25);
+            this.lbl_title.Size = new System.Drawing.Size(269, 25);
             this.lbl_title.TabIndex = 29;
-            this.lbl_title.Text = "Sommerset Racing Group";
+            this.lbl_title.Text = "Somerset Racing Group";
             // 
             // pictureBox1
             // 
@@ -148,28 +148,6 @@ namespace ProjectChocobo
             this.tab_Prices.Text = "Prices";
             this.tab_Prices.UseVisualStyleBackColor = true;
             // 
-            // tab_MostUsedTracks
-            // 
-            this.tab_MostUsedTracks.Controls.Add(this.crt_MostUsedTracks);
-            this.tab_MostUsedTracks.Location = new System.Drawing.Point(4, 22);
-            this.tab_MostUsedTracks.Name = "tab_MostUsedTracks";
-            this.tab_MostUsedTracks.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_MostUsedTracks.Size = new System.Drawing.Size(762, 346);
-            this.tab_MostUsedTracks.TabIndex = 2;
-            this.tab_MostUsedTracks.Text = "Tracks";
-            this.tab_MostUsedTracks.UseVisualStyleBackColor = true;
-            // 
-            // tab_Racers
-            // 
-            this.tab_Racers.Controls.Add(this.crt_RacerStatistics);
-            this.tab_Racers.Location = new System.Drawing.Point(4, 22);
-            this.tab_Racers.Name = "tab_Racers";
-            this.tab_Racers.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Racers.Size = new System.Drawing.Size(762, 346);
-            this.tab_Racers.TabIndex = 3;
-            this.tab_Racers.Text = "Racers";
-            this.tab_Racers.UseVisualStyleBackColor = true;
-            // 
             // crt_EventPrices
             // 
             chartArea2.Name = "ChartArea1";
@@ -186,6 +164,17 @@ namespace ProjectChocobo
             this.crt_EventPrices.TabIndex = 32;
             this.crt_EventPrices.Text = "Prices";
             // 
+            // tab_MostUsedTracks
+            // 
+            this.tab_MostUsedTracks.Controls.Add(this.crt_MostUsedTracks);
+            this.tab_MostUsedTracks.Location = new System.Drawing.Point(4, 22);
+            this.tab_MostUsedTracks.Name = "tab_MostUsedTracks";
+            this.tab_MostUsedTracks.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_MostUsedTracks.Size = new System.Drawing.Size(762, 346);
+            this.tab_MostUsedTracks.TabIndex = 2;
+            this.tab_MostUsedTracks.Text = "Tracks";
+            this.tab_MostUsedTracks.UseVisualStyleBackColor = true;
+            // 
             // crt_MostUsedTracks
             // 
             chartArea3.Name = "ChartArea1";
@@ -201,6 +190,17 @@ namespace ProjectChocobo
             this.crt_MostUsedTracks.Size = new System.Drawing.Size(753, 300);
             this.crt_MostUsedTracks.TabIndex = 32;
             this.crt_MostUsedTracks.Text = "Tracks";
+            // 
+            // tab_Racers
+            // 
+            this.tab_Racers.Controls.Add(this.crt_RacerStatistics);
+            this.tab_Racers.Location = new System.Drawing.Point(4, 22);
+            this.tab_Racers.Name = "tab_Racers";
+            this.tab_Racers.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_Racers.Size = new System.Drawing.Size(762, 346);
+            this.tab_Racers.TabIndex = 3;
+            this.tab_Racers.Text = "Racers";
+            this.tab_Racers.UseVisualStyleBackColor = true;
             // 
             // crt_RacerStatistics
             // 
@@ -235,10 +235,10 @@ namespace ProjectChocobo
             this.tbc_Analytics.ResumeLayout(false);
             this.tab_EventAttendance.ResumeLayout(false);
             this.tab_Prices.ResumeLayout(false);
-            this.tab_MostUsedTracks.ResumeLayout(false);
-            this.tab_Racers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.crt_EventPrices)).EndInit();
+            this.tab_MostUsedTracks.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.crt_MostUsedTracks)).EndInit();
+            this.tab_Racers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.crt_RacerStatistics)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

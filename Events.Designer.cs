@@ -37,6 +37,7 @@ namespace ProjectChocobo
             this.btn_UpdateEvent = new System.Windows.Forms.Button();
             this.btn_EventAnalytics = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_stewardsMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@ namespace ProjectChocobo
             // 
             this.btn_allEvents.Location = new System.Drawing.Point(402, 73);
             this.btn_allEvents.Name = "btn_allEvents";
-            this.btn_allEvents.Size = new System.Drawing.Size(386, 150);
+            this.btn_allEvents.Size = new System.Drawing.Size(386, 63);
             this.btn_allEvents.TabIndex = 12;
             this.btn_allEvents.Text = "See All Events";
             this.btn_allEvents.UseVisualStyleBackColor = true;
@@ -64,7 +65,7 @@ namespace ProjectChocobo
             // 
             this.btn_newEvents.Location = new System.Drawing.Point(12, 73);
             this.btn_newEvents.Name = "btn_newEvents";
-            this.btn_newEvents.Size = new System.Drawing.Size(384, 150);
+            this.btn_newEvents.Size = new System.Drawing.Size(384, 271);
             this.btn_newEvents.TabIndex = 11;
             this.btn_newEvents.Text = "New Event";
             this.btn_newEvents.UseVisualStyleBackColor = true;
@@ -76,15 +77,15 @@ namespace ProjectChocobo
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(285, 25);
+            this.lbl_title.Size = new System.Drawing.Size(269, 25);
             this.lbl_title.TabIndex = 14;
-            this.lbl_title.Text = "Sommerset Racing Group";
+            this.lbl_title.Text = "Somerset Racing Group";
             // 
             // btn_UpdateEvent
             // 
-            this.btn_UpdateEvent.Location = new System.Drawing.Point(12, 229);
+            this.btn_UpdateEvent.Location = new System.Drawing.Point(402, 208);
             this.btn_UpdateEvent.Name = "btn_UpdateEvent";
-            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 136);
+            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 65);
             this.btn_UpdateEvent.TabIndex = 29;
             this.btn_UpdateEvent.Text = "Update Event";
             this.btn_UpdateEvent.UseVisualStyleBackColor = true;
@@ -92,9 +93,9 @@ namespace ProjectChocobo
             // 
             // btn_EventAnalytics
             // 
-            this.btn_EventAnalytics.Location = new System.Drawing.Point(402, 229);
+            this.btn_EventAnalytics.Location = new System.Drawing.Point(402, 142);
             this.btn_EventAnalytics.Name = "btn_EventAnalytics";
-            this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 136);
+            this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 60);
             this.btn_EventAnalytics.TabIndex = 30;
             this.btn_EventAnalytics.Text = "Event Analyitics";
             this.btn_EventAnalytics.UseVisualStyleBackColor = true;
@@ -111,11 +112,22 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
+            // btn_stewardsMenu
+            // 
+            this.btn_stewardsMenu.Location = new System.Drawing.Point(402, 279);
+            this.btn_stewardsMenu.Name = "btn_stewardsMenu";
+            this.btn_stewardsMenu.Size = new System.Drawing.Size(384, 65);
+            this.btn_stewardsMenu.TabIndex = 31;
+            this.btn_stewardsMenu.Text = "Stewards Menu";
+            this.btn_stewardsMenu.UseVisualStyleBackColor = true;
+            this.btn_stewardsMenu.Click += new System.EventHandler(this.btn_stewardsMenu_Click);
+            // 
             // Events
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_stewardsMenu);
             this.Controls.Add(this.btn_EventAnalytics);
             this.Controls.Add(this.btn_UpdateEvent);
             this.Controls.Add(this.lbl_title);
@@ -141,5 +153,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_UpdateEvent;
         private System.Windows.Forms.Button btn_EventAnalytics;
+        private System.Windows.Forms.Button btn_stewardsMenu;
     }
 }

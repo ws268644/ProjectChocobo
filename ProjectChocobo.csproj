@@ -199,12 +199,6 @@
     <Compile Include="updateTracks.Designer.cs">
       <DependentUpon>updateTracks.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewProfile.Designer.cs">
-      <DependentUpon>viewProfile.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddTracks.resx">
       <DependentUpon>AddTracks.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,9 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateTracks.resx">
       <DependentUpon>updateTracks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewProfile.resx">
-      <DependentUpon>viewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
