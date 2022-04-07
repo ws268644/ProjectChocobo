@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -47,6 +48,12 @@ namespace ProjectChocobo
             {
                 btn_delete.Show();
             }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            profiles profilesPage = new profiles();
+            nextPage(this, profilesPage);
         }
     }
 }
