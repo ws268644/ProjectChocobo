@@ -925,12 +925,13 @@ namespace ProjectChocobo
         }
         static public string getRacerUserName(string sName)
         {
-            string userName;
+            string userName = "";
             string strCommand = "getRacerUserName";
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand getRacerUserName = new MySqlCommand(strCommand, cnn);
             getRacerUserName.CommandType = CommandType.StoredProcedure;
             getRacerUserName.Parameters.AddWithValue("name", sName);
+            //getRacerUserName.Parameters.AddWithValue("name", sName);
 
 
 
@@ -945,8 +946,8 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
-
-            return getRacerUserName.ToString();
+            MessageBox.Show(userName);
+            return userName;
         }
     }
 }
