@@ -111,6 +111,11 @@ namespace ProjectChocobo
             this.nudLapCount.Name = "nudLapCount";
             this.nudLapCount.Size = new System.Drawing.Size(100, 20);
             this.nudLapCount.TabIndex = 33;
+            this.nudLapCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboTrackType
             // 
@@ -147,6 +152,11 @@ namespace ProjectChocobo
             this.nudTrackCapacity.Name = "nudTrackCapacity";
             this.nudTrackCapacity.Size = new System.Drawing.Size(120, 20);
             this.nudTrackCapacity.TabIndex = 37;
+            this.nudTrackCapacity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cboDriveTrain
             // 

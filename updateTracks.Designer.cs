@@ -103,9 +103,19 @@ namespace ProjectChocobo
             // nudTrackCapacity
             // 
             this.nudTrackCapacity.Location = new System.Drawing.Point(83, 259);
+            this.nudTrackCapacity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudTrackCapacity.Name = "nudTrackCapacity";
             this.nudTrackCapacity.Size = new System.Drawing.Size(120, 20);
             this.nudTrackCapacity.TabIndex = 48;
+            this.nudTrackCapacity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -139,9 +149,19 @@ namespace ProjectChocobo
             // nudLapCount
             // 
             this.nudLapCount.Location = new System.Drawing.Point(83, 158);
+            this.nudLapCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudLapCount.Name = "nudLapCount";
             this.nudLapCount.Size = new System.Drawing.Size(100, 20);
             this.nudLapCount.TabIndex = 44;
+            this.nudLapCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblLapCount
             // 
