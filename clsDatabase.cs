@@ -892,10 +892,6 @@ namespace ProjectChocobo
             }
             return null;
         }
-        static public DataTable getTrack(string str)
-        {
-            return null;
-        }
         static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
         {
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
