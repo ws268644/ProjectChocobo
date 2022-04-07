@@ -139,9 +139,9 @@ namespace ProjectChocobo
 
                 racerCheck = Convert.ToInt32(checkRacer.ExecuteScalar());
                 cnn.Close();
-                if (adminCheck == 1) { return "admin"; }
-                if (stewardCheck == 1) { return "steward"; }
-                if (racerCheck == 1) { return "racer"; }
+                if (adminCheck == 1) { return "Admin"; }
+                if (stewardCheck == 1) { return "Steward"; }
+                if (racerCheck == 1) { return "Racer"; }
             }
 
             catch (Exception ex)

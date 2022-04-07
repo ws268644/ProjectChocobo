@@ -49,6 +49,11 @@ namespace ProjectChocobo
                 case "Racer": btn_tracks.Hide(); break;
                 case "Steward": btn_tracks.Hide(); break;
                 case "Admin": btn_tracks.Show(); break;
+
+                default:
+                    MessageBox.Show("No role was found");
+                    break;
+
             }
         }
 
