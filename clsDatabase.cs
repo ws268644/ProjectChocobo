@@ -312,10 +312,8 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comDelUser = new MySqlCommand(strCommand, cnn);
             comDelUser.CommandType = System.Data.CommandType.StoredProcedure;
-            //MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
             comDelUser.Parameters.AddWithValue("@username", sName);
-            //dataAdapter.SelectCommand = comDelUser;
-            DataTable dt = new DataTable();
+
             try
             {
                 cnn.Open();
@@ -925,5 +923,31 @@ namespace ProjectChocobo
                 return false;
             }
         }
+        static public string getRacerUserName(string sName)
+        {
+            string userName;
+            string strCommand = "getRacerUserName";
+            MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
+            MySqlCommand getRacerUserName = new MySqlCommand(strCommand, cnn);
+            getRacerUserName.CommandType = CommandType.StoredProcedure;
+            getRacerUserName.Parameters.AddWithValue("name", sName);
+
+
+
+
+            try
+            {
+                cnn.Open();
+                userName = getRacerUserName.ExecuteScalar().ToString();
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error: \n" + ex.ToString());
+            }
+
+            return getRacerUserName.ToString();
+        }
     }
 }
+
