@@ -785,7 +785,7 @@ namespace ProjectChocobo
             }
             return null;
         }
-        }
+        
         static public void updateEvent(int raceID, string strRaceName, string strTrackName, string strStewardName, int intEntryFee, DateTime startDate, DateTime endDate, string startTime, string endTime, string strRaceDesc, int raceCompleted)
         {// REMEMBER!!!!!!!!!!!!!!!!!!!
          // Make sure all these fields are filled in! If there are any blank spaces, that will override what's in the database.
@@ -929,5 +929,4 @@ namespace ProjectChocobo
             }
         }
     }
-
-    }
+}
