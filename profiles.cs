@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsUtility;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -43,7 +44,12 @@ namespace ProjectChocobo
 
         private void profiles_Load(object sender, EventArgs e)
         {
-
+            switch(sUserRole)
+            {
+                case "Admin": btn_newProfile.Show(); break;
+                case "Steward": btn_SeeAllStewards.Show(); btn_SeeAllAdmins.Show(); break;
+                case "Racer": btn_newProfile.Hide(); btn_SeeAllStewards.Hide(); btn_SeeAllAdmins.Hide(); break;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -24,8 +24,8 @@ namespace ProjectChocobo
             switch (sUserRole)
             {
                 case "Admin": btn_newEvents.Show(); break;
-                case "Steward": btn_UpdateEvent.Show(); break;
-                case "Racer": btn_UpdateEvent.Hide(); btn_newEvents.Hide(); break;
+                case "Steward": btn_UpdateEvent.Show(); btn_stewardsMenu.Show(); break;
+                case "Racer": btn_UpdateEvent.Hide(); btn_newEvents.Hide(); btn_stewardsMenu.Hide(); btn_newEvents.Hide(); break;
             }
         }
 
