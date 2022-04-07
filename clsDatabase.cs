@@ -23,7 +23,11 @@ namespace ProjectChocobo
         {
             //Login function
             sUsername = strUser;
-            
+            string sRole = "";
+            switch(checkRole(strUser, sRole))
+            {
+
+            }
 
 
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
@@ -313,15 +317,17 @@ namespace ProjectChocobo
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
             MySqlCommand comDelUser = new MySqlCommand(strCommand, cnn);
             comDelUser.CommandType = System.Data.CommandType.StoredProcedure;
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-            comDelUser.Parameters.AddWithValue("@userName", sName);
-            dataAdapter.SelectCommand = comDelUser;
+            //MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            comDelUser.Parameters.AddWithValue("@username", sName);
+            //dataAdapter.SelectCommand = comDelUser;
             DataTable dt = new DataTable();
             try
             {
                 cnn.Open();
-                dataAdapter.Fill(dt);
+                comDelUser.ExecuteNonQuery();
                 cnn.Close();
+
+                MessageBox.Show(sName + " has been successfully deleted.");
                 
             }
             catch (Exception ex)

@@ -97,12 +97,6 @@
     <Compile Include="AddTracks.Designer.cs">
       <DependentUpon>AddTracks.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="admin.Designer.cs">
-      <DependentUpon>admin.cs</DependentUpon>
-    </Compile>
     <Compile Include="AllAdmins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,9 +207,6 @@
     </Compile>
     <EmbeddedResource Include="AddTracks.resx">
       <DependentUpon>AddTracks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="admin.resx">
-      <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllAdmins.resx">
       <DependentUpon>AllAdmins.cs</DependentUpon>

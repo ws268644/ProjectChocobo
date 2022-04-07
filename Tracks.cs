@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -35,10 +36,9 @@ namespace ProjectChocobo
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmAdmin adminPage = new frmAdmin();
-            adminPage.ShowDialog();
-            this.Close();
+            Home homePage = new Home();
+            nextPage(this, homePage);
+            
         }
     }
 }

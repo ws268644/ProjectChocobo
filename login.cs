@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -40,16 +41,12 @@ namespace ProjectChocobo
 
             if(bLogin == true)
             {
-                int iAdmin = checkRole(sUsername, "admin");
-                this.Hide();
-                Home homePage = new Home();
-                frmAdmin admin = new frmAdmin();
-                if (iAdmin == 1)
-                { admin.ShowDialog(); }
-                else 
-                { homePage.ShowDialog(); }
+               
                 
-                this.Close();
+                Home homePage = new Home();
+                nextPage(this, homePage);
+                
+                
             }
             else
             {

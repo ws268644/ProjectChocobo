@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ProjectChocobo.clsUtility;
+using static ProjectChocobo.clsDatabase;
 
 namespace ProjectChocobo
 {
@@ -20,7 +21,12 @@ namespace ProjectChocobo
 
         private void Events_Load(object sender, EventArgs e)
         {
-
+            switch (sUserRole)
+            {
+                case "Admin": btn_newEvents.Show(); break;
+                case "Steward": btn_UpdateEvent.Show(); break;
+                case "Racer": btn_UpdateEvent.Hide(); btn_newEvents.Hide(); break;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,6 +47,7 @@ namespace ProjectChocobo
         {
             
             Home mainMenu = new Home();
+
             nextPage(this, mainMenu);
         }
 

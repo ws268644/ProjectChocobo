@@ -54,7 +54,7 @@ namespace ProjectChocobo
             // 
             this.btn_allEvents.Location = new System.Drawing.Point(402, 73);
             this.btn_allEvents.Name = "btn_allEvents";
-            this.btn_allEvents.Size = new System.Drawing.Size(386, 180);
+            this.btn_allEvents.Size = new System.Drawing.Size(386, 150);
             this.btn_allEvents.TabIndex = 12;
             this.btn_allEvents.Text = "See All Events";
             this.btn_allEvents.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@ namespace ProjectChocobo
             // 
             this.btn_newEvents.Location = new System.Drawing.Point(12, 73);
             this.btn_newEvents.Name = "btn_newEvents";
-            this.btn_newEvents.Size = new System.Drawing.Size(384, 180);
+            this.btn_newEvents.Size = new System.Drawing.Size(384, 150);
             this.btn_newEvents.TabIndex = 11;
             this.btn_newEvents.Text = "New Event";
             this.btn_newEvents.UseVisualStyleBackColor = true;
@@ -82,9 +82,9 @@ namespace ProjectChocobo
             // 
             // btn_UpdateEvent
             // 
-            this.btn_UpdateEvent.Location = new System.Drawing.Point(12, 259);
+            this.btn_UpdateEvent.Location = new System.Drawing.Point(12, 229);
             this.btn_UpdateEvent.Name = "btn_UpdateEvent";
-            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 106);
+            this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 136);
             this.btn_UpdateEvent.TabIndex = 29;
             this.btn_UpdateEvent.Text = "Update Event";
             this.btn_UpdateEvent.UseVisualStyleBackColor = true;
@@ -92,9 +92,9 @@ namespace ProjectChocobo
             // 
             // btn_EventAnalytics
             // 
-            this.btn_EventAnalytics.Location = new System.Drawing.Point(402, 259);
+            this.btn_EventAnalytics.Location = new System.Drawing.Point(402, 229);
             this.btn_EventAnalytics.Name = "btn_EventAnalytics";
-            this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 106);
+            this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 136);
             this.btn_EventAnalytics.TabIndex = 30;
             this.btn_EventAnalytics.Text = "Event Analyitics";
             this.btn_EventAnalytics.UseVisualStyleBackColor = true;

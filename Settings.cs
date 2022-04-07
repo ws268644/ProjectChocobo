@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ProjectChocobo.clsDatabase;
+using static ProjectChocobo.clsUtility;
 
 namespace ProjectChocobo
 {
@@ -21,8 +23,10 @@ namespace ProjectChocobo
         {
             this.Hide();
             Home mainMenu = new Home();
-            mainMenu.ShowDialog();
-            this.Close();
+            
+
+            nextPage(this, mainMenu);
+            
         }
     }
 }

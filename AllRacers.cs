@@ -104,7 +104,8 @@ namespace ProjectChocobo
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            
+            string sDeletedUser = cbo_selectRacers.SelectedItem.ToString();
+            deleteUser(sDeletedUser);
         }
     }
 }

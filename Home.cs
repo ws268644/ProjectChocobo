@@ -44,7 +44,11 @@ namespace ProjectChocobo
 
         private void Home_Load(object sender, EventArgs e)
         {
-            
+            switch(checkRole(sUsername, "Admin"))
+            {
+                case 0: btn_tracks.Hide(); break;
+                case 1: btn_tracks.Show(); break;
+            }
         }
 
         private void btn_settings_Click(object sender, EventArgs e)
@@ -57,7 +61,8 @@ namespace ProjectChocobo
 
         private void btn_tracks_Click(object sender, EventArgs e)
         {
-            
+            Tracks tracksPage = new Tracks();
+            nextPage(this, tracksPage);
         }
 
         private void btn_quit_Click(object sender, EventArgs e)
@@ -75,6 +80,18 @@ namespace ProjectChocobo
 
             
             
+        }
+
+        private void btn_events_Click_1(object sender, EventArgs e)
+        {
+            Events eventsPage = new Events();
+            nextPage(this, eventsPage);
+        }
+
+        private void btn_tracks_Click_1(object sender, EventArgs e)
+        {
+            Tracks tracksPage = new Tracks();
+            nextPage(this, tracksPage);
         }
     }
 }
