@@ -359,7 +359,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AllRacers";
-            this.Text = "AllProfiles";
+            this.Text = "All Racers";
             this.Load += new System.EventHandler(this.AllProfiles_Load);
             this.spc_profilesSplit.Panel1.ResumeLayout(false);
             this.spc_profilesSplit.Panel1.PerformLayout();

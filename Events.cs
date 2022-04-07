@@ -21,11 +21,12 @@ namespace ProjectChocobo
 
         private void Events_Load(object sender, EventArgs e)
         {
+            // Manage Access levels
             switch (sUserRole)
             {
                 case "Admin": btn_newEvents.Show(); break;
-                case "Steward": btn_UpdateEvent.Show(); btn_stewardsMenu.Show(); break;
-                case "Racer": btn_UpdateEvent.Hide(); btn_newEvents.Hide(); btn_stewardsMenu.Hide(); btn_newEvents.Hide(); break;
+                case "Steward": btn_UpdateEvent.Show(); btn_stewardsMenu.Show(); btn_EventAnalytics.Show(); break;
+                case "Racer": btn_UpdateEvent.Hide(); btn_newEvents.Hide(); btn_stewardsMenu.Hide(); btn_newEvents.Hide(); btn_EventAnalytics.Hide(); break;
             }
         }
 

@@ -28,6 +28,16 @@ namespace ProjectChocobo
 
         private void AllProfiles_Load(object sender, EventArgs e)
         {
+
+
+            switch(sUserRole)
+            {
+                case "Admin": btn_Edit.Show(); btn_delete.Show();  break;
+                case "Steward": break;
+                case "Racer": lbl_AddToRace.Hide(); cbo_Events.Hide(); nud_startPosition.Hide(); lbl_startPosition.Hide(); btn_AddRacerToRace.Hide(); btn_delete.Hide(); btn_Edit.Hide(); break;
+            }
+
+
             // Fill combo box with all Racer Profile
             foreach (string sRacer in getRacerNames())
             {
