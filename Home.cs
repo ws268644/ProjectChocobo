@@ -44,10 +44,11 @@ namespace ProjectChocobo
 
         private void Home_Load(object sender, EventArgs e)
         {
-            switch(checkRole(sUsername, "Admin"))
+            switch(sUserRole)
             {
-                case 0: btn_tracks.Hide(); break;
-                case 1: btn_tracks.Show(); break;
+                case "Racer": btn_tracks.Hide(); break;
+                case "Steward": btn_tracks.Hide(); break;
+                case "Admin": btn_tracks.Show(); break;
             }
         }
 

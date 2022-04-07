@@ -39,7 +39,7 @@ namespace ProjectChocobo
         private void cbo_selectAdmins_SelectedIndexChanged(object sender, EventArgs e)
         {
             // If Admin selects themselves, then remove the delete button
-            if(checkRole(sUsername, "Admin") == 1)
+            if(checkRole(sUsername) == "Admin")
             {
                 btn_delete.Hide();
             }

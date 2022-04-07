@@ -72,11 +72,11 @@ namespace ProjectChocobo
             }
 
             // If Admin selects themselves, then remove the delete button
-            if (checkRole(sUsername, "Admin") == 0)
+            if (checkRole(sUsername) != "Admin")
             {
                 btn_delete.Hide();
             }
-            else if (checkRole(sUsername, "Admin") == 1)
+            else if (checkRole(sUsername) == "Admin")
             {
                 btn_delete.Show();
             }

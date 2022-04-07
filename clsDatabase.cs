@@ -16,17 +16,19 @@ namespace ProjectChocobo
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =26?kyuT2;CharSet=utf8;SslMode=none;";
 
         // Save logged in person
-        static public string sUsername { get; set; }
-        static public string sUserRole { get; set; }
+        static public string sUsername;
+        static public string sUserRole;
 
         static public Boolean login(string strUser, string strPass)
         {
             //Login function
             sUsername = strUser;
-            string sRole = "";
+            
             switch(checkRole(strUser))
             {
-
+                case "Admin": sUserRole = "Admin"; break;
+                case "Steward": sUserRole = "Steward"; break;
+                case "Racer": sUserRole = "Racer"; break;
             }
 
 
