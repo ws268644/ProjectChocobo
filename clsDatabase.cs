@@ -16,10 +16,8 @@ namespace ProjectChocobo
         static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
 
         // Save logged in person
-        static public string sUsername;
-        static public string sUserRole;
-
-
+        static public string sUsername { get; set; }
+        static public string sUserRole { get; set; }
 
         static public Boolean login(string strUser, string strPass)
         {
@@ -58,7 +56,6 @@ namespace ProjectChocobo
         {
             // log the user out of the database.
             sUsername = "";
-
         }
 
         
@@ -893,6 +890,10 @@ namespace ProjectChocobo
             {
                 MessageBox.Show("There was an error: \n" + ex.ToString());
             }
+            return null;
+        }
+        static public DataTable getTrack(string str)
+        {
             return null;
         }
         static public Boolean updateTrack(string strIndex, string strTrackName, int intLaps, string strTrackType, int intTrackCapacity, string strDriveTrain)
