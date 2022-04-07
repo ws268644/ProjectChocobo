@@ -24,7 +24,7 @@ namespace ProjectChocobo
             //Login function
             sUsername = strUser;
             string sRole = "";
-            switch(checkRole(strUser, sRole))
+            switch(checkRole(strUser))
             {
 
             }
@@ -111,49 +111,42 @@ namespace ProjectChocobo
         }
 
 
-        static public int checkRole(string strUserName, string role)
+        static public string checkRole(string strUserName)
         {
             
 
-            int iCheck = 0;
-            string strCommand;
-            switch (role.ToLower())
-            {
-                case "admin":
-                    strCommand = "checkAdmin";
-                    break;
-
-                case "steward":
-                    strCommand = "checkSteward";
-                    break;
-
-                case "racer":
-                    strCommand = "checkRacer";
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid account, please try again.");
-                    return 0;
-
-            }
-
+            int adminCheck = 0;
+            int stewardCheck = 0;
+            int racerCheck = 0;
             MySqlConnection cnn = new MySqlConnection(conString); //Sets connection string as an actual SQL connection
-            MySqlCommand checkRole = new MySqlCommand(strCommand, cnn);
-            checkRole.CommandType = System.Data.CommandType.StoredProcedure;
-
-            checkRole.Parameters.AddWithValue("userName", strUserName);
+            MySqlCommand checkAdmin = new MySqlCommand("checkAdmin", cnn);
+            MySqlCommand checkSteward = new MySqlCommand("checkSteward", cnn);
+            MySqlCommand checkRacer = new MySqlCommand("checkRacer", cnn);
+            checkAdmin.CommandType = System.Data.CommandType.StoredProcedure;
+            checkSteward.CommandType = System.Data.CommandType.StoredProcedure;
+            checkRacer.CommandType = System.Data.CommandType.StoredProcedure;
+            checkAdmin.Parameters.AddWithValue("userName", strUserName);
+            checkSteward.Parameters.AddWithValue("userName", strUserName);
+            checkRacer.Parameters.AddWithValue("userName", strUserName);
             try
             {
                 cnn.Open();
-                iCheck = Convert.ToInt32(checkRole.ExecuteScalar());
+                adminCheck = Convert.ToInt32(checkAdmin.ExecuteScalar());
+
+                stewardCheck = Convert.ToInt32(checkSteward.ExecuteScalar());
+
+                racerCheck = Convert.ToInt32(checkRacer.ExecuteScalar());
                 cnn.Close();
+                if (adminCheck == 1) { return "admin"; }
+                if (stewardCheck == 1) { return "steward"; }
+                if (racerCheck == 1) { return "racer"; }
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-            return iCheck;
+            return null;
         }
 
 
