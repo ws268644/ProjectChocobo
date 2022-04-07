@@ -13,7 +13,7 @@ namespace ProjectChocobo
 {
     static public class clsDatabase
     {
-        static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =98U*z4rl;CharSet=utf8;SslMode=none;";
+        static private string conString = "server=ws268644.remote.ac;user = ws268644_Admin;database = ws268644_ProjectChocobo;password =26?kyuT2;CharSet=utf8;SslMode=none;";
 
         // Save logged in person
         static public string sUsername { get; set; }
