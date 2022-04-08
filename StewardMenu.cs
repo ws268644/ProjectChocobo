@@ -29,5 +29,11 @@ namespace ProjectChocobo
         {
             dgv_RaceViewer.DataSource = getAllRaces();
         }
+
+        private void btn_editRaces_Click(object sender, EventArgs e)
+        {
+            UpdateEvent updateEventPage = new UpdateEvent();
+            nextPage(this, updateEventPage);
+        }
     }
 }

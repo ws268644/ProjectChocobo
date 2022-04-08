@@ -29,12 +29,14 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tracks));
             this.btn_addTracks = new System.Windows.Forms.Button();
             this.btnUpdateTracks = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Back = new System.Windows.Forms.Button();
+            this.ttp_Tracks = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +47,7 @@ namespace ProjectChocobo
             this.btn_addTracks.Size = new System.Drawing.Size(363, 117);
             this.btn_addTracks.TabIndex = 7;
             this.btn_addTracks.Text = "Add Tracks";
+            this.ttp_Tracks.SetToolTip(this.btn_addTracks, "Add a new track to the database");
             this.btn_addTracks.UseVisualStyleBackColor = true;
             this.btn_addTracks.Click += new System.EventHandler(this.btn_addTracks_Click);
             // 
@@ -55,6 +58,7 @@ namespace ProjectChocobo
             this.btnUpdateTracks.Size = new System.Drawing.Size(363, 117);
             this.btnUpdateTracks.TabIndex = 8;
             this.btnUpdateTracks.Text = "Update Tracks";
+            this.ttp_Tracks.SetToolTip(this.btnUpdateTracks, "Update the existing tracks");
             this.btnUpdateTracks.UseVisualStyleBackColor = true;
             this.btnUpdateTracks.Click += new System.EventHandler(this.btnUpdateTracks_Click);
             // 
@@ -83,9 +87,10 @@ namespace ProjectChocobo
             // 
             this.btn_Back.Location = new System.Drawing.Point(12, 415);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.Size = new System.Drawing.Size(776, 23);
             this.btn_Back.TabIndex = 32;
             this.btn_Back.Text = "Back";
+            this.ttp_Tracks.SetToolTip(this.btn_Back, "Return to Main menu");
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
@@ -99,6 +104,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUpdateTracks);
             this.Controls.Add(this.btn_addTracks);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Tracks";
             this.Text = "Tracks";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -114,5 +120,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.ToolTip ttp_Tracks;
     }
 }

@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Events));
             this.button3 = new System.Windows.Forms.Button();
             this.btn_allEvents = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@ namespace ProjectChocobo
             this.btn_EventAnalytics = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_stewardsMenu = new System.Windows.Forms.Button();
+            this.ttp_events = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@ namespace ProjectChocobo
             this.button3.Size = new System.Drawing.Size(776, 67);
             this.button3.TabIndex = 13;
             this.button3.Text = "Back";
+            this.ttp_events.SetToolTip(this.button3, "Return to the main menu");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -58,6 +61,7 @@ namespace ProjectChocobo
             this.btn_allEvents.Size = new System.Drawing.Size(386, 63);
             this.btn_allEvents.TabIndex = 12;
             this.btn_allEvents.Text = "See All Events";
+            this.ttp_events.SetToolTip(this.btn_allEvents, "Manage all events");
             this.btn_allEvents.UseVisualStyleBackColor = true;
             this.btn_allEvents.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -68,6 +72,7 @@ namespace ProjectChocobo
             this.btn_newEvents.Size = new System.Drawing.Size(384, 271);
             this.btn_newEvents.TabIndex = 11;
             this.btn_newEvents.Text = "New Event";
+            this.ttp_events.SetToolTip(this.btn_newEvents, "Add a new event to the database");
             this.btn_newEvents.UseVisualStyleBackColor = true;
             this.btn_newEvents.Click += new System.EventHandler(this.btn_newEvents_Click);
             // 
@@ -88,6 +93,7 @@ namespace ProjectChocobo
             this.btn_UpdateEvent.Size = new System.Drawing.Size(384, 65);
             this.btn_UpdateEvent.TabIndex = 29;
             this.btn_UpdateEvent.Text = "Update Event";
+            this.ttp_events.SetToolTip(this.btn_UpdateEvent, "Modify an existing event");
             this.btn_UpdateEvent.UseVisualStyleBackColor = true;
             this.btn_UpdateEvent.Click += new System.EventHandler(this.btn_UpdateEvent_Click);
             // 
@@ -98,6 +104,7 @@ namespace ProjectChocobo
             this.btn_EventAnalytics.Size = new System.Drawing.Size(384, 60);
             this.btn_EventAnalytics.TabIndex = 30;
             this.btn_EventAnalytics.Text = "Event Analyitics";
+            this.ttp_events.SetToolTip(this.btn_EventAnalytics, "See the data and analytics for all events");
             this.btn_EventAnalytics.UseVisualStyleBackColor = true;
             this.btn_EventAnalytics.Click += new System.EventHandler(this.btn_EventAnalytics_Click);
             // 
@@ -119,6 +126,7 @@ namespace ProjectChocobo
             this.btn_stewardsMenu.Size = new System.Drawing.Size(384, 65);
             this.btn_stewardsMenu.TabIndex = 31;
             this.btn_stewardsMenu.Text = "Stewards Menu";
+            this.ttp_events.SetToolTip(this.btn_stewardsMenu, "See a listing of all past and upcoming events");
             this.btn_stewardsMenu.UseVisualStyleBackColor = true;
             this.btn_stewardsMenu.Click += new System.EventHandler(this.btn_stewardsMenu_Click);
             // 
@@ -135,6 +143,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_allEvents);
             this.Controls.Add(this.btn_newEvents);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Events";
             this.Text = "Events";
             this.Load += new System.EventHandler(this.Events_Load);
@@ -154,5 +163,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_UpdateEvent;
         private System.Windows.Forms.Button btn_EventAnalytics;
         private System.Windows.Forms.Button btn_stewardsMenu;
+        private System.Windows.Forms.ToolTip ttp_events;
     }
 }

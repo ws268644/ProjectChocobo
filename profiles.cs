@@ -47,7 +47,7 @@ namespace ProjectChocobo
             switch(sUserRole)
             {
                 case "Admin": btn_newProfile.Show(); break;
-                case "Steward": btn_SeeAllStewards.Show(); btn_SeeAllAdmins.Show(); break;
+                case "Steward": btn_SeeAllStewards.Show(); btn_SeeAllAdmins.Show(); btn_SeeAllAdmins.Hide(); break;
                 case "Racer": btn_newProfile.Hide(); btn_SeeAllStewards.Hide(); btn_SeeAllAdmins.Hide(); break;
             }
         }

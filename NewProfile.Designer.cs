@@ -276,6 +276,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_LastName);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(813, 489);
             this.Name = "NewProfile";
             this.Text = "NewProfile";
             this.Load += new System.EventHandler(this.NewProfile_Load);

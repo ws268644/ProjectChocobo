@@ -358,6 +358,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "AllRacers";
             this.Text = "All Racers";
             this.Load += new System.EventHandler(this.AllProfiles_Load);

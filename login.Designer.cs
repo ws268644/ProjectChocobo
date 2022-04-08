@@ -40,15 +40,20 @@ namespace ProjectChocobo
             this.tmr_ErrorMessage = new System.Windows.Forms.Timer(this.components);
             this.lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ttp_Login = new System.Windows.Forms.ToolTip(this.components);
+            this.cbx_unhidePassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(312, 168);
+            this.txtUsername.MaximumSize = new System.Drawing.Size(50, 10);
+            this.txtUsername.MinimumSize = new System.Drawing.Size(196, 20);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(196, 20);
             this.txtUsername.TabIndex = 0;
+            this.ttp_Login.SetToolTip(this.txtUsername, "Please enter your username");
             // 
             // txtPassword
             // 
@@ -56,6 +61,8 @@ namespace ProjectChocobo
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(196, 20);
             this.txtPassword.TabIndex = 1;
+            this.ttp_Login.SetToolTip(this.txtPassword, "Please enter your password");
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -77,9 +84,9 @@ namespace ProjectChocobo
             // 
             // btn_submit
             // 
-            this.btn_submit.Location = new System.Drawing.Point(372, 293);
+            this.btn_submit.Location = new System.Drawing.Point(312, 293);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(75, 23);
+            this.btn_submit.Size = new System.Drawing.Size(196, 23);
             this.btn_submit.TabIndex = 5;
             this.btn_submit.Text = "Enter";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -107,9 +114,9 @@ namespace ProjectChocobo
             this.lbl_title.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(285, 25);
+            this.lbl_title.Size = new System.Drawing.Size(269, 25);
             this.lbl_title.TabIndex = 28;
-            this.lbl_title.Text = "Sommerset Racing Group";
+            this.lbl_title.Text = "Somerset Racing Group";
             // 
             // pictureBox1
             // 
@@ -122,11 +129,23 @@ namespace ProjectChocobo
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // cbx_unhidePassword
+            // 
+            this.cbx_unhidePassword.AutoSize = true;
+            this.cbx_unhidePassword.Location = new System.Drawing.Point(543, 225);
+            this.cbx_unhidePassword.Name = "cbx_unhidePassword";
+            this.cbx_unhidePassword.Size = new System.Drawing.Size(108, 17);
+            this.cbx_unhidePassword.TabIndex = 30;
+            this.cbx_unhidePassword.Text = "Unhide password";
+            this.cbx_unhidePassword.UseVisualStyleBackColor = true;
+            this.cbx_unhidePassword.CheckedChanged += new System.EventHandler(this.cbx_unhidePassword_CheckedChanged);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 461);
+            this.Controls.Add(this.cbx_unhidePassword);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_ErrorMessage);
@@ -135,6 +154,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.MinimumSize = new System.Drawing.Size(816, 500);
             this.Name = "login";
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
@@ -155,5 +175,7 @@ namespace ProjectChocobo
         private System.Windows.Forms.Timer tmr_ErrorMessage;
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolTip ttp_Login;
+        private System.Windows.Forms.CheckBox cbx_unhidePassword;
     }
 }

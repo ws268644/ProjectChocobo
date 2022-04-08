@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StewardMenu));
             this.btn_back = new System.Windows.Forms.Button();
             this.dgv_RaceViewer = new System.Windows.Forms.DataGridView();
@@ -36,8 +37,9 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_pastRaces = new System.Windows.Forms.Button();
             this.btn_UpcomingRaces = new System.Windows.Forms.Button();
-            this.btn_editRaces = new System.Windows.Forms.Button();
             this.lbl_StewardMenuTitle = new System.Windows.Forms.Label();
+            this.ttp_StewardMenu = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_editRaces = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RaceViewer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +61,7 @@ namespace ProjectChocobo
             this.dgv_RaceViewer.Name = "dgv_RaceViewer";
             this.dgv_RaceViewer.Size = new System.Drawing.Size(776, 185);
             this.dgv_RaceViewer.TabIndex = 1;
+            this.ttp_StewardMenu.SetToolTip(this.dgv_RaceViewer, "List of all races");
             // 
             // lbl_title
             // 
@@ -88,6 +91,7 @@ namespace ProjectChocobo
             this.btn_pastRaces.Size = new System.Drawing.Size(333, 23);
             this.btn_pastRaces.TabIndex = 30;
             this.btn_pastRaces.Text = "Past Races";
+            this.ttp_StewardMenu.SetToolTip(this.btn_pastRaces, "List all past races from comapny database");
             this.btn_pastRaces.UseVisualStyleBackColor = true;
             this.btn_pastRaces.Click += new System.EventHandler(this.btn_pastRaces_Click);
             // 
@@ -98,16 +102,8 @@ namespace ProjectChocobo
             this.btn_UpcomingRaces.Size = new System.Drawing.Size(328, 23);
             this.btn_UpcomingRaces.TabIndex = 31;
             this.btn_UpcomingRaces.Text = "Upcoming Races";
+            this.ttp_StewardMenu.SetToolTip(this.btn_UpcomingRaces, "List all planned races from database");
             this.btn_UpcomingRaces.UseVisualStyleBackColor = true;
-            // 
-            // btn_editRaces
-            // 
-            this.btn_editRaces.Location = new System.Drawing.Point(438, 415);
-            this.btn_editRaces.Name = "btn_editRaces";
-            this.btn_editRaces.Size = new System.Drawing.Size(328, 23);
-            this.btn_editRaces.TabIndex = 34;
-            this.btn_editRaces.Text = "Edit Races";
-            this.btn_editRaces.UseVisualStyleBackColor = true;
             // 
             // lbl_StewardMenuTitle
             // 
@@ -118,6 +114,17 @@ namespace ProjectChocobo
             this.lbl_StewardMenuTitle.Size = new System.Drawing.Size(188, 31);
             this.lbl_StewardMenuTitle.TabIndex = 35;
             this.lbl_StewardMenuTitle.Text = "Steward Menu";
+            // 
+            // btn_editRaces
+            // 
+            this.btn_editRaces.Location = new System.Drawing.Point(438, 415);
+            this.btn_editRaces.Name = "btn_editRaces";
+            this.btn_editRaces.Size = new System.Drawing.Size(328, 23);
+            this.btn_editRaces.TabIndex = 34;
+            this.btn_editRaces.Text = "Edit Races";
+            this.ttp_StewardMenu.SetToolTip(this.btn_editRaces, "Edit Race Events");
+            this.btn_editRaces.UseVisualStyleBackColor = true;
+            this.btn_editRaces.Click += new System.EventHandler(this.btn_editRaces_Click);
             // 
             // StewardMenu
             // 
@@ -132,6 +139,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgv_RaceViewer);
             this.Controls.Add(this.btn_back);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "StewardMenu";
             this.Text = "StewardMenu";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_RaceViewer)).EndInit();
@@ -149,7 +157,8 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_pastRaces;
         private System.Windows.Forms.Button btn_UpcomingRaces;
-        private System.Windows.Forms.Button btn_editRaces;
         private System.Windows.Forms.Label lbl_StewardMenuTitle;
+        private System.Windows.Forms.ToolTip ttp_StewardMenu;
+        private System.Windows.Forms.Button btn_editRaces;
     }
 }

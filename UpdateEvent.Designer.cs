@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateEvent));
             this.lbl_title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,6 +60,7 @@ namespace ProjectChocobo
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_ExistingEventName = new System.Windows.Forms.ComboBox();
             this.ckb_RaceCompleted = new System.Windows.Forms.CheckBox();
+            this.ttp_UpdateEvents = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +93,7 @@ namespace ProjectChocobo
             this.dtp_FinishTime.ShowUpDown = true;
             this.dtp_FinishTime.Size = new System.Drawing.Size(100, 20);
             this.dtp_FinishTime.TabIndex = 72;
+            this.ttp_UpdateEvents.SetToolTip(this.dtp_FinishTime, "Set a new finish time for every day of the event");
             // 
             // dtp_StartTime
             // 
@@ -102,6 +105,7 @@ namespace ProjectChocobo
             this.dtp_StartTime.ShowUpDown = true;
             this.dtp_StartTime.Size = new System.Drawing.Size(100, 20);
             this.dtp_StartTime.TabIndex = 71;
+            this.ttp_UpdateEvents.SetToolTip(this.dtp_StartTime, "Set a new start time for each day of the event");
             this.dtp_StartTime.Value = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             // 
             // lbl_SelectSteward
@@ -120,6 +124,7 @@ namespace ProjectChocobo
             this.cbo_selectSteward.Name = "cbo_selectSteward";
             this.cbo_selectSteward.Size = new System.Drawing.Size(392, 21);
             this.cbo_selectSteward.TabIndex = 69;
+            this.ttp_UpdateEvents.SetToolTip(this.cbo_selectSteward, "Select a new steward for the event");
             // 
             // lbl_TrackName
             // 
@@ -137,6 +142,7 @@ namespace ProjectChocobo
             this.cbo_TrackName.Name = "cbo_TrackName";
             this.cbo_TrackName.Size = new System.Drawing.Size(392, 21);
             this.cbo_TrackName.TabIndex = 67;
+            this.ttp_UpdateEvents.SetToolTip(this.cbo_TrackName, "Select a new track for the event");
             // 
             // lbl_NewEventError
             // 
@@ -197,6 +203,7 @@ namespace ProjectChocobo
             this.txt_TicketPrice.Name = "txt_TicketPrice";
             this.txt_TicketPrice.Size = new System.Drawing.Size(203, 20);
             this.txt_TicketPrice.TabIndex = 61;
+            this.ttp_UpdateEvents.SetToolTip(this.txt_TicketPrice, "Select a new ticket price for the event");
             // 
             // lbl_finishTime
             // 
@@ -223,6 +230,7 @@ namespace ProjectChocobo
             this.btn_addEvent.Size = new System.Drawing.Size(392, 23);
             this.btn_addEvent.TabIndex = 58;
             this.btn_addEvent.Text = "Update Event";
+            this.ttp_UpdateEvents.SetToolTip(this.btn_addEvent, "Update the existing event with the new details");
             this.btn_addEvent.UseVisualStyleBackColor = true;
             this.btn_addEvent.Click += new System.EventHandler(this.btn_addEvent_Click);
             // 
@@ -250,6 +258,7 @@ namespace ProjectChocobo
             this.dtp_EndDate.Name = "dtp_EndDate";
             this.dtp_EndDate.Size = new System.Drawing.Size(200, 20);
             this.dtp_EndDate.TabIndex = 55;
+            this.ttp_UpdateEvents.SetToolTip(this.dtp_EndDate, "Set a new end date for the event");
             // 
             // label3
             // 
@@ -267,6 +276,7 @@ namespace ProjectChocobo
             this.dtp_StartDate.Name = "dtp_StartDate";
             this.dtp_StartDate.Size = new System.Drawing.Size(200, 20);
             this.dtp_StartDate.TabIndex = 53;
+            this.ttp_UpdateEvents.SetToolTip(this.dtp_StartDate, "Set a new start date for the event");
             this.dtp_StartDate.Value = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             // 
             // label1
@@ -285,6 +295,7 @@ namespace ProjectChocobo
             this.txt_eventDescription.Name = "txt_eventDescription";
             this.txt_eventDescription.Size = new System.Drawing.Size(343, 358);
             this.txt_eventDescription.TabIndex = 51;
+            this.ttp_UpdateEvents.SetToolTip(this.txt_eventDescription, "Add in a new description for the event");
             // 
             // btn_Back
             // 
@@ -293,6 +304,7 @@ namespace ProjectChocobo
             this.btn_Back.Size = new System.Drawing.Size(392, 23);
             this.btn_Back.TabIndex = 49;
             this.btn_Back.Text = "Back";
+            this.ttp_UpdateEvents.SetToolTip(this.btn_Back, "Return to Events");
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -302,6 +314,7 @@ namespace ProjectChocobo
             this.txt_NewEventName.Name = "txt_NewEventName";
             this.txt_NewEventName.Size = new System.Drawing.Size(392, 20);
             this.txt_NewEventName.TabIndex = 73;
+            this.ttp_UpdateEvents.SetToolTip(this.txt_NewEventName, "Enter a new name for event");
             // 
             // label5
             // 
@@ -319,6 +332,7 @@ namespace ProjectChocobo
             this.cbo_ExistingEventName.Name = "cbo_ExistingEventName";
             this.cbo_ExistingEventName.Size = new System.Drawing.Size(392, 21);
             this.cbo_ExistingEventName.TabIndex = 75;
+            this.ttp_UpdateEvents.SetToolTip(this.cbo_ExistingEventName, "Select and existing event");
             this.cbo_ExistingEventName.SelectedIndexChanged += new System.EventHandler(this.cbo_ExistingEventName_SelectedIndexChanged);
             // 
             // ckb_RaceCompleted
@@ -329,6 +343,7 @@ namespace ProjectChocobo
             this.ckb_RaceCompleted.Size = new System.Drawing.Size(111, 17);
             this.ckb_RaceCompleted.TabIndex = 76;
             this.ckb_RaceCompleted.Text = "Race Completed?";
+            this.ttp_UpdateEvents.SetToolTip(this.ckb_RaceCompleted, "Has the race been completed?");
             this.ckb_RaceCompleted.UseVisualStyleBackColor = true;
             // 
             // UpdateEvent
@@ -365,6 +380,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(816, 598);
             this.Name = "UpdateEvent";
             this.Text = "UpdateEvent";
             this.Load += new System.EventHandler(this.UpdateEvent_Load);
@@ -404,5 +420,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbo_ExistingEventName;
         private System.Windows.Forms.CheckBox ckb_RaceCompleted;
+        private System.Windows.Forms.ToolTip ttp_UpdateEvents;
     }
 }

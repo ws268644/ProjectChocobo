@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTracks));
             this.btn_Back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace ProjectChocobo
             this.cboDriveTrain = new System.Windows.Forms.ComboBox();
             this.lblDriveTrain = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.ttp_AddTracks = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLapCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTrackCapacity)).BeginInit();
@@ -53,9 +55,10 @@ namespace ProjectChocobo
             // 
             this.btn_Back.Location = new System.Drawing.Point(13, 415);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.Size = new System.Drawing.Size(214, 23);
             this.btn_Back.TabIndex = 0;
             this.btn_Back.Text = "Back";
+            this.ttp_AddTracks.SetToolTip(this.btn_Back, "Return to tracks");
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
@@ -84,8 +87,9 @@ namespace ProjectChocobo
             // 
             this.txtTrackName.Location = new System.Drawing.Point(16, 87);
             this.txtTrackName.Name = "txtTrackName";
-            this.txtTrackName.Size = new System.Drawing.Size(100, 20);
+            this.txtTrackName.Size = new System.Drawing.Size(211, 20);
             this.txtTrackName.TabIndex = 30;
+            this.ttp_AddTracks.SetToolTip(this.txtTrackName, "Enter a new track name");
             // 
             // lblTrackName
             // 
@@ -109,8 +113,9 @@ namespace ProjectChocobo
             // 
             this.nudLapCount.Location = new System.Drawing.Point(16, 130);
             this.nudLapCount.Name = "nudLapCount";
-            this.nudLapCount.Size = new System.Drawing.Size(100, 20);
+            this.nudLapCount.Size = new System.Drawing.Size(211, 20);
             this.nudLapCount.TabIndex = 33;
+            this.ttp_AddTracks.SetToolTip(this.nudLapCount, "Enter a new lap count");
             // 
             // cboTrackType
             // 
@@ -120,8 +125,9 @@ namespace ProjectChocobo
             "Off-Road"});
             this.cboTrackType.Location = new System.Drawing.Point(16, 186);
             this.cboTrackType.Name = "cboTrackType";
-            this.cboTrackType.Size = new System.Drawing.Size(121, 21);
+            this.cboTrackType.Size = new System.Drawing.Size(211, 21);
             this.cboTrackType.TabIndex = 34;
+            this.ttp_AddTracks.SetToolTip(this.cboTrackType, "Select the terrain that best fits this new track");
             // 
             // lblTrackType
             // 
@@ -145,8 +151,9 @@ namespace ProjectChocobo
             // 
             this.nudTrackCapacity.Location = new System.Drawing.Point(16, 231);
             this.nudTrackCapacity.Name = "nudTrackCapacity";
-            this.nudTrackCapacity.Size = new System.Drawing.Size(120, 20);
+            this.nudTrackCapacity.Size = new System.Drawing.Size(211, 20);
             this.nudTrackCapacity.TabIndex = 37;
+            this.ttp_AddTracks.SetToolTip(this.nudTrackCapacity, "How many attendiees can this venu hold?");
             // 
             // cboDriveTrain
             // 
@@ -158,8 +165,9 @@ namespace ProjectChocobo
             "Rear-wheel drive"});
             this.cboDriveTrain.Location = new System.Drawing.Point(16, 279);
             this.cboDriveTrain.Name = "cboDriveTrain";
-            this.cboDriveTrain.Size = new System.Drawing.Size(121, 21);
+            this.cboDriveTrain.Size = new System.Drawing.Size(211, 21);
             this.cboDriveTrain.TabIndex = 38;
+            this.ttp_AddTracks.SetToolTip(this.cboDriveTrain, "Select a new drive train for the new track");
             // 
             // lblDriveTrain
             // 
@@ -174,9 +182,10 @@ namespace ProjectChocobo
             // 
             this.btnSubmit.Location = new System.Drawing.Point(16, 338);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(211, 23);
             this.btnSubmit.TabIndex = 40;
             this.btnSubmit.Text = "Submit";
+            this.ttp_AddTracks.SetToolTip(this.btnSubmit, "Add the new track to the database");
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -199,6 +208,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(779, 489);
             this.Name = "AddTracks";
             this.Text = "Tracks";
             this.Load += new System.EventHandler(this.Tracks_Load);
@@ -226,5 +236,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.ComboBox cboDriveTrain;
         private System.Windows.Forms.Label lblDriveTrain;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ToolTip ttp_AddTracks;
     }
 }

@@ -55,6 +55,11 @@ namespace ProjectChocobo
                     break;
 
             }
+
+            lbl_NameDisplay.Text = "Welcome " + sUsername;
+            lbl_RoleDisplay.Text = "Access Level: " + sUserRole;
+
+
         }
 
         private void btn_settings_Click(object sender, EventArgs e)
@@ -98,6 +103,11 @@ namespace ProjectChocobo
         {
             Tracks tracksPage = new Tracks();
             nextPage(this, tracksPage);
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

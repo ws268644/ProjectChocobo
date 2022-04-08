@@ -32,9 +32,19 @@ namespace ProjectChocobo
         private void AllAdmins_Load(object sender, EventArgs e)
         {
             // Populate the admin combo box with all admins
-            List<string> lt = getAdminNames();
+            List<string> stAdmins = getAdminNames();
+            List<string> stUsers;
 
-            cbo_selectAdmins.Items.Add(lt);
+            foreach (string st in stAdmins)
+            {
+                cbo_selectAdmins.Items.Add(st);
+            }
+
+
+
+            
+
+            
         }
 
         private void cbo_selectAdmins_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,6 +64,11 @@ namespace ProjectChocobo
         {
             profiles profilesPage = new profiles();
             nextPage(this, profilesPage);
+        }
+
+        private void cbo_users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(profiles));
             this.btn_newProfile = new System.Windows.Forms.Button();
             this.btn_seeAllProfiles = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@ namespace ProjectChocobo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_SeeAllStewards = new System.Windows.Forms.Button();
             this.btn_SeeAllAdmins = new System.Windows.Forms.Button();
+            this.ttp_profiles = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +49,7 @@ namespace ProjectChocobo
             this.btn_newProfile.Size = new System.Drawing.Size(381, 289);
             this.btn_newProfile.TabIndex = 8;
             this.btn_newProfile.Text = "New Profile";
+            this.ttp_profiles.SetToolTip(this.btn_newProfile, "Add a new profile to the database");
             this.btn_newProfile.UseVisualStyleBackColor = true;
             this.btn_newProfile.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -57,6 +60,7 @@ namespace ProjectChocobo
             this.btn_seeAllProfiles.Size = new System.Drawing.Size(389, 96);
             this.btn_seeAllProfiles.TabIndex = 9;
             this.btn_seeAllProfiles.Text = "See All Racers";
+            this.ttp_profiles.SetToolTip(this.btn_seeAllProfiles, "Manage all Racers");
             this.btn_seeAllProfiles.UseVisualStyleBackColor = true;
             this.btn_seeAllProfiles.Click += new System.EventHandler(this.btn_seeAllProfiles_Click);
             // 
@@ -67,6 +71,7 @@ namespace ProjectChocobo
             this.btn_Back.Size = new System.Drawing.Size(776, 69);
             this.btn_Back.TabIndex = 10;
             this.btn_Back.Text = "Back";
+            this.ttp_profiles.SetToolTip(this.btn_Back, "Return to the homepage");
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
@@ -98,6 +103,7 @@ namespace ProjectChocobo
             this.btn_SeeAllStewards.Size = new System.Drawing.Size(389, 96);
             this.btn_SeeAllStewards.TabIndex = 22;
             this.btn_SeeAllStewards.Text = "See All Stewards";
+            this.ttp_profiles.SetToolTip(this.btn_SeeAllStewards, "Manage all stewards");
             this.btn_SeeAllStewards.UseVisualStyleBackColor = true;
             this.btn_SeeAllStewards.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -108,6 +114,7 @@ namespace ProjectChocobo
             this.btn_SeeAllAdmins.Size = new System.Drawing.Size(389, 85);
             this.btn_SeeAllAdmins.TabIndex = 23;
             this.btn_SeeAllAdmins.Text = "See All Admins";
+            this.ttp_profiles.SetToolTip(this.btn_SeeAllAdmins, "Manage all Admins");
             this.btn_SeeAllAdmins.UseVisualStyleBackColor = true;
             this.btn_SeeAllAdmins.Click += new System.EventHandler(this.btn_SeeAllAdmins_Click);
             // 
@@ -123,6 +130,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_seeAllProfiles);
             this.Controls.Add(this.btn_newProfile);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(813, 489);
             this.Name = "profiles";
             this.Text = "profiles";
             this.Load += new System.EventHandler(this.profiles_Load);
@@ -141,5 +149,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_SeeAllStewards;
         private System.Windows.Forms.Button btn_SeeAllAdmins;
+        private System.Windows.Forms.ToolTip ttp_profiles;
     }
 }

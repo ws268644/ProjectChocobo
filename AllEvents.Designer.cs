@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllEvents));
             this.btn_back = new System.Windows.Forms.Button();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@ namespace ProjectChocobo
             this.lbl_EventDateTitle = new System.Windows.Forms.Label();
             this.lbl_EventNameTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ttp_AllEvents = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spc_AllEvents)).BeginInit();
             this.spc_AllEvents.Panel1.SuspendLayout();
             this.spc_AllEvents.Panel2.SuspendLayout();
@@ -61,6 +63,7 @@ namespace ProjectChocobo
             this.btn_back.Size = new System.Drawing.Size(772, 23);
             this.btn_back.TabIndex = 0;
             this.btn_back.Text = "Back";
+            this.ttp_AllEvents.SetToolTip(this.btn_back, "Return to all events");
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
@@ -119,6 +122,7 @@ namespace ProjectChocobo
             this.cbo_selectedEvent.Name = "cbo_selectedEvent";
             this.cbo_selectedEvent.Size = new System.Drawing.Size(251, 21);
             this.cbo_selectedEvent.TabIndex = 0;
+            this.ttp_AllEvents.SetToolTip(this.cbo_selectedEvent, "Select an existing event");
             this.cbo_selectedEvent.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txt_eventRacers
@@ -129,6 +133,7 @@ namespace ProjectChocobo
             this.txt_eventRacers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_eventRacers.Size = new System.Drawing.Size(503, 217);
             this.txt_eventRacers.TabIndex = 23;
+            this.ttp_AllEvents.SetToolTip(this.txt_eventRacers, "All racers currently added to this event");
             // 
             // lbl_UserNameHeadline
             // 
@@ -241,6 +246,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.spc_AllEvents);
             this.Controls.Add(this.btn_back);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "AllEvents";
             this.Text = "AllEvents";
             this.Load += new System.EventHandler(this.AllEvents_Load);
@@ -275,5 +281,6 @@ namespace ProjectChocobo
         private System.Windows.Forms.Label lbl_EventDateTitle;
         private System.Windows.Forms.Label lbl_EventNameTitle;
         private System.Windows.Forms.TextBox txt_eventRacers;
+        private System.Windows.Forms.ToolTip ttp_AllEvents;
     }
 }

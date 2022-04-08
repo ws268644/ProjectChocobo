@@ -29,6 +29,7 @@ namespace ProjectChocobo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_profiles = new System.Windows.Forms.Button();
@@ -38,6 +39,9 @@ namespace ProjectChocobo
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_tracks = new System.Windows.Forms.Button();
             this.btn_events = new System.Windows.Forms.Button();
+            this.lbl_NameDisplay = new System.Windows.Forms.Label();
+            this.lbl_RoleDisplay = new System.Windows.Forms.Label();
+            this.ttp_home = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,21 +57,24 @@ namespace ProjectChocobo
             // 
             // btn_profiles
             // 
-            this.btn_profiles.Location = new System.Drawing.Point(12, 60);
+            this.btn_profiles.Location = new System.Drawing.Point(12, 76);
             this.btn_profiles.Name = "btn_profiles";
             this.btn_profiles.Size = new System.Drawing.Size(393, 128);
             this.btn_profiles.TabIndex = 4;
+            this.btn_profiles.Tag = "";
             this.btn_profiles.Text = "Profiles";
+            this.ttp_home.SetToolTip(this.btn_profiles, "View all profile options");
             this.btn_profiles.UseVisualStyleBackColor = true;
             this.btn_profiles.Click += new System.EventHandler(this.btn_profiles_Click);
             // 
             // btn_settings
             // 
-            this.btn_settings.Location = new System.Drawing.Point(401, 194);
+            this.btn_settings.Location = new System.Drawing.Point(401, 210);
             this.btn_settings.Name = "btn_settings";
             this.btn_settings.Size = new System.Drawing.Size(387, 122);
             this.btn_settings.TabIndex = 7;
             this.btn_settings.Text = "Settings";
+            this.ttp_home.SetToolTip(this.btn_settings, "Adjust the program\'s settings");
             this.btn_settings.UseVisualStyleBackColor = true;
             this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
@@ -78,6 +85,7 @@ namespace ProjectChocobo
             this.btn_quit.Size = new System.Drawing.Size(387, 100);
             this.btn_quit.TabIndex = 8;
             this.btn_quit.Text = "Quit";
+            this.ttp_home.SetToolTip(this.btn_quit, "Shut down the program");
             this.btn_quit.UseVisualStyleBackColor = true;
             this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
             // 
@@ -99,34 +107,63 @@ namespace ProjectChocobo
             this.btn_logout.Size = new System.Drawing.Size(393, 100);
             this.btn_logout.TabIndex = 21;
             this.btn_logout.Text = "Logout";
+            this.ttp_home.SetToolTip(this.btn_logout, "Log out of your account");
             this.btn_logout.UseVisualStyleBackColor = true;
             this.btn_logout.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_tracks
             // 
-            this.btn_tracks.Location = new System.Drawing.Point(12, 194);
+            this.btn_tracks.Location = new System.Drawing.Point(12, 210);
             this.btn_tracks.Name = "btn_tracks";
             this.btn_tracks.Size = new System.Drawing.Size(393, 122);
             this.btn_tracks.TabIndex = 22;
             this.btn_tracks.Text = "Tracks";
+            this.ttp_home.SetToolTip(this.btn_tracks, "View all tracks options");
             this.btn_tracks.UseVisualStyleBackColor = true;
             this.btn_tracks.Click += new System.EventHandler(this.btn_tracks_Click_1);
             // 
             // btn_events
             // 
-            this.btn_events.Location = new System.Drawing.Point(401, 60);
+            this.btn_events.Location = new System.Drawing.Point(401, 76);
             this.btn_events.Name = "btn_events";
             this.btn_events.Size = new System.Drawing.Size(387, 128);
             this.btn_events.TabIndex = 23;
             this.btn_events.Text = "Events";
+            this.ttp_home.SetToolTip(this.btn_events, "View all events options");
             this.btn_events.UseVisualStyleBackColor = true;
             this.btn_events.Click += new System.EventHandler(this.btn_events_Click_1);
+            // 
+            // lbl_NameDisplay
+            // 
+            this.lbl_NameDisplay.AutoSize = true;
+            this.lbl_NameDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NameDisplay.Location = new System.Drawing.Point(17, 57);
+            this.lbl_NameDisplay.Name = "lbl_NameDisplay";
+            this.lbl_NameDisplay.Size = new System.Drawing.Size(122, 17);
+            this.lbl_NameDisplay.TabIndex = 24;
+            this.lbl_NameDisplay.Text = "Welcome: User.";
+            // 
+            // lbl_RoleDisplay
+            // 
+            this.lbl_RoleDisplay.AutoSize = true;
+            this.lbl_RoleDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoleDisplay.Location = new System.Drawing.Point(563, 56);
+            this.lbl_RoleDisplay.Name = "lbl_RoleDisplay";
+            this.lbl_RoleDisplay.Size = new System.Drawing.Size(186, 17);
+            this.lbl_RoleDisplay.TabIndex = 25;
+            this.lbl_RoleDisplay.Text = "You have: Admin Access";
+            // 
+            // ttp_home
+            // 
+            this.ttp_home.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_RoleDisplay);
+            this.Controls.Add(this.lbl_NameDisplay);
             this.Controls.Add(this.btn_events);
             this.Controls.Add(this.btn_tracks);
             this.Controls.Add(this.btn_logout);
@@ -135,6 +172,7 @@ namespace ProjectChocobo
             this.Controls.Add(this.btn_profiles);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.pictureBox1);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
@@ -154,6 +192,9 @@ namespace ProjectChocobo
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_tracks;
         private System.Windows.Forms.Button btn_events;
+        private System.Windows.Forms.Label lbl_NameDisplay;
+        private System.Windows.Forms.Label lbl_RoleDisplay;
+        private System.Windows.Forms.ToolTip ttp_home;
     }
 }
 

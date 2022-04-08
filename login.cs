@@ -61,6 +61,23 @@ namespace ProjectChocobo
             tmr_ErrorMessage.Stop();
             lbl_ErrorMessage.Hide();
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbx_unhidePassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbx_unhidePassword.Checked == true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
 
